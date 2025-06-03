@@ -1,0 +1,25 @@
+.tag {
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    &.black {
+      color: black;
+    }
+  
+    &.red {
+      color: red;
+    }
+  
+    &.orange {
+      color: orange;
+    }
+  
+    &.green {
+      color: green;
+    }
+  
+    &.blue {
+      color: blue;
+    }
+  }
+  

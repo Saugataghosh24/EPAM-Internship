@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body{
+    background-color:#FFFBF3;
+    /* Add more specific rules for the input in the context of RegisterComponent */
+    input[type="password"]::-webkit-textfield-decoration-container, input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear {
+        display: none;
+    }
+}

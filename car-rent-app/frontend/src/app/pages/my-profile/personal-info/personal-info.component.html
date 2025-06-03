@@ -1,0 +1,184 @@
+<div>
+    <h2 class="text-3xl font-bold mb-6">Personal info</h2>
+    
+    <!-- Success notification -->
+    <div *ngIf="showSuccessMessage" class="bg-green-50 border border-green-200 rounded-md p-4 mb-6 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <div>
+        <p class="font-medium text-green-800">Success!</p>
+        <p class="text-green-600">{{ successMessage }}</p>
+      </div>
+      <button class="ml-auto text-gray-500" (click)="showSuccessMessage = false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="bg-red-50 border border-red-200 rounded-md p-4 mb-6 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+      </svg>
+      <div>
+        <p class="font-medium text-red-800">Error</p>
+        <p class="text-red-600">{{ errorMessage }}</p>
+      </div>
+      <button class="ml-auto text-gray-500" (click)="errorMessage = ''">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div *ngIf="isLoading" class="flex justify-center items-center py-10">
+      <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-red-600"></div>
+    </div>
+    
+    <!-- Content - only show when data is loaded -->
+    <div *ngIf="!isLoading && originalInfo && editableInfo">
+      <!-- User profile card - using originalInfo (not editable) -->
+      <div class="border rounded-lg p-6 mb-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden">
+              <img [src]="originalInfo.imageUrl" alt="Profile" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 class="text-lg font-medium">{{ originalInfo.firstName }} {{ originalInfo.lastName }}</h3>
+              <p class="text-gray-600">{{ originalInfo.email }}</p>
+            </div>
+          </div>
+          <button class="text-gray-600 hover:text-red-600 cursor-pointer" (click)="triggerFileInput()">Change</button>
+          <input 
+            id="profileImageInput" 
+            type="file" 
+            class="hidden" 
+            accept="image/*" 
+            (change)="onFileSelected($event)" 
+          />
+        </div>
+      </div>
+      
+      <!-- Personal info form - using editableInfo -->
+      <div>
+        <!-- Image preview if a new image is selected but not yet saved -->
+        <div *ngIf="newImagePreview" class="mb-6 p-4 border border-gray-200 rounded-md">
+          <p class="text-sm text-gray-600 mb-2">New profile image preview (will be applied after saving):</p>
+          <div class="flex items-center">
+            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
+              <img [src]="newImagePreview" alt="New Profile" class="w-full h-full object-cover" />
+            </div>
+            <button class="text-gray-600 hover:text-red-600 text-sm" (click)="newImagePreview = null">
+              Cancel
+            </button>
+          </div>
+        </div>
+        
+        <h3 class="text-xl font-medium mb-4">Personal info</h3>
+        <div class="border rounded-lg p-6 mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">Name</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your name"
+                [(ngModel)]="editableInfo.firstName"
+              />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">Surname</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your surname"
+                [(ngModel)]="editableInfo.lastName"
+              />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm text-gray-600 mb-1">Phone</label>
+            <input 
+              type="tel" 
+              class="w-full border rounded-md p-2.5" 
+              placeholder="Write your phone no"
+              [(ngModel)]="editableInfo.phoneNumber"
+            />
+          </div>
+        </div>
+        
+        <!-- Address section -->
+        <h3 class="text-xl font-medium mb-4">Address</h3>
+        <div class="border rounded-lg p-6 mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">Country</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your country"
+                [(ngModel)]="editableInfo.country"
+              />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">City</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your city"
+                [(ngModel)]="editableInfo.city"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">Postal code</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your postal code"
+                [(ngModel)]="editableInfo.postalCode"
+              />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-600 mb-1">Street</label>
+              <input 
+                type="text" 
+                class="w-full border rounded-md p-2.5" 
+                placeholder="Write your street"
+                [(ngModel)]="editableInfo.street"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="flex justify-end gap-4">
+          <!-- <button 
+            class="border border-gray-300 text-gray-700 rounded-md px-6 py-3 hover:bg-gray-50"
+            (click)="discardChanges()"
+          >
+            Cancel
+          </button> -->
+          <button 
+            class="bg-red-600 hover:bg-red-700 text-white rounded-md px-6 py-3"
+            (click)="saveChanges()"
+            [disabled]="isSaving"
+          >
+            <span *ngIf="!isSaving">Save changes</span>
+            <span *ngIf="isSaving" class="flex items-center">
+              <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Saving...
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<!-- src/app/auth/login/login.component.html -->
+<div class="auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">LOGIN</h2>
+      
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+          <input 
+            type="text" 
+            name="email" 
+            [(ngModel)]="loginForm.email" 
+            placeholder="Username" 
+            required>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="password" 
+            name="password" 
+            [(ngModel)]="loginForm.password" 
+            placeholder="Password" 
+            required>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        
+        <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">LOGIN</button>
+          <button type="button" class="btn btn-secondary" routerLink="/">CANCEL</button>
+        </div>
+      </form>
+    </div>
+  </div>

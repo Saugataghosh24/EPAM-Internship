@@ -1,0 +1,54 @@
+button {
+    height: 40px;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.primary {
+      background-color: #CC1D1D;
+      color: white;
+      border: 1px solid #CC1D1D;
+      font-size: 15px;
+      &:hover{
+        background-color: transparent;
+        color: #CC1D1D;
+      }
+    }
+  
+    &.secondary {
+      color: black;
+      border: 1px solid black;
+      font-size: 15px;
+      &:hover{
+        color: white;
+        background-color: black;
+      }
+    }
+  
+    &.underline {
+        color: black; 
+        text-decoration: none;
+        border-bottom: 1px solid black; 
+        border-radius: 0; 
+        width: max-content;
+        height: max-content;        
+    }
+  
+    &:disabled {
+      background-color: #DCDCDD;
+      border: 1px solid #DCDCDD;
+      color: #A29E9E;
+      cursor: not-allowed;
+      font-size: 18px;
+
+      /* Override any hover styles that might be applied */
+      &:hover, &.primary:hover, &.secondary:hover {
+        background-color: #DCDCDD !important;
+        border-color: #DCDCDD !important;
+        color: #A29E9E !important;
+      }
+    }
+  }

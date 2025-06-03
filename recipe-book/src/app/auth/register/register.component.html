@@ -1,0 +1,106 @@
+<!-- src/app/auth/register/register.component.html -->
+<div class="auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">REGISTRATION</h2>
+      
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-row">
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="firstName" 
+              [(ngModel)]="registerForm.firstName" 
+              placeholder="First name" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="lastName" 
+              [(ngModel)]="registerForm.lastName" 
+              placeholder="Last name" 
+              required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="email" 
+            name="email" 
+            [(ngModel)]="registerForm.email" 
+            placeholder="Email id" 
+            required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <select 
+              name="country" 
+              [(ngModel)]="registerForm.country" 
+              required>
+              <option value="" disabled selected>Country</option>
+              <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <select 
+              name="region" 
+              [(ngModel)]="registerForm.region" 
+              required
+              [disabled]="!registerForm.country">
+              <option value="" disabled selected>Region</option>
+              <option *ngFor="let region of regions[registerForm.country] || []" [value]="region">{{ region }}</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <input 
+              type="password" 
+              name="password" 
+              [(ngModel)]="registerForm.password" 
+              placeholder="Password" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <input 
+              type="password" 
+              name="confirmPassword" 
+              [(ngModel)]="registerForm.confirmPassword" 
+              placeholder="Confirm Password" 
+              required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="upload-container">
+            <label for="profileImage" class="upload-label">
+              <span>Upload Image</span>
+              <span class="upload-icon">↑</span>
+            </label>
+            <input 
+              type="file" 
+              id="profileImage" 
+              (change)="onFileSelected($event)"
+              accept="image/*"
+              class="file-input">
+            
+            <div class="image-preview" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Profile preview">
+            </div>
+          </div>
+        </div>
+        
+        <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">REGISTER</button>
+          <button type="button" class="btn btn-secondary" routerLink="/">CANCEL</button>
+        </div>
+      </form>
+    </div>
+  </div>

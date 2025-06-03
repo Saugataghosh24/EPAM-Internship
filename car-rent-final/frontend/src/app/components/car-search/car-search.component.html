@@ -1,0 +1,228 @@
+<!-- src/app/components/car-search/car-search.component.html -->
+<div class="w-full max-w-[1500px] mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-6">Choose a car for rental</h1>
+  <div class="rounded-lg border border-gray-200 p-4 md:p-6 bg-[#FFFBF3]">
+    <!-- Clear filters button -->
+    <div class="flex justify-end mb-3">
+      <button class="text-red-600 text-sm hover:underline cursor-pointer" (click)="clearFilters()">Clear all filters</button>
+    </div>
+    <form [formGroup]="searchForm" (ngSubmit)="searchCars($event)">
+      <!-- First row: Locations (2/3) and Dates (1/3) -->
+      <div class="flex flex-col md:flex-row gap-4 mb-4 md:h-20">
+        <!-- Locations section - 2/3 width on md+ screens -->
+        <div class="w-full md:w-2/3 flex flex-col sm:flex-row gap-4">
+          <div class="w-full sm:w-1/2">
+            <label class="block text-sm text-gray-500 mb-2">Pick-up location</label>
+            <div class="relative">
+              <select title="select" formControlName="pickupLocation" class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      [ngClass]="{'border-red-500': searchForm.get('pickupLocation')?.invalid && searchForm.get('pickupLocation')?.touched}">
+                <option value="" disabled>Choose location</option>
+                <option *ngFor="let location of locations" [value]="location.locationId">{{ location.locationName }}</option>
+
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+              <!-- Loading indicator for locations -->
+              <div *ngIf="isLoadingLocations" class="absolute inset-y-0 right-8 flex items-center">
+                <svg class="animate-spin h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </div>
+            </div>
+            <div *ngIf="searchForm.get('pickupLocation')?.invalid && searchForm.get('pickupLocation')?.touched" class="text-red-500 text-xs mt-1">
+              Please select a pick-up location
+            </div>
+          </div>
+          
+          
+          <div class="w-full sm:w-1/2">
+            <label class="block text-sm text-gray-500 mb-2">Drop-off location</label>
+            <div class="relative">
+              <select title="select" formControlName="dropoffLocation" class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                      [ngClass]="{'border-red-500': searchForm.get('dropoffLocation')?.invalid && searchForm.get('dropoffLocation')?.touched}">
+                <option value="" disabled>Choose location</option>
+                <option *ngFor="let location of locations" [value]="location.locationId">{{ location.locationName}}</option>
+                
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+              <!-- Loading indicator for locations -->
+              <div *ngIf="isLoadingLocations" class="absolute inset-y-0 right-8 flex items-center">
+                <svg class="animate-spin h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </div>
+            </div>
+            <div *ngIf="searchForm.get('dropoffLocation')?.invalid && searchForm.get('dropoffLocation')?.touched" class="text-red-500 text-xs mt-1">
+              Please select a drop-off location
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dates section - 1/3 width on md+ screens -->
+        <div class="relative w-full md:w-1/3">
+          <section class="w-full flex gap-4 h-full">
+            <section class="w-1/2 flex flex-col">
+              <label class="block text-sm text-gray-500 mb-2">Pick-up Date</label>
+              <section class="border border-gray-300 rounded-md p-3 w-full relative">
+                <p (click)="openPickup()">{{dateTime.pickup | date: 'MMMM d'}}</p>
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition-transform duration-200"
+                [ngClass]="{'rotate-180': isPickupVisible}" (click)="openPickup()">
+                <svg width="12" height="12" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.240779 0.376034C0.353279 0.263673 0.505779 0.200562 0.66478 0.200562C0.82378 0.200562 0.976279 0.263673 1.08878 0.376034L3.06478 2.35203L5.04078 0.376034C5.15452 0.27005 5.30496 0.212351 5.4604 0.215094C5.61584 0.217836 5.76415 0.280805 5.87408 0.390736C5.98401 0.500666 6.04698 0.648975 6.04972 0.804416C6.05246 0.959857 5.99476 1.11029 5.88878 1.22403L3.48878 3.62403C3.37628 3.73639 3.22378 3.79951 3.06478 3.79951C2.90578 3.79951 2.75328 3.73639 2.64078 3.62403L0.240779 1.22403C0.128419 1.11153 0.0653076 0.959034 0.0653076 0.800034C0.0653076 0.641033 0.128419 0.488534 0.240779 0.376034Z" fill="gray"/>
+                </svg>
+              </span>
+            </section>
+          </section>  
+          <section class="w-1/2 flex flex-col">
+            <label class="block text-sm text-gray-500 mb-2">Drop-off Date</label>
+
+             <section class="border border-gray-300 rounded-md p-3 w-full relative"> 
+                 <p (click)="openPickup()">{{dateTime.dropoff | date: 'MMMM d'}} </p>
+                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition-transform duration-200"
+                 [ngClass]="{'rotate-180': isPickupVisible}" (click)="openPickup()">
+                 <svg width="12" height="12" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0.240779 0.376034C0.353279 0.263673 0.505779 0.200562 0.66478 0.200562C0.82378 0.200562 0.976279 0.263673 1.08878 0.376034L3.06478 2.35203L5.04078 0.376034C5.15452 0.27005 5.30496 0.212351 5.4604 0.215094C5.61584 0.217836 5.76415 0.280805 5.87408 0.390736C5.98401 0.500666 6.04698 0.648975 6.04972 0.804416C6.05246 0.959857 5.99476 1.11029 5.88878 1.22403L3.48878 3.62403C3.37628 3.73639 3.22378 3.79951 3.06478 3.79951C2.90578 3.79951 2.75328 3.73639 2.64078 3.62403L0.240779 1.22403C0.128419 1.11153 0.0653076 0.959034 0.0653076 0.800034C0.0653076 0.641033 0.128419 0.488534 0.240779 0.376034Z" fill="gray"/>
+                 </svg>
+             </span>
+         </section>
+          </section>
+     </section>
+     <section *ngIf="isPickupVisible" class="absolute top-full z-50 mt-2 right-1/2 translate-x-1/2  md:translate-x-0 md:right-0 bg-white shadow-xl rounded" (click)="$event.stopPropagation()">
+      
+         <app-date-time-picker (dateRangeSelected)="selectedDates($event)" (closed)="pickerStatus($event)" [selectedPickup]="dateTime.pickup" [selectedDropoff]="dateTime.dropoff"></app-date-time-picker>
+     </section>
+
+ </div>
+ 
+      </div>
+      
+      <!-- Second row: Car options, price slider and button -->
+      <div class="flex flex-col lg:flex-row gap-4 items-end lg:h-20">
+        <!-- Car options section - stacks vertically on mobile, horizontally on larger screens -->
+        <div class="w-full lg:w-3/5 flex flex-col sm:flex-row gap-4">
+          <div class="w-full sm:w-1/3">
+            <label class="block text-sm text-gray-500 mb-2">Car category</label>
+            <div class="relative">
+              <select title="select" formControlName="carCategory" class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <option *ngFor="let category of carCategories" [value]="category">{{ category| titlecase}}</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="w-full sm:w-1/3">
+            <label class="block text-sm text-gray-500 mb-2">Gearbox</label>
+            <div class="relative">
+              <select title="select" formControlName="gearboxType" class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <option *ngFor="let type of gearboxTypes" [value]="type">{{ type|titlecase }}</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="w-full sm:w-1/3">
+            <label class="block text-sm text-gray-500 mb-2">Type of engine</label>
+            <div class="relative">
+              <select title="select" formControlName="fuelType" class="w-full p-2 md:p-3 border border-gray-300 rounded-md appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <option *ngFor="let type of fuelTypes" [value]="type">{{ type|titlecase }}</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Price slider and button section -->
+        <div class="w-full h-full lg:w-2/5 flex flex-col sm:flex-row gap-4">
+          <!-- Price slider section - wrap in ngIf for browser-only rendering -->
+          <div *ngIf="isBrowser" class="w-full sm:w-3/5">
+            <label class="block text-sm text-gray-500 my-2">Price per day</label>
+            <div class="px-2">
+              <div class="relative pt-5 pb-2 price-slider">
+                <!-- Track background -->
+                <div class="absolute h-2 w-full bg-gray-200 rounded-md"></div>
+                
+                <!-- Selected range highlight -->
+                <div class="absolute h-2 bg-[#CC1D1D] rounded-md"
+                    [style.left]="((priceRange.min - minPrice) / (maxPrice - minPrice) * 100) + '%'"
+                    [style.width]="((priceRange.max - priceRange.min) / (maxPrice - minPrice) * 100) + '%'">
+                </div>
+                
+                <!-- Min handle -->
+                <div title="minhandle" class="absolute w-4 h-4 bg-[#CC1D1D] rounded-full -mt-1 -ml-2.5 cursor-pointer shadow-md slider-handle"
+                    [style.left]="((priceRange.min - minPrice) / (maxPrice - minPrice) * 100) + '%'"
+                    (mousedown)="startDrag($event, 'min')"
+                    (touchstart)="startDragTouch($event, 'min')"
+                    tabindex="0"
+                    role="slider"
+                    [attr.aria-valuemin]="minPrice"
+                    [attr.aria-valuemax]="priceRange.max"
+                    [attr.aria-valuenow]="priceRange.min"
+                    (keydown)="onKeyDown($event, 'min')">
+                </div>
+                
+                <!-- Max handle -->
+                <div title="maxhandle" class="absolute w-4 h-4 bg-[#CC1D1D] rounded-full -mt-1 -ml-2.5 cursor-pointer shadow-md slider-handle"
+                    [style.left]="((priceRange.max - minPrice) / (maxPrice - minPrice) * 100) + '%'"
+                    (mousedown)="startDrag($event, 'max')"
+                    (touchstart)="startDragTouch($event, 'max')"
+                    tabindex="0"
+                    role="slider"
+                    [attr.aria-valuemin]="priceRange.min"
+                    [attr.aria-valuemax]="maxPrice"
+                    [attr.aria-valuenow]="priceRange.max"
+                    (keydown)="onKeyDown($event, 'max')">
+                </div>
+              </div>
+              
+              <div class="flex justify-between mt-2 text-sm">
+                <span>${{ priceRange.min }}</span>
+                <span>${{ priceRange.max }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fallback for server-side rendering -->
+          <div *ngIf="!isBrowser" class="w-full sm:w-3/5">
+            <label class="block text-sm text-gray-500 mb-2">Price per day</label>
+            <div class="px-2">
+              <div class="text-sm">$52 - $400</div>
+            </div>
+          </div>
+          
+          <div class="w-full sm:w-2/5 flex items-end">
+            <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 md:py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center cursor-pointer">
+              <span *ngIf="isLoading" class="mr-2">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </span>
+              Find a car
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

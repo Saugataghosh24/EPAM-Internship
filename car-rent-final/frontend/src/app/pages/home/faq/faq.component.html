@@ -1,0 +1,60 @@
+<div class="w-full max-w-[1500px] mx-auto p-6" id="faq">
+  <section class="mt-2 relative flex flex-col">
+    <p class="text-2xl text-[#666666]">(FAQ)</p>
+    
+    <!-- Skeleton loader - replaces spinning loader -->
+    <ng-container *ngIf="isLoading" >
+      <div class="self-end md:w-[64%]">
+        <!-- Repeat skeleton items to show multiple FAQs loading -->
+        <div *ngFor="let i of [1,2,3,4,5,6,7,8.9.10]" class="border-b border-gray-300 w-full animate-pulse">
+          <!-- Question skeleton -->
+          <div class="flex justify-between items-center py-6">
+            <!-- Question text placeholder -->
+            <div class="h-8 bg-gray-300 rounded w-3/4"></div>
+            <!-- Plus sign placeholder -->
+            <div class="h-6 w-6 bg-gray-300 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    
+    
+    <!-- Error state (unchanged) -->
+    <div *ngIf="error" class="bg-red-100 flex justify-center items-center gap-4 my-8 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+      <span class="block sm:inline">{{ error }}</span>
+      <button 
+        (click)="loadFaqs()" 
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+      >
+        Try Again
+      </button>
+    </div>
+    
+    <!-- Empty state (unchanged) -->
+    <div *ngIf="!isLoading && !error && faqs.length === 0" class="text-center py-8">
+      <p class="text-gray-500">No FAQ items available at the moment.</p>
+    </div>
+    
+    <!-- Actual FAQ items (unchanged) -->
+    <div *ngIf="!isLoading && !error && faqs.length > 0" class="self-end md:w-[64%]">
+      <div *ngFor="let faq of faqs; index as i" class="border-b border-gray-700/20 w-full" id="faq-{{ i }}">
+        <button
+          (click)="toggle(i)"
+          class="w-full flex justify-between items-center py-4 text-left cursor-pointer"
+        >
+          <span class="text-xl font-medium">{{ faq.question }}</span>
+          <span class="text-2xl">{{ isOpen(i) ? '×' : '+' }}</span>
+        </button>
+    
+        <div
+          [@slideToggle]="isOpen(i) ? 'open' : 'closed'"
+          class="overflow-hidden text-gray-400 text-sm transition-all duration-300"
+        >
+          <div class="pb-4 px-2 text-[#666666]">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

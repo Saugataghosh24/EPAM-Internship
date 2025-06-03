@@ -1,0 +1,36 @@
+<section *ngIf="visible"
+[ngClass]="{
+    'border-[#149E32] bg-[#E2FAE7]': success,
+    'border-[#E22D0D] bg-[#F8E7E7]': !success
+  }"
+ class="border  pl-3 pr-12 py-5 rounded-md w-85 md:w-[430px] fixed top-8 left-1/2 transform -translate-x-1/2 z-5">
+    <section class="flex space-x-1">
+        <section class="p-1.5 flex-shrink-0">
+            @if(success){
+            <img src="assets/icons/success.svg" alt="success">
+            }
+            @else{
+            <img src="assets/icons/caution.svg" alt="caution">
+
+            }
+        </section>
+        <section>
+            <p class="text-lg"> {{alert}}</p>
+            <p class="text-sm text-gray-600">{{message}}</p>
+        </section>
+    </section>
+    @if(success){
+    <section class="absolute top-0 right-0 p-2 hover:cursor-pointer" (click)="closeNotification()">
+        <img src="assets/icons/close.svg" alt="close">
+    </section>
+    }@else if(buttons){
+        <section class="flex justify-self-end my-2">
+            <section class="w-25 mx-2">
+                <app-button type="secondary" label="Cancel" (clicked)="closeNotification()"></app-button>
+            </section>
+            <section class="w-25">
+                <app-button type="primary" label="Login" (clicked)="login()"></app-button>
+            </section>
+        </section>
+    }
+</section>

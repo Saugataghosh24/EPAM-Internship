@@ -1,0 +1,20 @@
+<section class="bg-[#F0F0F0] py-3 rounded-lg w-86 md:w-100 h-fit md:mx-5 my-12">
+    <section class="w-82 md:w-95 mx-auto p-1">
+        <img src="{{car!.images[0]}}" alt="{{car?.model}}">
+        <section class="my-2">
+            <p>{{car?.model}}</p>
+            <p class="text-xs text-gray-600">{{car?.location}}</p>
+        </section>
+        <hr class="border-1 border-gray-300 my-3 rounded-3xl" />
+        <section>
+            <section class="flex justify-between my-2">
+                <p class="font-bold">Total</p>
+                <p class="font-bold">${{totalcost==1?car?.pricePerDay:totalcost}}</p>
+            </section>
+            <p class="text-xs text-gray-600 my-2">Deposit: $ 2000</p>
+            <!-- <button class="bg-[#CC1D1D] text-white p-2 rounded-full w-95 my-2 justify-self-center">Confirm reservation</button> -->
+            <app-button [label]="label" (clicked)="addBookingForUser()"></app-button>
+        </section>
+    </section>
+</section>
+

@@ -1,0 +1,39 @@
+<section class="my-4" id="personal-info">
+    @if(cuser!.role === 'Support'){
+        <p class="my-3 font-semibold text-xl">Client Info</p>
+        <section *ngIf="changeclient; else elseblock" class="border-[1.5px] rounded-lg p-3">
+            <section class="mb-1">
+                <section class="flex justify-between items-center">
+                    <span class="text-xs text-gray-600">Client</span>
+                    <p id="save-client" class="text-sm cursor-pointer" (click)="toggleUpdate()">Save</p>
+                </section>
+    
+                <select id="client" [(ngModel)]="clt"
+                    class="w-70 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                    <option *ngFor="let client of allclients" [ngValue]="client">
+                        {{client.userName}}
+                    </option>
+                </select>
+            </section>
+        </section>
+        <ng-template #elseblock>
+            <section class="border-[1.5px] rounded-lg p-3">
+                <section class="mb-1">
+                    <section class="flex justify-between items-center">
+                        <span class="text-xs text-gray-600">Client</span>
+                        <p id="change-client" class="text-sm cursor-pointer" (click)="toggleUpdate()">Change</p>
+                    </section>
+        
+                    <p>{{clt.userName}}</p>
+                </section>
+            </section>
+        </ng-template>
+    }
+    @else{
+        <p class="my-3 font-semibold text-xl">Personal Info</p>
+        <section class="border-[1.5px] rounded-lg p-3">
+            <p class="text-sm">{{cuser!.username}}</p>
+            <p class="text-gray-600 text-sm">{{cuser!.email}}</p>
+        </section>
+    }
+</section>

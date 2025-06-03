@@ -1,0 +1,198 @@
+<!-- src/app/recipes/recipe-detail/recipe-detail.component.html -->
+<div class="recipe-detail-container" *ngIf="recipe">
+    <div class="recipe-header">
+      <div class="recipe-image">
+        <img [src]="recipe.imageUrl || 'assets/images/default-recipe.jpg'" [alt]="recipe.name">
+      </div>
+      
+      <div class="recipe-info">
+        <h1 class="recipe-title">{{ recipe.name }}</h1>
+        
+        <div class="recipe-meta">
+          <div class="recipe-author" (click)="navigateToOwnerProfile()">
+            <div class="author-avatar">
+              <img *ngIf="recipe.userImage" [src]="recipe.userImage" alt="Author">
+              <div *ngIf="!recipe.userImage" class="avatar-placeholder">
+                {{ recipe.userName?.charAt(0) || 'U' }}
+              </div>
+            </div>
+            <span>{{ recipe.userName }}</span>
+          </div>
+          
+          <div class="recipe-stats">
+            <div class="stat">
+              <span class="stat-label">Difficulty:</span>
+              <span class="stat-value">{{ recipe.difficultyLevel }}</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Time:</span>
+              <span class="stat-value">{{ recipe.cookingTime }} mins</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Rating:</span>
+              <div class="stat-rating">
+                <app-rating [rating]="recipe.averageRating" [readonly]="true"></app-rating>
+                <span class="rating-count">({{ recipe.ratings.length }})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="recipe-description">{{ recipe.description }}</p>
+        
+        <div class="recipe-tags">
+          <span class="tag" *ngFor="let tag of recipe.tags">{{ tag }}</span>
+        </div>
+        
+        <div class="recipe-actions">
+            <button *ngIf="!isOwner && isLoggedIn" class="btn" [class.btn-favorite]="isFavorite" [class.btn-outline]="!isFavorite" (click)="toggleFavorite()">
+                <i class="icon" [class.icon-heart-filled]="isFavorite" [class.icon-heart-outline]="!isFavorite"></i>
+                {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+            </button>
+            <a *ngIf="!isLoggedIn" class="btn btn-outline" (click)="navigateToLogin()" style="cursor: pointer;">
+                <i class="icon icon-heart-outline"></i>
+                Add to Favorites
+            </a>
+          <button class="btn btn-secondary" *ngIf="isOwner" (click)="editRecipe()">
+            Edit Recipe
+          </button>
+          <button class="btn btn-danger" *ngIf="isOwner" (click)="deleteRecipe()">
+            Delete Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="recipe-content">
+      <div class="recipe-main">
+        <section class="recipe-section">
+          <h2>Ingredients</h2>
+          <ul class="ingredients-list">
+            <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+          </ul>
+        </section>
+        
+        <section class="recipe-section">
+          <h2>Instructions</h2>
+          <ol class="instructions-list">
+            <li *ngFor="let step of recipe.steps">{{ step }}</li>
+          </ol>
+        </section>
+        
+        <section class="recipe-section" *ngIf="recipe.dietaryRestrictions?.length">
+          <h2>Dietary Restrictions</h2>
+          <div class="dietary-tags">
+            <span class="dietary-tag" *ngFor="let restriction of recipe.dietaryRestrictions">
+              {{ restriction }}
+            </span>
+          </div>
+        </section>
+      </div>
+      
+      <div class="recipe-sidebar">
+        <section class="rating-section">
+          <h2>Rate this Recipe</h2>
+          
+          <div *ngIf="isLoggedIn && !isOwner; else loginOrOwnerMessage">
+            <!-- User already rated this recipe -->
+            <div *ngIf="existingUserRating" class="existing-rating">
+              <div class="existing-rating-header">
+                <p>Your rating:</p>
+                <app-rating [rating]="userRating" [readonly]="true"></app-rating>
+              </div>
+              
+              <p *ngIf="existingUserRating.comment" class="existing-comment">
+                "{{ existingUserRating.comment }}"
+              </p>
+              
+              <div class="rating-actions">
+                <button class="btn btn-sm btn-secondary" (click)="toggleRatingForm()">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="removeRating()">Remove</button>
+              </div>
+            </div>
+            
+            <!-- Rating form (for new ratings or editing) -->
+            <div *ngIf="!existingUserRating || showRatingForm" class="rating-form">
+              <div class="user-rating">
+                <p>Select your rating:</p>
+                <app-rating [(rating)]="userRating" [readonly]="false"></app-rating>
+              </div>
+              
+              <div class="comment-form">
+                <textarea 
+                  [(ngModel)]="commentText" 
+                  placeholder="Share your experience with this recipe (optional)"
+                  rows="4">
+                </textarea>
+                
+                <div class="form-actions">
+                  <button 
+                    class="btn btn-primary" 
+                    [disabled]="userRating === 0"
+                    (click)="submitRating()">
+                    {{ existingUserRating ? 'Update Rating' : 'Submit Rating' }}
+                  </button>
+                  
+                  <button 
+                    *ngIf="existingUserRating" 
+                    class="btn btn-outline" 
+                    (click)="toggleRatingForm()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <ng-template #loginOrOwnerMessage>
+            <p class="login-prompt" *ngIf="!isLoggedIn">
+              Please <a (click)="navigateToLogin()" style="cursor: pointer;">login</a> to rate this recipe.
+            </p>
+            <p class="owner-message" *ngIf="isLoggedIn && isOwner">
+              You cannot rate your own recipe.
+            </p>
+          </ng-template>
+        </section>
+        
+        <section class="comments-section">
+          <h2>Reviews ({{ recipe.ratings.length }})</h2>
+          
+          <div class="comments-list">
+            <div class="comment" *ngFor="let rating of recipe.ratings">
+              <div class="comment-header">
+                <div class="comment-author" (click)="navigateToUserProfile(rating.userId)">
+                  <div class="author-avatar">
+                    <img *ngIf="rating.userImage" [src]="rating.userImage" alt="User">
+                    <div *ngIf="!rating.userImage" class="avatar-placeholder">
+                      {{ rating.userName?.charAt(0) || 'U' }}
+                    </div>
+                  </div>
+                  <span>{{ rating.userName }}</span>
+                </div>
+                
+                <div class="comment-rating">
+                  <app-rating [rating]="rating.value" [readonly]="true"></app-rating>
+                </div>
+              </div>
+              
+              <div class="comment-body" *ngIf="rating.comment">
+                <p>{{ rating.comment }}</p>
+              </div>
+              
+              <div class="comment-date">
+                {{ formatDate(rating.date) }}
+              </div>
+            </div>
+            
+            <div class="no-comments" *ngIf="recipe.ratings.length === 0">
+              <p>No reviews yet. Be the first to rate this recipe!</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading" *ngIf="!recipe">
+    Loading recipe...
+  </div>

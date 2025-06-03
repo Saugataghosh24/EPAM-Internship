@@ -1,0 +1,72 @@
+<!-- src/app/shared/components/sidebar/sidebar.component.html -->
+<div class="sidebar-overlay" [class.active]="isOpen" (click)="closeMenu()"></div>
+
+<aside class="sidebar" [class.open]="isOpen">
+  <div class="sidebar-header">
+    <button class="close-btn" (click)="closeMenu()">×</button>
+    <h2 class="sidebar-title">Recipe Book</h2>
+  </div>
+  
+  <div class="sidebar-content">
+    <!-- User Section -->
+    <div class="user-section">
+      <div *ngIf="currentUser" class="user-info">
+        <div class="user-avatar">
+          <img *ngIf="currentUser.profileImage" [src]="currentUser.profileImage" alt="Profile">
+          <div *ngIf="!currentUser.profileImage" class="avatar-placeholder">
+            {{ currentUser.firstName.charAt(0) }}
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>{{ currentUser.firstName }} {{ currentUser.lastName }}</h3>
+          <p>{{ currentUser.email }}</p>
+        </div>
+      </div>
+      
+      <div *ngIf="!currentUser" class="auth-buttons">
+        <a routerLink="/auth/login" class="btn btn-outline" (click)="closeMenu()">Login</a>
+        <a routerLink="/auth/register" class="btn btn-primary" (click)="closeMenu()">Register</a>
+      </div>
+    </div>
+    
+    <!-- Navigation -->
+    <!-- <nav class="sidebar-nav">
+      <h3 class="nav-heading">Explore</h3>
+      <ul class="nav-list">
+        <li><a routerLink="/recipes" (click)="closeMenu()">All Recipes</a></li>
+        <li><a routerLink="/recipes/popular" (click)="closeMenu()">Popular Recipes</a></li>
+        <li><a routerLink="/recipes/latest" (click)="closeMenu()">Latest Recipes</a></li>
+      </ul>
+      
+      <h3 class="nav-heading">Categories</h3>
+      <ul class="nav-list">
+        <li><a routerLink="/recipes" [queryParams]="{category: 'Breakfast'}" (click)="closeMenu()">Breakfast</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{category: 'Main Course'}" (click)="closeMenu()">Main Course</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{category: 'Dessert'}" (click)="closeMenu()">Dessert</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{category: 'Appetizer'}" (click)="closeMenu()">Appetizer</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{category: 'Salad'}" (click)="closeMenu()">Salad</a></li>
+      </ul>
+      
+      <h3 class="nav-heading">Cuisines</h3>
+      <ul class="nav-list">
+        <li><a routerLink="/recipes" [queryParams]="{cuisine: 'Italian'}" (click)="closeMenu()">Italian</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{cuisine: 'Mexican'}" (click)="closeMenu()">Mexican</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{cuisine: 'Chinese'}" (click)="closeMenu()">Chinese</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{cuisine: 'Indian'}" (click)="closeMenu()">Indian</a></li>
+        <li><a routerLink="/recipes" [queryParams]="{cuisine: 'American'}" (click)="closeMenu()">American</a></li>
+      </ul>
+    </nav> -->
+    
+    <!-- User Actions -->
+    <div class="user-actions" *ngIf="currentUser">
+      <h3 class="nav-heading">My Account</h3>
+      <ul class="nav-list">
+        <li><a routerLink="/user/profile" (click)="closeMenu()">My Profile</a></li>
+        <li><a routerLink="/user/favorites" (click)="closeMenu()">My Favorites</a></li>
+        <li><a routerLink="/recipes/my-recipes" (click)="closeMenu()">View Your Recipes</a></li>
+        <li><a routerLink="/recipes/add" (click)="closeMenu()">Add New Recipe</a></li>
+        <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</aside>

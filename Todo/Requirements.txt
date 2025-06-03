@@ -1,0 +1,16 @@
+
+Theme
+TO-DO Application
+Team
+Jan | Feb 2025 - Interns
+Objective
+This project aims to build a basic to-do list application that allows users to manage their tasks efficiently.
+Requirements
+Users should be able to add a new task with a description. Users should be able to view a list of all tasks.
+Users should be able to edit the description of an existing task. Users should be able to archive a task from the list.
+Users should be able to mark a task as In-Progress, Done or TO-DO. Sequence of status of the tasks are TO-DO, In-Progress, Done Tasks already Done can not be marked as In-Progress and TO-DO Archived Tasks can not be marked as TO-DO
+Create Simple User Interface
+Create a Activity diagram of your functionality using Mermaid and DIAL. Mermaid: https://mermaid.live/, DIAL: EPAM AI DIAL
+<épam>
+CONFIDENTIAL Cappright
+10

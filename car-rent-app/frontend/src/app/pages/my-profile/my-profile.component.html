@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">My profile</h1>
+    
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Left sidebar navigation -->
+      <div class="w-full md:w-1/4">
+        <nav class="flex flex-col gap-4">
+          <a 
+            routerLink="reviews" 
+            class="hover:text-red-600"
+            [ngClass]="{'text-red-600 font-medium': activeTab === 'reviews', 'text-gray-600': activeTab !== 'reviews'}"
+          >Reviews</a>
+          <a 
+            routerLink="personal-info" 
+            class="hover:text-red-600"
+            [ngClass]="{'text-red-600 font-medium': activeTab === 'personal-info', 'text-gray-600': activeTab !== 'personal-info'}"
+          >Personal info</a>
+          <a 
+            routerLink="documents" 
+            class="hover:text-red-600"
+            [ngClass]="{'text-red-600 font-medium': activeTab === 'documents', 'text-gray-600': activeTab !== 'documents'}"
+          >Documents</a>
+          <a 
+            routerLink="change-password" 
+            class="hover:text-red-600"
+            [ngClass]="{'text-red-600 font-medium': activeTab === 'change-password', 'text-gray-600': activeTab !== 'change-password'}"
+          >Change password</a>
+        </nav>
+      </div>
+      
+      <!-- Main content area -->
+      <div class="w-full md:w-3/4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

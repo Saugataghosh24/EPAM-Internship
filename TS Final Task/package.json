@@ -1,0 +1,17 @@
+{
+  "name": "ts-final-task",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+  "build": "tsc",
+  "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.15",
+    "typescript": "^5.8.2"
+  }
+}

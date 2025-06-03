@@ -1,0 +1,122 @@
+[
+    {
+      "name": "Venice",
+      "image": "assets/Link → popular.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Luxury",
+      "duration": "4-7 Days",
+      "rating": 5,
+      "priceRange": "$$$ - Luxury"
+    },
+    {
+      "name": "Amsterdam",
+      "image": "assets/Link → popular2.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Adventure",
+      "duration": "4-7 Days",
+      "rating": 4,
+      "priceRange": "$$ - Mid-range"
+    },
+    {
+      "name": "Budapest",
+      "image": "assets/Link → popular3.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Budget",
+      "duration": "1-3 Days",
+      "rating": 4,
+      "priceRange": "$ - Budget"
+    },
+    {
+      "name": "Lisbon",
+      "image": "assets/Link → popular4.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Adventure",
+      "duration": "4-7 Days",
+      "rating": 5,
+      "priceRange": "$$ - Mid-range"
+    },
+    {
+      "name": "London",
+      "image": "assets/Link → popular5.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Luxury",
+      "duration": "8+ Days",
+      "rating": 5,
+      "priceRange": "$$$ - Luxury"
+    },
+    {
+      "name": "Ottawa",
+      "image": "assets/Link → popular6.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Budget",
+      "duration": "1-3 Days",
+      "rating": 3,
+      "priceRange": "$ - Budget"
+    },
+    {
+      "name": "Paris",
+      "image": "assets/Link → popular7.png.png",
+      "tours": 356,
+      "activities": 248,
+      "category": "Luxury",
+      "duration": "4-7 Days",
+      "rating": 5,
+      "priceRange": "$$$ - Luxury"
+    },
+    {
+      "name": "Bali",
+      "image": "assets/Bali.jpg",
+      "tours": 412,
+      "activities": 287,
+      "category": "Adventure",
+      "duration": "8+ Days",
+      "rating": 4,
+      "priceRange": "$$ - Mid-range"
+    },
+    {
+      "name": "Tokyo",
+      "image": "assets/Tokyo.jpg",
+      "tours": 498,
+      "activities": 342,
+      "category": "Luxury",
+      "duration": "8+ Days",
+      "rating": 5,
+      "priceRange": "$$$ - Luxury"
+    },
+    {
+      "name": "New York",
+      "image": "assets/New York.jpg",
+      "tours": 527,
+      "activities": 389,
+      "category": "Luxury",
+      "duration": "4-7 Days",
+      "rating": 4,
+      "priceRange": "$$$ - Luxury"
+    },
+    {
+      "name": "Rome",
+      "image": "assets/Rome.jpg",
+      "tours": 385,
+      "activities": 276,
+      "category": "Adventure",
+      "duration": "4-7 Days",
+      "rating": 5,
+      "priceRange": "$$ - Mid-range"
+    },
+    {
+      "name": "Sydney",
+      "image": "assets/Sydney.jpg",
+      "tours": 329,
+      "activities": 231,
+      "category": "Adventure",
+      "duration": "8+ Days",
+      "rating": 4,
+      "priceRange": "$$ - Mid-range"
+    }
+  ]

@@ -1,0 +1,100 @@
+<div class=" w-full max-w-[1500px] mx-auto p-6 flex flex-col">
+    <h2 class="text-2xl text-gray-600 mb-6">(RECENT FEEDBACK)</h2>
+    <div *ngIf="isLoading" class="flex justify-center items-center py-12">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    </div>
+    <!-- Error state -->
+    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+      <span class="block sm:inline">{{ error }}</span>
+      <button 
+        (click)="loadFeedbacks()" 
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+      >
+        Try Again
+      </button>
+    </div>
+    <div
+  #carouselContainer
+  class="flex overflow-x-auto gap-4 px-4 py-2 hide-scrollbar"
+>
+  <!-- Show loading indicator -->
+  <div *ngIf="isLoading" class="w-full text-center py-12">
+    <p class="text-gray-500">Loading feedback...</p>
+  </div>
+
+  <!-- Show error message -->
+  <div *ngIf="error" class="w-full text-center py-12">
+    <p class="text-red-500">{{ error }}</p>
+  </div>
+
+  <!-- Show empty/fallback state -->
+  <div *ngIf="!isLoading && !error && feedbacks.length === 0" class="w-full text-center py-12">
+    <p class="text-gray-500">No feedback available at the moment.</p>
+  </div>
+
+  <!-- Render feedback items -->
+  <div
+    *ngFor="let feedback of feedbacks"
+    class="w-full md:w-[48%] lg:w-[32%] bg-[#FFFBF3] p-6 rounded-md shadow-sm border border-gray-200 flex-shrink-0"
+  >
+    <div class="flex justify-between">
+      <img
+        [src]="feedback.carImageUrl"
+        alt="Car"
+        class="w-24 h-16 object-cover rounded-md mr-4"
+      />
+      <div class="w-[70%]">
+        <h3 class="font-bold md:text-2xl">{{ feedback.carModel }}</h3>
+        <p class="text-xs text-gray-500">
+          Order History: {{ feedback.orderHistory }}
+        </p>
+        <app-star-rating
+          class="my-4 h-4 w-4"
+          [rating]="feedback.rating"
+        ></app-star-rating>
+        <p
+          class="text-gray-600 mb-4 flex-grow text-sm"
+        >
+          {{ feedback.feedbackText.length > 90
+            ? (feedback.feedbackText | slice: 0:90) + '...'
+            : feedback.feedbackText }}
+        </p>
+        <div
+          class="flex flex-col md:flex-row md:justify-between text-xs text-gray-500"
+        >
+          <span>{{ feedback.author }}</span>
+          <span>({{ feedback.date }})</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <div class="flex space-x-2 mt-2.5 self-end">
+      <button  title="btn"
+        (click)="scrollLeft()"
+        class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+        [disabled]="isScrollLeftDisabled"
+        [class.opacity-50]="isScrollLeftDisabled"
+      >
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#DCDCDD"/>
+        <path d="M11 20H29M11 20L16.1429 15M11 20L16.1429 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      
+        
+      </button>
+      <button  title="btn"
+        (click)="scrollRight()"
+        class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+        [disabled]="isScrollRightDisabled"
+        [class.opacity-50]="isScrollRightDisabled"
+      > 
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#DCDCDD"/>
+        <path d="M29 20H11M29 20L23.8571 25M29 20L23.8571 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        
+      </button>
+    </div>
+  </div>

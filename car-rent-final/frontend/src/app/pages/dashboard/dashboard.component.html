@@ -1,0 +1,223 @@
+<app-header></app-header>
+
+<div class="p-6 min-h-screen">
+  <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+  
+  <div class="mb-6 flex flex-wrap justify-between items-end gap-4">
+    <form [formGroup]="filterForm" class="flex flex-wrap gap-4 items-end flex-1">
+      <!-- Report Type Dropdown with floating label -->
+      <div class="min-w-[150px] relative">
+        <select formControlName="reportType" id="reportType" (change)="onReportTypeChange()"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white appearance-none h-[38px]"
+                [ngClass]="{'border-red-500': filterForm.get('reportType')?.invalid && filterForm.get('reportType')?.touched}">
+          <option *ngFor="let type of reportTypes" [value]="type">{{ type }}</option>
+        </select>
+        <label for="reportType" 
+               class="absolute text-xs text-gray-500 bg-white px-1 left-2 -top-2">
+          Report Type
+        </label>
+        <div *ngIf="filterForm.get('reportType')?.invalid && filterForm.get('reportType')?.touched" 
+             class="absolute text-red-600 text-xs mt-1 left-0">
+          Required
+        </div>
+        <!-- Dropdown arrow -->
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Date Range with floating labels -->
+      <div class="relative min-w-[300px] w-full md:w-1/3">
+          <section class="w-full flex gap-4 h-full">
+            <section class="w-1/2 flex flex-col">
+              <label class="absolute text-xs text-gray-500 bg-white px-1 left-2 -top-2 z-10">Pick-up Date</label>
+              <section class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white appearance-none h-[38px] relative">
+                <p (click)="openPickup()">{{dateTime.pickup | date: 'MMMM d'}}</p>
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition-transform duration-200"
+                [ngClass]="{'rotate-180': isPickupVisible}" (click)="openPickup()">
+                <svg width="12" height="12" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.240779 0.376034C0.353279 0.263673 0.505779 0.200562 0.66478 0.200562C0.82378 0.200562 0.976279 0.263673 1.08878 0.376034L3.06478 2.35203L5.04078 0.376034C5.15452 0.27005 5.30496 0.212351 5.4604 0.215094C5.61584 0.217836 5.76415 0.280805 5.87408 0.390736C5.98401 0.500666 6.04698 0.648975 6.04972 0.804416C6.05246 0.959857 5.99476 1.11029 5.88878 1.22403L3.48878 3.62403C3.37628 3.73639 3.22378 3.79951 3.06478 3.79951C2.90578 3.79951 2.75328 3.73639 2.64078 3.62403L0.240779 1.22403C0.128419 1.11153 0.0653076 0.959034 0.0653076 0.800034C0.0653076 0.641033 0.128419 0.488534 0.240779 0.376034Z" fill="gray"/>
+                </svg>
+              </span>
+            </section>
+          </section>  
+          <section class="w-1/2 flex flex-col relative">
+            <label class="absolute text-xs text-gray-500 bg-white px-1 left-2 -top-2 z-10">Drop-off Date</label>
+             <section class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white appearance-none h-[38px] relative"> 
+                 <p (click)="openPickup()">{{dateTime.dropoff | date: 'MMMM d'}} </p>
+                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 transition-transform duration-200"
+                 [ngClass]="{'rotate-180': isPickupVisible}" (click)="openPickup()">
+                 <svg width="12" height="12" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0.240779 0.376034C0.353279 0.263673 0.505779 0.200562 0.66478 0.200562C0.82378 0.200562 0.976279 0.263673 1.08878 0.376034L3.06478 2.35203L5.04078 0.376034C5.15452 0.27005 5.30496 0.212351 5.4604 0.215094C5.61584 0.217836 5.76415 0.280805 5.87408 0.390736C5.98401 0.500666 6.04698 0.648975 6.04972 0.804416C6.05246 0.959857 5.99476 1.11029 5.88878 1.22403L3.48878 3.62403C3.37628 3.73639 3.22378 3.79951 3.06478 3.79951C2.90578 3.79951 2.75328 3.73639 2.64078 3.62403L0.240779 1.22403C0.128419 1.11153 0.0653076 0.959034 0.0653076 0.800034C0.0653076 0.641033 0.128419 0.488534 0.240779 0.376034Z" fill="gray"/>
+                 </svg>
+             </span>
+         </section>
+          </section>
+     </section>
+     <section *ngIf="isPickupVisible" class="absolute top-full z-50 mt-2 right-1/2 translate-x-1/2  bg-white shadow-xl rounded" (click)="$event.stopPropagation()">
+      
+         <app-date-time-picker (dateRangeSelected)="selectedDates($event)" (closed)="pickerStatus($event)" [selectedPickup]="dateTime.pickup" [selectedDropoff]="dateTime.dropoff" [allowPastDates]="true" [allowTimeSelection]="false"></app-date-time-picker>
+
+     </section>
+
+ </div>
+      
+      <!-- Location Dropdown with floating label -->
+      <div class="min-w-[150px] relative">
+        <select formControlName="locationId" id="locationId"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white appearance-none h-[38px]">
+          <option value="">All Locations</option>
+          <option *ngFor="let location of locations" [value]="location.locationId">{{ location.locationName }}</option>
+        </select>
+        <label for="locationId" 
+               class="absolute text-xs text-gray-500 bg-white px-1 left-2 -top-2">
+          Location
+        </label>
+        <!-- Dropdown arrow -->
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <button type="button" (click)="generateReport()"
+              class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors h-[38px] min-w-[120px]">
+        Create report
+      </button>
+    </form>
+    
+    <button (click)="downloadReport('PDF')"
+            class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center gap-2 h-[38px]">
+      Download <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+    </button>
+  </div>
+  
+  <!-- Loading indicator -->
+  <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-10">
+    <div class="w-8 h-8 border-4 border-gray-200 border-t-red-600 rounded-full animate-spin mb-3"></div>
+    <p class="text-gray-600">Loading report data...</p>
+  </div>
+  
+  <!-- Error message -->
+  <div *ngIf="error" class="p-4 bg-red-50 text-red-700 rounded-md mb-6">
+    {{ error }}
+  </div>
+  
+  <!-- Sales Report Table -->
+  <div *ngIf="!isLoading && !error && showReport && currentReportType === 'Sales Report' && reportData.length > 0" class="overflow-x-auto w-full">
+    <h2 class="text-xl font-semibold mb-4">Sales Report</h2>
+    <table class="min-w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Period start</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Period end</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Location</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Car model</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Registration</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Days of rent</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Reservations</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Start mileage (km)</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">End mileage (km)</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Total mileage (km)</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Avg mileage</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Avg mileage</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Avg rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Min rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Avg rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Revenue</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of reportData; let even = even" [ngClass]="even ? 'bg-gray-50' : 'bg-white'">
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.dateFrom }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.dateTo }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.location }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.carModel }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.registrationNumber }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.daysRent }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.reservationCount }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.startMilage }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.endMilage }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.totalRun }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.avgMilage }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm" 
+              [ngClass]="{'text-red-600': item.deltaAvgMilage.includes('-'), 'text-green-600': item.deltaAvgMilage.includes('+')}">
+            {{ item.deltaAvgMilage }}
+          </td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.avgRating }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.minRating }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm"
+              [ngClass]="{'text-red-600': item.deltaAvgRating.includes('-'), 'text-green-600': item.deltaAvgRating.includes('+')}">
+            {{ item.deltaAvgRating }}
+          </td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.revenue }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm"
+              [ngClass]="{'text-red-600': item.deltaRevenue.includes('-'), 'text-green-600': item.deltaRevenue.includes('+')}">
+            {{ item.deltaRevenue }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Staff Performance Report Table -->
+  <div *ngIf="!isLoading && !error && showReport && currentReportType === 'Staff Performance' && staffPerformanceData.length > 0" class="overflow-x-auto w-full">
+    <h2 class="text-xl font-semibold mb-4">Staff Performance Report</h2>
+    <table class="min-w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Period start</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Period end</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Location</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Agent Name</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Email</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Reservations Processed</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Reservations</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Avg Rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Min Rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Avg Rating</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Revenue (EUR)</th>
+          <th class="bg-black text-white px-4 py-2 text-left font-medium text-sm whitespace-nowrap">Δ Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of staffPerformanceData; let even = even" [ngClass]="even ? 'bg-gray-50' : 'bg-white'">
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.dateFrom }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.dateTo }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.location }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.agentName }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.email }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.bookingProcessed }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm"
+              [ngClass]="{'text-red-600': item.deltaBookingProcessed.includes('-'), 'text-green-600': item.deltaBookingProcessed.includes('+')}">
+            {{ item.deltaBookingProcessed }}
+          </td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.avgRating }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.minRating }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm"
+              [ngClass]="{'text-red-600': item.deltaAvgRating.includes('-'), 'text-green-600': item.deltaAvgRating.includes('+')}">
+            {{ item.deltaAvgRating }}
+          </td>
+          <td class="border border-gray-200 px-4 py-2 text-sm">{{ item.revenue }}</td>
+          <td class="border border-gray-200 px-4 py-2 text-sm"
+              [ngClass]="{'text-red-600': item.deltaRevenue.includes('-'), 'text-green-600': item.deltaRevenue.includes('+')}">
+            {{ item.deltaRevenue }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- No data message -->
+  <div *ngIf="!isLoading && !error && showReport && 
+             ((currentReportType === 'Sales Report' && reportData.length === 0) || 
+              (currentReportType === 'Staff Performance' && staffPerformanceData.length === 0))" 
+       class="p-8 bg-gray-100 text-gray-600 text-center rounded-md">
+    <p>No report data available for the selected filters. Please adjust your filters and try again.</p>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<section class="my-4" id="pd-dates">
+    <p class="my-3 font-semibold text-xl">Dates & Times</p>
+    @if(!changedate){
+    <section class="border-[1.5px] rounded-lg p-3">
+        <section class="mb-1">
+            <section class="flex justify-between items-center">
+                <span class="text-xs text-gray-600">Pick-up date & time</span>
+                <p *ngIf="support; else elseblock" id="change-pd-dates" class="text-sm cursor-pointer" (click)="changedate=true">Change</p>
+                <ng-template #elseblock>
+                    <p id="set-date" class="text-sm cursor-pointer" (click)="openPickup()">Change</p>
+                </ng-template>
+            </section>
+            <p>{{dateTime.pickup | date: 'MMMM d'}} | {{dateTime.pickup | date: 'HH:mm'}}</p>
+        </section>
+        <span class="text-xs text-gray-600">Drop-off date & time</span>
+        <p>{{dateTime.dropoff | date: 'MMMM d'}} | {{dateTime.dropoff | date: 'HH:mm'}}</p>
+    </section>
+    }
+    @else{
+    <section class="border-[1.5px] rounded-lg p-3">
+        <div class="mb-1">
+            <div class="flex justify-between items-center mb-1">
+                <span class="text-xs text-gray-600">Pick-up date & time</span>
+                <p class="text-sm cursor-pointer" id="save-dates" (click)="changedate=false">Save</p>
+            </div>
+            <div id="change-pickup-date" class="w-70 border border-gray-300 rounded-md px-4 py-2 flex justify-between items-center cursor-pointer relative"
+                (click)="openPickup()">
+                <p>{{ dateTime.pickup | date: 'MMMM d' }} | {{ dateTime.pickup | date: 'HH:mm' }}</p>
+                <svg class="absolute -right-0.5 w-5 h-3 text-black" fill="none" stroke="black" stroke-width="3" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+
+        <div>
+            <span class="text-xs text-gray-600">Drop-off date & time</span>
+            <div id="change-dropoff-date" class="w-70 border border-gray-300 rounded-md px-4 py-2 flex justify-between items-center cursor-pointer relative"
+                (click)="openPickup()">
+                <p>{{ dateTime.dropoff | date: 'MMMM d' }} | {{ dateTime.dropoff | date: 'HH:mm' }}</p>
+                <svg class="absolute -right-0.5 w-5 h-3 text-black" fill="none" stroke="black" stroke-width="3" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    }
+</section>

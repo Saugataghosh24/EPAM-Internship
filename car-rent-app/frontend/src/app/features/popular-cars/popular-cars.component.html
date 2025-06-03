@@ -1,0 +1,22 @@
+<section class="min-h-[500px] flex flex-col justify-between w-full max-w-[1500px] mx-auto p-6 gap-4">
+    <h1 class="text-2xl text-[#666666]">(POPULAR CARS)</h1>
+    <section class="grid grid-cols-[repeat(auto-fit,_minmax(265px,_1fr))] justify-items-center max-w-[1500px] w-full mx-auto gap-4">
+        <app-car-card
+        *ngFor="let car of cars; trackBy: trackByCar" 
+        [car]="car"
+        (bookCar)="onBookCar($event)"
+        (viewDetails)="onViewDetails($event)">
+      </app-car-card>
+    </section>
+    <section class="flex justify-end">
+        <app-button routerLink="/cars" [fragment]="'top'" label="View all cars" type="underline" class=""></app-button>       
+    </section>
+
+     <!-- Car Details Modal -->
+  <app-car-details-modal 
+  *ngIf="showDetailsModal && selectedCar" 
+  [car]="selectedCar" 
+  (close)="closeDetailsModal()" 
+  (bookCar)="bookSelectedCar($event)">
+</app-car-details-modal>
+</section>

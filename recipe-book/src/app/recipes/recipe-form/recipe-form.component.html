@@ -1,0 +1,173 @@
+<!-- src/app/recipes/recipe-form/recipe-form.component.html -->
+<div class="recipe-form-container">
+    <h1 class="form-title">{{ isEditMode ? 'Edit Recipe' : 'Submit Your Recipe' }}</h1>
+    
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-section">
+        <div class="form-group">
+          <label for="recipeName">Recipe Name</label>
+          <input 
+            type="text" 
+            id="recipeName" 
+            [(ngModel)]="recipeForm.name" 
+            name="name" 
+            required>
+        </div>
+        
+        <div class="form-group image-upload">
+          <label>Recipe Image</label>
+          <div class="upload-container">
+            <label for="recipeImage" class="upload-label">
+              <span>Upload Image</span>
+              <span class="upload-icon">↑</span>
+            </label>
+            <input 
+              type="file" 
+              id="recipeImage" 
+              (change)="onFileSelected($event)"
+              accept="image/*"
+              class="file-input">
+            
+            <div class="image-preview" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Recipe preview">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea 
+            id="description" 
+            [(ngModel)]="recipeForm.description" 
+            name="description" 
+            rows="4" 
+            required></textarea>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cuisineType">Cuisine Type</label>
+            <select 
+              id="cuisineType" 
+              [(ngModel)]="recipeForm.cuisineType" 
+              name="cuisineType" 
+              required>
+              <option value="" disabled selected>Select cuisine</option>
+              <option *ngFor="let cuisine of cuisineTypes" [value]="cuisine">{{ cuisine }}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select 
+              id="category" 
+              [(ngModel)]="recipeForm.category" 
+              name="category" 
+              required>
+              <option value="" disabled selected>Select category</option>
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="difficultyLevel">Difficulty Level</label>
+            <select 
+              id="difficultyLevel" 
+              [(ngModel)]="recipeForm.difficultyLevel" 
+              name="difficultyLevel" 
+              required>
+              <option value="" disabled selected>Select difficulty</option>
+              <option *ngFor="let level of difficultyLevels" [value]="level">{{ level }}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="cookingTime">Cooking Time (minutes)</label>
+            <input 
+              type="number" 
+              id="cookingTime" 
+              [(ngModel)]="recipeForm.cookingTime" 
+              name="cookingTime" 
+              min="1" 
+              required>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <label>Ingredients</label>
+        <div class="ingredients-list">
+          <div class="ingredient-item" *ngFor="let ingredient of recipeForm.ingredients; let i = index">
+            <input 
+              type="text" 
+              [(ngModel)]="recipeForm.ingredients![i]" 
+              [name]="'ingredient' + i" 
+              placeholder="e.g. 2 cups flour">
+            <button type="button" class="remove-btn" (click)="removeIngredient(i)">×</button>
+          </div>
+        </div>
+        <button type="button" class="add-btn" (click)="addIngredient()">Add Ingredient</button>
+      </div>
+      
+      <div class="form-section">
+        <label>Preparation Steps</label>
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of recipeForm.steps; let i = index">
+            <div class="step-number">{{ i + 1 }}</div>
+            <textarea 
+              [(ngModel)]="recipeForm.steps![i]" 
+              [name]="'step' + i" 
+              rows="2" 
+              placeholder="Describe this step"></textarea>
+            <button type="button" class="remove-btn" (click)="removeStep(i)">×</button>
+          </div>
+        </div>
+        <button type="button" class="add-btn" (click)="addStep()">Add Step</button>
+      </div>
+      
+      <div class="form-section">
+        <label>Tags</label>
+        <div class="tags-input">
+          <input 
+            type="text" 
+            [(ngModel)]="tagInput" 
+            name="tagInput" 
+            placeholder="Add tag and press Enter"
+            (keyup.enter)="addTag()">
+          <button type="button" (click)="addTag()">Add</button>
+        </div>
+        <div class="tags-list">
+          <div class="tag" *ngFor="let tag of recipeForm.tags">
+            {{ tag }}
+            <button type="button" class="remove-tag" (click)="removeTag(tag)">×</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <label>Dietary Restrictions</label>
+        <div class="dietary-options">
+          <div 
+            *ngFor="let option of dietaryOptions" 
+            class="dietary-option" 
+            [class.selected]="isDietarySelected(option)"
+            (click)="toggleDietaryRestriction(option)">
+            {{ option }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>

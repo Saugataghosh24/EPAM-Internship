@@ -1,0 +1,47 @@
+.rating-container {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .star {
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ddd;
+    transition: color 0.2s ease;
+    margin-right: 2px;
+  }
+  
+  .star.active {
+    color: #ffb400;
+  }
+  
+  .star.half {
+    position: relative;
+  }
+  
+  .star.half:after {
+    content: '★';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #ffb400;
+  }
+  
+  .readonly .star {
+    cursor: default;
+    font-size: 20px;
+  }
+  
+  .rating-value {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+  }
+  
+  .star-icon {
+    font-style: normal;
+  }

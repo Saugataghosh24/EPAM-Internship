@@ -1,0 +1,1908 @@
+{
+  "AboutUsStoryInfo": [
+    {
+      "description": "in car rentals highlights a steadfast commitment to excellence, marked by a track record of trust and satisfaction among thousands of clients worldwide",
+      "numericValue": "15",
+      "title": "years",
+      "id": "6874"
+    },
+    {
+      "description": "we make car rentals accessible and convenient for customers no matter where their travels take them, ensuring quality service and easy access",
+      "numericValue": "7",
+      "title": "locations",
+      "id": "f4aa"
+    },
+    {
+      "description": "we cater to every kind of traveler, from business professionals to families and adventure seekers, ensuring the perfect vehicle is always available",
+      "numericValue": "6",
+      "title": "car brands",
+      "id": "0e99"
+    },
+    {
+      "description": "we cater to every kind of traveler, from business professionals to families and adventure seekers, ensuring the perfect vehicle is always available",
+      "numericValue": "20+",
+      "title": "cars",
+      "id": "f297"
+    }
+  ],
+  "BookCar": [
+    {
+      "carId": "92c87432-3383-4328-85f8-7d20ba8715ec",
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "dropOffDateTime": "2024-06-10 10:00",
+      "dropOffLocationId": "9b903ebf-2b18-4946-bc58-045d86a2632e",
+      "pickupDateTime": "2024-06-08 10:00",
+      "pickupLocationId": "9b903ebf-2b18-4946-bc58-045d86a2632e",
+      "id": "9cb9"
+    },
+    {
+      "carId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "clientId": "d8e7f6a5-b4c3-2d1e-0f9a-8b7c6d5e4f3a",
+      "dropOffDateTime": "2024-07-15 14:30",
+      "dropOffLocationId": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+      "pickupDateTime": "2024-07-10 09:15",
+      "pickupLocationId": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+      "id": "d850"
+    },
+    {
+      "carId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "clientId": "e4f3a2b1-c0d9-8e7f-6a5b-4c3d2e1f0a9b",
+      "dropOffDateTime": "2024-08-22 18:00",
+      "dropOffLocationId": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+      "pickupDateTime": "2024-08-18 12:45",
+      "pickupLocationId": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+      "id": "2e02"
+    },
+    {
+      "carId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "clientId": "f5e4d3c2-b1a0-9f8e-7d6c-5b4a3c2d1e0f",
+      "dropOffDateTime": "2024-05-30 16:15",
+      "dropOffLocationId": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+      "pickupDateTime": "2024-05-27 11:30",
+      "pickupLocationId": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+      "id": "033c"
+    },
+    {
+      "carId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "clientId": "a6b5c4d3-e2f1-0a9b-8c7d-6e5f4a3b2c1d",
+      "dropOffDateTime": "2024-09-05 08:45",
+      "dropOffLocationId": "0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+      "pickupDateTime": "2024-09-01 10:00",
+      "pickupLocationId": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+      "id": "97c7"
+    },
+    {
+      "carId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "clientId": "b7c6d5e4-f3a2-1b0c-9d8e-7f6a5b4c3d2e",
+      "dropOffDateTime": "2024-10-12 19:30",
+      "dropOffLocationId": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "pickupDateTime": "2024-10-08 15:45",
+      "pickupLocationId": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "id": "0628"
+    },
+    {
+      "carId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "clientId": "c8d7e6f5-a4b3-2c1d-0e9f-8a7b6c5d4e3f",
+      "dropOffDateTime": "2024-11-20 12:00",
+      "dropOffLocationId": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "pickupDateTime": "2024-11-15 14:30",
+      "pickupLocationId": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "id": "806b"
+    },
+    {
+      "carId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "clientId": "d9e8f7a6-b5c4-3d2e-1f0a-9b8c7d6e5f4a",
+      "dropOffDateTime": "2024-12-28 17:15",
+      "dropOffLocationId": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "pickupDateTime": "2024-12-23 09:30",
+      "pickupLocationId": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "id": "db1e"
+    },
+    {
+      "id": "1167",
+      "carId": "1a",
+      "clientId": "4a0a03b8-4c28-442f-a426-a89ef5a4f079",
+      "dropOffDateTime": "2025-04-28 10:30",
+      "dropOffLocationId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "pickupDateTime": "2025-04-26 07:00",
+      "pickupLocationId": "9b903ebf-2b18-4946-bc58-045d86a2632e"
+    }
+  ],
+  "BookingInfo": [
+    {
+      "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c734",
+      "bookingStatus": "reserved",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/audi-A6-quattro-2023.jpg",
+      "carModel": "Audi A6 Quattro 2023",
+      "orderDetails": "#2437 (05.10.2024)",
+      "id": "b1d7"
+    },
+    {
+      "bookingId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "bookingStatus": "reserved-by-sa",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/bmw-530i-2023.jpg",
+      "carModel": "BMW 530i 2023",
+      "orderDetails": "#2438 (06.10.2024)",
+      "id": "efcb"
+    },
+    {
+      "bookingId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "bookingStatus": "service-started",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mercedes-e350-2023.jpg",
+      "carModel": "Mercedes E350 2023",
+      "orderDetails": "#2439 (07.10.2024)",
+      "id": "3769"
+    },
+    {
+      "bookingId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "bookingStatus": "service-provided",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/tesla-model-s-2023.jpg",
+      "carModel": "Tesla Model S 2023",
+      "orderDetails": "#2440 (08.10.2024)",
+      "id": "44a2"
+    },
+    {
+      "bookingId": "d0e1f2a3-b4c5-d6e7-f8a9-b0c1d2e3f4a5",
+      "bookingStatus": "booking-finished",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/lexus-es350-2023.jpg",
+      "carModel": "Lexus ES350 2023",
+      "orderDetails": "#2441 (09.10.2024)",
+      "id": "afc7"
+    },
+    {
+      "bookingId": "e1f2a3b4-c5d6-e7f8-a9b0-c1d2e3f4a5b6",
+      "bookingStatus": "cancelled",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/volvo-s90-2023.jpg",
+      "carModel": "Volvo S90 2023",
+      "orderDetails": "#2442 (10.10.2024)",
+      "id": "5782"
+    },
+    {
+      "bookingId": "f2a3b4c5-d6e7-f8a9-b0c1-d2e3f4a5b6c7",
+      "bookingStatus": "reserved",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/jaguar-xf-2023.jpg",
+      "carModel": "Jaguar XF 2023",
+      "orderDetails": "#2443 (11.10.2024)",
+      "id": "a5d1"
+    },
+    {
+      "bookingId": "a3b4c5d6-e7f8-a9b0-c1d2-e3f4a5b6c7d8",
+      "bookingStatus": "service-started",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/cadillac-ct5-2023.jpg",
+      "carModel": "Cadillac CT5 2023",
+      "orderDetails": "#2444 (12.10.2024)",
+      "id": "6b32"
+    },
+    {
+      "bookingId": "b4c5d6e7-f8a9-b0c1-d2e3-f4a5b6c7d8e9",
+      "bookingStatus": "reserved-by-sa",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/genesis-g80-2023.jpg",
+      "carModel": "Genesis G80 2023",
+      "orderDetails": "#2445 (13.10.2024)",
+      "id": "33bd"
+    },
+    {
+      "bookingId": "c5d6e7f8-a9b0-c1d2-e3f4-a5b6c7d8e9f0",
+      "bookingStatus": "service-provided",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/infiniti-q50-2023.jpg",
+      "carModel": "Infiniti Q50 2023",
+      "orderDetails": "#2446 (14.10.2024)",
+      "id": "6226"
+    }
+  ],
+  "UserBookingInfo": [
+    {
+      "id": "4a0a03b8-4c28-442f-a426-a89ef5a4f079",
+      "userId": "4a0a03b8-4c28-442f-a426-a89ef5a4f079",
+      "userName": "Shuvam Ghosh",
+      "bookings": [
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c001",
+          "bookingStatus": "reserved",
+          "carImageUrl":         "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/side-view-(left)-90.jpg?tr=w-664",
+          "carModel": "Audi A6 Quattro 2023",
+          "orderDetails": "#2437 (05.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c002",
+          "bookingStatus": "service-started",
+          "carImageUrl": "https://imgd.aeplcdn.com/664x374/cw/ec/22898/MercedesBenz-CLA-Right-Front-Three-Quarter-84856.jpg?v=201711021421&q=80",
+          "carModel": "Mercedes CLA 2023",
+          "orderDetails": "#2438 (06.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c003",
+          "bookingStatus": "service-provided",
+          "carImageUrl": "https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/X5-2023/10452/1688992642182/front-left-side-47.jpg?tr=w-664",
+          "carModel": "BMW X5 2023",
+          "orderDetails": "#2439 (07.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c004",
+          "bookingStatus": "booking-finished",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/ford-focus-2023.jpg",
+          "carModel": "Ford Focus 2023",
+          "orderDetails": "#2440 (08.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c005",
+          "bookingStatus": "cancelled",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/chevrolet-malibu-2023.jpg",
+          "carModel": "Chevrolet Malibu 2023",
+          "orderDetails": "#2441 (09.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c006",
+          "bookingStatus": "reserved-by-sa",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/tesla-model-3-2023.jpg",
+          "carModel": "Tesla Model 3 2023",
+          "orderDetails": "#2442 (10.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c007",
+          "bookingStatus": "booking-finished",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/kia-sportage-2023.jpg",
+          "carModel": "Kia Sportage 2023",
+          "orderDetails": "#2443 (11.10.2024)"
+        },
+        {
+          "bookingId": "235ad27b-3830-4bf6-b34e-1133b003f44e",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/side-view-(left)-90.jpg?tr=w-664",
+          "carModel": "Audi A6 Quattro 2023",
+          "orderDetails": "#6434 (26.04.2025)"
+        }
+      ]
+    },
+    {
+      "id": "user456",
+      "userId": "user456",
+      "userName": "Emily Smith",
+      "bookings": [
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c101",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/bmw-X5-2023.jpg",
+          "carModel": "BMW X5 2023",
+          "orderDetails": "#2444 (12.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c102",
+          "bookingStatus": "service-started",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mazda-CX5-2023.jpg",
+          "carModel": "Mazda CX-5 2023",
+          "orderDetails": "#2445 (13.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c103",
+          "bookingStatus": "booking-finished",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/nissan-rogue-2023.jpg",
+          "carModel": "Nissan Rogue 2023",
+          "orderDetails": "#2446 (14.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c104",
+          "bookingStatus": "cancelled",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/vw-passat-2023.jpg",
+          "carModel": "Volkswagen Passat 2023",
+          "orderDetails": "#2447 (15.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c105",
+          "bookingStatus": "service-provided",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mercedes-CLA-2023.jpg",
+          "carModel": "Mercedes CLA 2023",
+          "orderDetails": "#2448 (16.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c106",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/audi-Q3-2023.jpg",
+          "carModel": "Audi Q3 2023",
+          "orderDetails": "#2449 (17.10.2024)"
+        }
+      ]
+    },
+    {
+      "id": "user789",
+      "userId": "user789",
+      "userName": "Rajiv Patel",
+      "bookings": [
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c201",
+          "bookingStatus": "reserved-by-sa",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/tata-nexon-2023.jpg",
+          "carModel": "Tata Nexon 2023",
+          "orderDetails": "#2450 (18.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c202",
+          "bookingStatus": "booking-finished",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/maruti-brezza-2023.jpg",
+          "carModel": "Maruti Suzuki Brezza 2023",
+          "orderDetails": "#2451 (19.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c203",
+          "bookingStatus": "cancelled",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/hyundai-venue-2023.jpg",
+          "carModel": "Hyundai Venue 2023",
+          "orderDetails": "#2452 (20.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c204",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/skoda-kushaq-2023.jpg",
+          "carModel": "Skoda Kushaq 2023",
+          "orderDetails": "#2453 (21.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c205",
+          "bookingStatus": "service-started",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mg-hector-2023.jpg",
+          "carModel": "MG Hector 2023",
+          "orderDetails": "#2454 (22.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c206",
+          "bookingStatus": "booking-finished",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/toyota-innova-2023.jpg",
+          "carModel": "Toyota Innova 2023",
+          "orderDetails": "#2455 (23.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c207",
+          "bookingStatus": "service-provided",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mahindra-xuv700-2023.jpg",
+          "carModel": "Mahindra XUV700 2023",
+          "orderDetails": "#2456 (24.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c208",
+          "bookingStatus": "cancelled",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/renault-duster-2023.jpg",
+          "carModel": "Renault Duster 2023",
+          "orderDetails": "#2457 (25.10.2024)"
+        },
+        {
+          "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c209",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/jeep-compass-2023.jpg",
+          "carModel": "Jeep Compass 2023",
+          "orderDetails": "#2458 (26.10.2024)"
+        }
+      ]
+    },
+    {
+      "id": "3bfd",
+      "userId": "51eb36a1-1a2f-4309-828a-ad4cd5531de6",
+      "userName": "Saugata Ghosh",
+      "bookings": [
+        {
+          "bookingId": "fac23a34-30d4-44f5-a876-c965a62512bc",
+          "bookingStatus": "reserved",
+          "carImageUrl": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/side-view-(left)-90.jpg?tr=w-664",
+          "carModel": "Audi A6 Quattro 2023",
+          "orderDetails": "#4278 (24.04.2025)"
+        }
+      ]
+    }
+  ],
+  "CarBriefInfo": [
+    {
+      "carId": "1",
+      "carRating": "4.5",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/audi-A6-quattro-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Audi A6 Quattro 2023",
+      "pricePerDay": "180",
+      "serviceRating": "4.8",
+      "status": "AVAILABLE",
+      "id": "f528"
+    },
+    {
+      "carId": "2",
+      "carRating": "4.8",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/tesla-model-s-2023.jpg",
+      "location": "Ukraine, Kharkiv",
+      "model": "Tesla Model S 2023",
+      "pricePerDay": "225",
+      "serviceRating": "4.7",
+      "status": "AVAILABLE",
+      "id": "1b60"
+    },
+    {
+      "carId": "3",
+      "carRating": "4.9",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/jaguar-xf-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Jaguar XF 2023",
+      "pricePerDay": "215",
+      "serviceRating": "5.0",
+      "status": "AVAILABLE",
+      "id": "98fd"
+    },
+    {
+      "carId": "4",
+      "carRating": "4.7",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/infiniti-q50-2023.jpg",
+      "location": "Ukraine, Kharkiv",
+      "model": "Infiniti Q50 2023",
+      "pricePerDay": "195",
+      "serviceRating": "4.6",
+      "status": "AVAILABLE",
+      "id": "db4e"
+    },
+    {
+      "carId": "5",
+      "carRating": "4.4",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/audi-q5-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "Audi Q5 2023",
+      "pricePerDay": "190",
+      "serviceRating": "4.7",
+      "status": "AVAILABLE",
+      "id": "39c6"
+    },
+    {
+      "carId": "6",
+      "carRating": "4.6",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/kia-k900-2023.jpg",
+      "location": "Ukraine, Dnipro",
+      "model": "Kia K900 2023",
+      "pricePerDay": "160",
+      "serviceRating": "4.5",
+      "status": "AVAILABLE",
+      "id": "4c74"
+    },
+    {
+      "carId": "7",
+      "carRating": "4.3",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mazda-6-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Mazda 6 2023",
+      "pricePerDay": "170",
+      "serviceRating": "4.4",
+      "status": "AVAILABLE",
+      "id": "b0ed"
+    },
+    {
+      "carId": "8",
+      "carRating": "4.9",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/bmw-x5-2023.jpg",
+      "location": "Ukraine, Odesa",
+      "model": "BMW X5 2023",
+      "pricePerDay": "240",
+      "serviceRating": "5.0",
+      "status": "AVAILABLE",
+      "id": "9c37"
+    },
+    {
+      "carId": "9",
+      "carRating": "4.8",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/lexus-ls500-2023.jpg",
+      "location": "Ukraine, Zaporizhzhia",
+      "model": "Lexus LS500 2023",
+      "pricePerDay": "250",
+      "serviceRating": "4.9",
+      "status": "AVAILABLE",
+      "id": "e833"
+    },
+    {
+      "carId": "10",
+      "carRating": "4.6",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mercedes-c300-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "Mercedes C300 2023",
+      "pricePerDay": "205",
+      "serviceRating": "4.8",
+      "status": "AVAILABLE",
+      "id": "7e98"
+    },
+    {
+      "carId": "11",
+      "carRating": "4.2",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/ford-mondeo-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Ford Mondeo 2023",
+      "pricePerDay": "165",
+      "serviceRating": "4.3",
+      "status": "AVAILABLE",
+      "id": "34a1"
+    },
+    {
+      "carId": "12",
+      "carRating": "4.5",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/nissan-altima-2023.jpg",
+      "location": "Ukraine, Kharkiv",
+      "model": "Nissan Altima 2023",
+      "pricePerDay": "175",
+      "serviceRating": "4.6",
+      "status": "AVAILABLE",
+      "id": "067c"
+    },
+    {
+      "carId": "13",
+      "carRating": "4.7",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/hyundai-sonata-2023.jpg",
+      "location": "Ukraine, Odesa",
+      "model": "Hyundai Sonata 2023",
+      "pricePerDay": "180",
+      "serviceRating": "4.5",
+      "status": "AVAILABLE",
+      "id": "aed5"
+    },
+    {
+      "carId": "14",
+      "carRating": "4.6",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/volkswagen-passat-2023.jpg",
+      "location": "Ukraine, Dnipro",
+      "model": "Volkswagen Passat 2023",
+      "pricePerDay": "170",
+      "serviceRating": "4.6",
+      "status": "AVAILABLE",
+      "id": "89c8"
+    },
+    {
+      "carId": "15",
+      "carRating": "4.8",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/skoda-superb-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "Skoda Superb 2023",
+      "pricePerDay": "185",
+      "serviceRating": "4.8",
+      "status": "AVAILABLE",
+      "id": "8dc9"
+    },
+    {
+      "carId": "16",
+      "carRating": "4.9",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/toyota-camry-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Toyota Camry 2023",
+      "pricePerDay": "190",
+      "serviceRating": "4.9",
+      "status": "AVAILABLE",
+      "id": "2749"
+    },
+    {
+      "carId": "17",
+      "carRating": "4.6",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/honda-accord-2023.jpg",
+      "location": "Ukraine, Kharkiv",
+      "model": "Honda Accord 2023",
+      "pricePerDay": "180",
+      "serviceRating": "4.7",
+      "status": "AVAILABLE",
+      "id": "5f9a"
+    },
+    {
+      "carId": "18",
+      "carRating": "4.3",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/kia-optima-2023.jpg",
+      "location": "Ukraine, Odesa",
+      "model": "Kia Optima 2023",
+      "pricePerDay": "160",
+      "serviceRating": "4.4",
+      "status": "AVAILABLE",
+      "id": "63c2"
+    },
+    {
+      "carId": "19",
+      "carRating": "4.5",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/peugeot-508-2023.jpg",
+      "location": "Ukraine, Zaporizhzhia",
+      "model": "Peugeot 508 2023",
+      "pricePerDay": "165",
+      "serviceRating": "4.5",
+      "status": "AVAILABLE",
+      "id": "47ad"
+    },
+    {
+      "carId": "20",
+      "carRating": "4.7",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/renault-talisman-2023.jpg",
+      "location": "Ukraine, Dnipro",
+      "model": "Renault Talisman 2023",
+      "pricePerDay": "175",
+      "serviceRating": "4.6",
+      "status": "AVAILABLE",
+      "id": "302d"
+    },
+    {
+      "carId": "21",
+      "carRating": "4.7",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/bmw-530i-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "BMW 530i 2023",
+      "pricePerDay": "195",
+      "serviceRating": "4.9",
+      "status": "BOOKED",
+      "id": "ef52"
+    },
+    {
+      "carId": "22",
+      "carRating": "4.6",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/lexus-es350-2023.jpg",
+      "location": "Ukraine, Dnipro",
+      "model": "Lexus ES350 2023",
+      "pricePerDay": "190",
+      "serviceRating": "4.5",
+      "status": "BOOKED",
+      "id": "3119"
+    },
+    {
+      "carId": "23",
+      "carRating": "4.4",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/cadillac-ct5-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "Cadillac CT5 2023",
+      "pricePerDay": "200",
+      "serviceRating": "4.3",
+      "status": "BOOKED",
+      "id": "ca0e"
+    },
+    {
+      "carId": "24",
+      "carRating": "4.8",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/chevrolet-malibu-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Chevrolet Malibu 2023",
+      "pricePerDay": "180",
+      "serviceRating": "4.7",
+      "status": "BOOKED",
+      "id": "8192"
+    },
+    {
+      "carId": "25",
+      "carRating": "4.5",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/chrysler-300-2023.jpg",
+      "location": "Ukraine, Kharkiv",
+      "model": "Chrysler 300 2023",
+      "pricePerDay": "195",
+      "serviceRating": "4.6",
+      "status": "BOOKED",
+      "id": "c98e"
+    },
+    {
+      "carId": "26",
+      "carRating": "4.3",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/mercedes-e350-2023.jpg",
+      "location": "Ukraine, Odesa",
+      "model": "Mercedes E350 2023",
+      "pricePerDay": "210",
+      "serviceRating": "4.6",
+      "status": "UNAVAILABLE",
+      "id": "21d5"
+    },
+    {
+      "carId": "27",
+      "carRating": "4.2",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/volvo-s90-2023.jpg",
+      "location": "Ukraine, Zaporizhzhia",
+      "model": "Volvo S90 2023",
+      "pricePerDay": "175",
+      "serviceRating": "4.4",
+      "status": "UNAVAILABLE",
+      "id": "cc65"
+    },
+    {
+      "carId": "28",
+      "carRating": "4.1",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/genesis-g80-2023.jpg",
+      "location": "Ukraine, Odesa",
+      "model": "Genesis G80 2023",
+      "pricePerDay": "185",
+      "serviceRating": "4.2",
+      "status": "UNAVAILABLE",
+      "id": "cadf"
+    },
+    {
+      "carId": "29",
+      "carRating": "4.0",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/ferrari-portofino-2023.jpg",
+      "location": "Ukraine, Kyiv",
+      "model": "Ferrari Portofino 2023",
+      "pricePerDay": "350",
+      "serviceRating": "4.1",
+      "status": "UNAVAILABLE",
+      "id": "072d"
+    },
+    {
+      "carId": "30",
+      "carRating": "4.2",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/rolls-royce-ghost-2023.jpg",
+      "location": "Ukraine, Lviv",
+      "model": "Rolls-Royce Ghost 2023",
+      "pricePerDay": "400",
+      "serviceRating": "4.3",
+      "status": "UNAVAILABLE",
+      "id": "5310"
+    }
+  ],
+  "CarDetails": [
+    {
+      "carId": "1a",
+      "carRating": "4.5",
+      "carCategory": "PASSENGER",
+      "climateControlOption": "CLIMATE_CONTROL",
+      "engineCapacity": "3.0 turbo",
+      "fuelConsumption": "10.0 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/side-view-(left)-90.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/rear-left-view-121.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/front-view-118.jpg?tr=w-664"
+      ],
+      "location": "Mumbai, India",
+      "model": "Audi A6 Quattro 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "180",
+      "serviceRating": "4.8",
+      "status": "AVAILABLE",
+      "id": "da1d"
+    },
+    {
+      "carId": "2a",
+      "carRating": "4.7",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "carCategory": "SUV",
+      "engineCapacity": "2.0 turbo",
+      "fuelConsumption": "8.5 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [],
+      "location": "Mumbai, India",
+      "model": "BMW 530i 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "195",
+      "serviceRating": "4.9",
+      "status": "BOOKED",
+      "id": "cf9b"
+    },
+    {
+      "carId": "d4e5f6a7-8gh6-0d1e-2f3a-4b5c6d7e8f9a",
+      "carRating": "4.3",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "carCategory": "LUXURY",
+      "engineCapacity": "3.0 V6",
+      "fuelConsumption": "9.8 Liter/100km",
+      "fuelType": "DIESEL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+   
+      ],
+      "location": "Chennai, India",
+      "model": "Mercedes E350 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "210",
+      "serviceRating": "4.6",
+      "status": "UNAVAILABLE",
+      "id": "eacb"
+    },
+    {
+      "carId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8sfa",
+      "carRating": "4.8",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "carCategory": "ECONOMY",
+      "engineCapacity": "Electric Dual Motor",
+      "fuelConsumption": "0.0 Liter/100km",
+      "fuelType": "ELECTRIC",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-S/5252/1611840999494/front-left-side-47.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-S/5252/1611840999494/rear-left-view-121.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-S/5252/1611840999494/exterior-image-164.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carinteriorimages/630x420/Tesla/Model-S/5252/1611840937130/dashboard-59.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carinteriorimages/630x420/Tesla/Model-S/5252/1611840937130/rear-seats-52.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tesla/Model-S/5252/1611840999494/exterior-image-165.jpg"
+      ],
+      "location": "Pune, India",
+      "model": "Tesla Model S 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "225",
+      "serviceRating": "4.7",
+      "status": "AVAILABLE",
+      "id": "62a3"
+    },
+    {
+      "carId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "carRating": "4.6",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "engineCapacity": "3.5 V6",
+      "fuelConsumption": "9.2 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/ES/9399/1665652746848/front-left-side-47.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/ES/9399/1665652746848/rear-left-view-121.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/ES/9399/1665652746848/exterior-image-165.jpg?tr=w-664"
+      ],
+      "location": "Hyderabad, India",
+      "model": "Lexus ES350 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "190",
+      "serviceRating": "4.5",
+      "status": "BOOKED",
+      "id": "f8a8"
+    },
+    {
+      "carId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "carRating": "4.2",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "CLIMATE_CONTROL",
+      "engineCapacity": "2.0 turbo",
+      "fuelConsumption": "7.8 Liter/100km",
+      "fuelType": "DIESEL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+     
+      ],
+      "location": "Hyderabad, India",
+      "model": "Volvo S90 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "175",
+      "serviceRating": "4.4",
+      "status": "UNAVAILABLE",
+      "id": "26ff"
+    },
+    {
+      "carId": "3a",
+      "carRating": "4.9",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "engineCapacity": "3.0 V6",
+      "fuelConsumption": "10.5 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Jaguar/XF/8670/Jaguar-XF-2.0-Petrol-R-Dynamic-S/1635170619851/front-left-side-47.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Jaguar/XF/8670/Jaguar-XF-2.0-Petrol-R-Dynamic-S/1635170619851/rear-left-view-121.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Jaguar/XF/8670/Jaguar-XF-2.0-Petrol-R-Dynamic-S/1635170619851/front-view-118.jpg?tr=w-664"
+      ],
+      "location": "Goa, India",
+      "model": "Jaguar XF 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "215",
+      "serviceRating": "5.0",
+      "status": "AVAILABLE",
+      "id": "6b9d"
+    },
+    {
+      "carId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "carRating": "4.4",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "engineCapacity": "3.6 V6",
+      "fuelConsumption": "11.2 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        
+      ],
+      "location": "Goa, India",
+      "model": "Cadillac CT5 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "200",
+      "serviceRating": "4.3",
+      "status": "BOOKED",
+      "id": "0433"
+    },
+    {
+      "carId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "carRating": "4.1",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "TWO_ZONE_CLIMATE_CONTROL",
+      "engineCapacity": "3.3 V6 Twin-Turbo",
+      "fuelConsumption": "10.8 Liter/100km",
+      "fuelType": "PETROL",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        
+      ],
+      "location": "Kochi, India",
+      "model": "Genesis G80 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "185",
+      "serviceRating": "4.2",
+      "status": "UNAVAILABLE",
+      "id": "9baf"
+    },
+    {
+      "carId": "4a",
+      "carRating": "4.7",
+      "carCategory": "ECONOMY",
+      "climateControlOption": "CLIMATE_CONTROL",
+      "engineCapacity": "2.0 turbo",
+      "fuelConsumption": "9.0 Liter/100km",
+      "fuelType": "HYBRID",
+      "gearBoxType": "AUTOMATIC",
+      "images": [
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Camry/11344/1733916451269/front-left-side-47.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Camry/11344/1733916451269/side-view-(left)-90.jpg?tr=w-664",
+        "https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Camry-2024/11344/1700044013446/rear-left-view-121.jpg?tr=w-664"
+      ],
+      "location": "Hyderabad, India",
+      "model": "Toyota Camry Hybrid 2023",
+      "passengerCapacity": "5",
+      "pricePerDay": "195",
+      "serviceRating": "4.6",
+      "status": "AVAILABLE",
+      "id": "fd1b"
+    }
+  ],
+  "ClientReview": [
+    {
+      "id": "r101",
+      "carId": "1a",
+      "author": "Alice Brown",
+      "authorInitial": "A",
+      "authorImageUrl": "",
+      "date": "2025-04-15",
+      "rentalExperience": "4.7",
+      "text": "Smooth ride, clean interior, and great mileage. Would rent again!"
+    },
+    {
+      "id": "r102",
+      "carId": "1a",
+      "author": "Mike Johnson",
+      "authorInitial": "M",
+      "authorImageUrl": "",
+      "date": "2025-03-12",
+      "rentalExperience": "4.3",
+      "text": "Decent experience, but the air conditioning could be better."
+    },
+    {
+      "id": "r103",
+      "carId": "1a",
+      "author": "Sophie Turner",
+      "authorInitial": "S",
+      "authorImageUrl": "",
+      "date": "2025-02-28",
+      "rentalExperience": "5.0",
+      "text": "Absolutely loved the car. It was perfect for my weekend getaway."
+    },
+    {
+      "id": "r104",
+      "carId": "1a",
+      "author": "James Lee",
+      "authorInitial": "J",
+      "authorImageUrl": "",
+      "date": "2025-04-04",
+      "rentalExperience": "4.1",
+      "text": "Good value for money, would consider renting again."
+    },
+    {
+      "id": "r105",
+      "carId": "1a",
+      "author": "Natalie Foster",
+      "authorInitial": "N",
+      "authorImageUrl": "",
+      "date": "2025-03-29",
+      "rentalExperience": "4.9",
+      "text": "Very clean and tidy. The support was also responsive."
+    },
+    {
+      "id": "r106",
+      "carId": "1a",
+      "author": "Chris Evans",
+      "authorInitial": "C",
+      "authorImageUrl": "",
+      "date": "2025-02-10",
+      "rentalExperience": "4.8",
+      "text": "Awesome experience! Would recommend to anyone."
+    },
+    {
+      "id": "r107",
+      "carId": "1a",
+      "author": "Tina Russell",
+      "authorInitial": "T",
+      "authorImageUrl": "",
+      "date": "2025-01-22",
+      "rentalExperience": "4.6",
+      "text": "The car felt like new and the whole process was smooth."
+    },
+    {
+      "id": "r201",
+      "carId": "2a",
+      "author": "Liam Harris",
+      "authorInitial": "L",
+      "authorImageUrl": "",
+      "date": "2025-03-05",
+      "rentalExperience": "4.0",
+      "text": "A good experience overall, although the pickup location was a bit far."
+    },
+    {
+      "id": "r202",
+      "carId": "2a",
+      "author": "Emily Clark",
+      "authorInitial": "E",
+      "authorImageUrl": "",
+      "date": "2025-04-01",
+      "rentalExperience": "4.8",
+      "text": "The car was spotless and ran like a dream. Highly recommended!"
+    },
+    {
+      "id": "r203",
+      "carId": "2a",
+      "author": "Nathan Reed",
+      "authorInitial": "N",
+      "authorImageUrl": "",
+      "date": "2025-04-10",
+      "rentalExperience": "4.6",
+      "text": "Very responsive support and the car was in excellent condition."
+    },
+    {
+      "id": "r204",
+      "carId": "2a",
+      "author": "Zara Patel",
+      "authorInitial": "Z",
+      "authorImageUrl": "",
+      "date": "2025-03-15",
+      "rentalExperience": "4.5",
+      "text": "Had no issues with the car. It was exactly as described."
+    },
+    {
+      "id": "r205",
+      "carId": "2a",
+      "author": "Ethan Moore",
+      "authorInitial": "E",
+      "authorImageUrl": "",
+      "date": "2025-02-21",
+      "rentalExperience": "4.2",
+      "text": "Worked great for a business trip. Will rent again."
+    },
+    {
+      "id": "r301",
+      "carId": "3a",
+      "author": "Grace Miller",
+      "authorInitial": "G",
+      "authorImageUrl": "",
+      "date": "2025-01-20",
+      "rentalExperience": "4.9",
+      "text": "One of the best rental experiences I've had. The car was top-notch."
+    },
+    {
+      "id": "r302",
+      "carId": "3a",
+      "author": "Daniel Wright",
+      "authorInitial": "D",
+      "authorImageUrl": "",
+      "date": "2025-02-14",
+      "rentalExperience": "4.2",
+      "text": "The car was great, but the return process could be smoother."
+    },
+    {
+      "id": "r303",
+      "carId": "3a",
+      "author": "Isabella Lewis",
+      "authorInitial": "I",
+      "authorImageUrl": "",
+      "date": "2025-03-30",
+      "rentalExperience": "1",
+      "text": "Loved the sunroof and fuel efficiency. Would book again!"
+    },
+    {
+      "id": "r304",
+      "carId": "3a",
+      "author": "Owen Scott",
+      "authorInitial": "O",
+      "authorImageUrl": "",
+      "date": "2025-04-08",
+      "rentalExperience": "1",
+      "text": "Perfect for a short vacation. No issues at all."
+    },
+    {
+      "id": "r305",
+      "carId": "3a",
+      "author": "Rachel Kim",
+      "authorInitial": "R",
+      "authorImageUrl": "",
+      "date": "2025-03-02",
+      "rentalExperience": "1",
+      "text": "Easy pickup and drop-off. Would use this service again."
+    },
+    {
+      "id": "r306",
+      "carId": "3a",
+      "author": "Henry Young",
+      "authorInitial": "H",
+      "authorImageUrl": "",
+      "date": "2025-01-18",
+      "rentalExperience": "4.0",
+      "text": "Everything went well, just wished the Bluetooth worked better."
+    },
+    {
+      "id": "r307",
+      "carId": "3a",
+      "author": "Ava Parker",
+      "authorInitial": "A",
+      "authorImageUrl": "",
+      "date": "2025-02-07",
+      "rentalExperience": "4.6",
+      "text": "Stylish and comfortable. Great choice for city driving."
+    },
+    {
+      "id": "r308",
+      "carId": "3a",
+      "author": "Leo Thomas",
+      "authorInitial": "L",
+      "authorImageUrl": "",
+      "date": "2025-04-12",
+      "rentalExperience": "4.9",
+      "text": "Everything was excellent! Highly recommend this car."
+    },
+    {
+      "id": "r401",
+      "carId": "4a",
+      "author": "Noah Davis",
+      "authorInitial": "N",
+      "authorImageUrl": "",
+      "date": "2025-04-11",
+      "rentalExperience": "4.6",
+      "text": "Great value for the price. Perfect for a short trip."
+    },
+    {
+      "id": "r402",
+      "carId": "4a",
+      "author": "Olivia Martin",
+      "authorInitial": "O",
+      "authorImageUrl": "",
+      "date": "2025-03-19",
+      "rentalExperience": "5.0",
+      "text": "Absolutely no complaints. It felt like driving a new car."
+    },
+    {
+      "id": "r403",
+      "carId": "4a",
+      "author": "Ben Carter",
+      "authorInitial": "B",
+      "authorImageUrl": "",
+      "date": "2025-04-13",
+      "rentalExperience": "4.5",
+      "text": "The car was well maintained and clean. Would rent again."
+    },
+    {
+      "id": "r404",
+      "carId": "4a",
+      "author": "Samantha Green",
+      "authorInitial": "S",
+      "authorImageUrl": "",
+      "date": "2025-03-25",
+      "rentalExperience": "4.7",
+      "text": "Customer service was very helpful. The car was as expected."
+    },
+    {
+      "id": "r405",
+      "carId": "4a",
+      "author": "William Baker",
+      "authorInitial": "W",
+      "authorImageUrl": "",
+      "date": "2025-04-03",
+      "rentalExperience": "4.3",
+      "text": "The return was quick and efficient. The car was a bit dusty though."
+    },
+    {
+      "id": "r406",
+      "carId": "4a",
+      "author": "Lily Adams",
+      "authorInitial": "L",
+      "authorImageUrl": "",
+      "date": "2025-02-11",
+      "rentalExperience": "4.9",
+      "text": "Superb experience. Smooth ride and fast support team."
+    }
+  ],
+  "CreateFeedback": [
+    {
+      "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c734",
+      "carId": "92c87432-3383-4328-85f8-7d20ba8715ec",
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "feedbackText": "I rented a car for a week. The car was in good condition, the service was excellent. I am very satisfied with the service!",
+      "rating": "4.8",
+      "id": "3eab"
+    },
+    {
+      "bookingId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "carId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "clientId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "feedbackText": "The BMW 530i was a pleasure to drive. Everything worked perfectly, and the car was spotless when I picked it up. The rental process was smooth and efficient.",
+      "rating": "5.0",
+      "id": "abe8"
+    },
+    {
+      "bookingId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "carId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "clientId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "feedbackText": "Good experience overall. The Mercedes was comfortable for our family trip. Minor issue with the navigation system, but everything else was great.",
+      "rating": "4.2",
+      "id": "b5b0"
+    },
+    {
+      "bookingId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "carId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "clientId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "feedbackText": "The Tesla Model S was amazing! It was my first time driving an electric car, and I was impressed. The pickup and return process was quick and hassle-free.",
+      "rating": "4.9",
+      "id": "3b10"
+    },
+    {
+      "bookingId": "d0e1f2a3-b4c5-d6e7-f8a9-b0c1d2e3f4a5",
+      "carId": "e1f2a3b4-c5d6-e7f8-a9b0-c1d2e3f4a5b6",
+      "clientId": "f2a3b4c5-d6e7-f8a9-b0c1-d2e3f4a5b6c7",
+      "feedbackText": "The Lexus ES350 was comfortable but had some minor scratches that weren't noted during pickup. Customer service was responsive when I mentioned this during return.",
+      "rating": "3.7",
+      "id": "4e0a"
+    },
+    {
+      "bookingId": "a3b4c5d6-e7f8-a9b0-c1d2-e3f4a5b6c7d8",
+      "carId": "b4c5d6e7-f8a9-b0c1-d2e3-f4a5b6c7d8e9",
+      "clientId": "c5d6e7f8-a9b0-c1d2-e3f4-a5b6c7d8e9f0",
+      "feedbackText": "Excellent service! The Volvo S90 was perfect for our business trip. The car was fuel-efficient and very comfortable for long drives. Will definitely rent again.",
+      "rating": "4.8",
+      "id": "776d"
+    },
+    {
+      "bookingId": "d6e7f8a9-b0c1-d2e3-f4a5-b6c7d8e9f0a1",
+      "carId": "e7f8a9b0-c1d2-e3f4-a5b6-c7d8e9f0a1b2",
+      "clientId": "f8a9b0c1-d2e3-f4a5-b6c7-d8e9f0a1b2c3",
+      "feedbackText": "The Jaguar XF was a dream to drive! Everything from booking to return was seamless. The staff was professional and friendly. Highly recommend this service!",
+      "rating": "5.0",
+      "id": "a689"
+    },
+    {
+      "bookingId": "a9b0c1d2-e3f4-a5b6-c7d8-e9f0a1b2c3d4",
+      "carId": "b0c1d2e3-f4a5-b6c7-d8e9-f0a1b2c3d4e5",
+      "clientId": "c1d2e3f4-a5b6-c7d8-e9f0-a1b2c3d4e5f6",
+      "feedbackText": "The Cadillac CT5 was nice but the fuel consumption was higher than expected. The pickup process took longer than it should have, but return was quick and easy.",
+      "rating": "3.5",
+      "id": "1393"
+    },
+    {
+      "bookingId": "d2e3f4a5-b6c7-d8e9-f0a1-b2c3d4e5f6a7",
+      "carId": "e3f4a5b6-c7d8-e9f0-a1b2-c3d4e5f6a7b8",
+      "clientId": "f4a5b6c7-d8e9-f0a1-b2c3-d4e5f6a7b8c9",
+      "feedbackText": "Great experience with the Genesis G80. The car was luxurious and comfortable. The booking process was straightforward, and customer service was excellent.",
+      "rating": "4.6",
+      "id": "ccc8"
+    },
+    {
+      "bookingId": "a5b6c7d8-e9f0-a1b2-c3d4-e5f6a7b8c9d0",
+      "carId": "b6c7d8e9-f0a1-b2c3-d4e5-f6a7b8c9d0e1",
+      "clientId": "c7d8e9f0-a1b2-c3d4-e5f6-a7b8c9d0e1f2",
+      "feedbackText": "The Toyota Camry Hybrid was perfect for our family vacation. Very fuel-efficient and spacious. The whole rental experience was smooth and pleasant. Would rent again!",
+      "rating": "4.7",
+      "id": "aa00"
+    }
+  ],
+  "FAQStory": [
+    {
+      "answer": "To rent a car, you will need a valid driver's license, a credit card in your name, and a government-issued photo ID (such as a passport or national ID). International renters may also need to present an International Driving Permit (IDP) in addition to their home country driver's license.",
+      "question": "What documents do I need to rent a car?",
+      "id": "4d27"
+    },
+    {
+      "answer": "The minimum age to rent a car is typically 21 years old. However, renters under 25 may be subject to a young driver surcharge. Some luxury or specialty vehicles may have a higher minimum age requirement of 25 or even 30 years old. Age requirements may vary by location and vehicle type.",
+      "question": "What is the minimum age to rent a car?",
+      "id": "fc02"
+    },
+    {
+      "answer": "If you need to cancel your reservation, you can do so through our website or mobile app by accessing your account and selecting the booking you wish to cancel. Cancellations made at least 48 hours before the scheduled pickup time typically receive a full refund. Cancellations made less than 48 hours in advance may be subject to a cancellation fee.",
+      "question": "How do I cancel my car rental reservation?",
+      "id": "e3eb"
+    },
+    {
+      "answer": "Yes, most of our locations allow you to pick up a car at one location and return it to another, which is known as a one-way rental. Please note that one-way rentals may incur an additional fee, which varies depending on the distance between locations and the specific vehicle. You can select this option during the booking process.",
+      "question": "Can I pick up the car at one location and return it to another?",
+      "id": "9b81"
+    },
+    {
+      "answer": "We offer various insurance options to protect you during your rental period. These typically include Collision Damage Waiver (CDW), Theft Protection (TP), Personal Accident Insurance (PAI), and Supplemental Liability Insurance (SLI). We recommend reviewing these options carefully during the booking process to select the coverage that best meets your needs.",
+      "question": "What insurance options are available for my rental car?",
+      "id": "c321"
+    },
+    {
+      "answer": "If you're involved in an accident with your rental car, first ensure everyone's safety and call emergency services if needed. Then contact our 24/7 customer service line immediately to report the incident. Document the accident by taking photos and collecting information from other involved parties. Fill out an accident report form, which can be found in the glove compartment of the vehicle.",
+      "question": "What should I do if I have an accident with the rental car?",
+      "id": "f9c0"
+    },
+    {
+      "answer": "Yes, most of our vehicles are equipped with GPS navigation systems. You can request this feature during the booking process for an additional daily fee. Alternatively, you can use navigation apps on your smartphone, such as Google Maps or Waze, which may be connected to the car's infotainment system via Apple CarPlay or Android Auto in newer models.",
+      "question": "Do rental cars come with GPS navigation?",
+      "id": "27cf"
+    },
+    {
+      "answer": "We expect the car to be returned with the same amount of fuel it had when you picked it up, which is typically a full tank. If you return the car with less fuel, you'll be charged for the missing fuel plus a refueling service fee. We also offer a prepaid fuel option, allowing you to pay for a full tank upfront and return the car with any amount of fuel without additional charges.",
+      "question": "What is your fuel policy for rental cars?",
+      "id": "97f4"
+    },
+    {
+      "answer": "Yes, most of our locations allow an additional driver to be added to the rental agreement. The additional driver must be present at the time of rental with their valid driver's license and must meet the same age and eligibility requirements as the primary driver. There may be an additional fee for extra drivers, though this fee is often waived for spouses or domestic partners.",
+      "question": "Can someone else drive my rental car?",
+      "id": "8d66"
+    },
+    {
+      "answer": "If you need to extend your rental period, please contact our customer service at least 24 hours before your scheduled return time. Extensions are subject to vehicle availability and may result in a rate change. If you fail to extend your rental and return the vehicle late, you may be charged additional fees according to our late return policy.",
+      "question": "How can I extend my car rental period?",
+      "id": "bea4"
+    }
+  ],
+  "FeedbackInfo": [
+    {
+      "author": "John S., New York, USA",
+      "carImageUrl": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/side-view-(left)-90.jpg?tr=w-664",
+      "carModel": "Audi A6 Quattro 2023",
+      "date": "05.10.2024",
+      "feedbackId": "71ddc0d2-320b-41e0-9c57-8b6290de7a27",
+      "feedbackText": "I am very satisfied with the service! The Audi A6 was in pristine condition and drove like a dream. The pickup and drop-off process was seamless, and the staff was incredibly helpful. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "orderHistory": "#2437 (05.10.2024)",
+      "rating": "4.8",
+      "id": "a38f"
+    },
+    {
+      "author": "Maria L., Madrid, Spain",
+      "carImageUrl":  "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tesla/Model-S/5252/1611840999494/front-left-side-47.jpg?tr=w-664",
+      "carModel": "BMW 530i 2023",
+      "date": "12.10.2024",
+      "feedbackId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "feedbackText": "Excellent experience with the BMW 530i. The car was perfect for our family trip around Ukraine. The booking process was straightforward, and customer service was top-notch.",
+      "orderHistory": "#2438 (12.10.2024)",
+      "rating": "5.0",
+      "id": "2afa"
+    },
+    {
+      "author": "Alex T., London, UK",
+      "carImageUrl":  "https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1700631019657/front-view-118.jpg?tr=w-664"
+      ,
+      "carModel": "Mercedes E350 2023",
+      "date": "18.10.2024",
+      "feedbackId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "feedbackText": "The Mercedes E350 was luxurious and comfortable for my business trip. Had a minor issue with the navigation system, but customer support resolved it quickly. Overall a great experience.",
+      "orderHistory": "#2439 (18.10.2024)",
+      "rating": "4.5",
+      "id": "c794"
+    },
+    {
+      "author": "Olena K., Kyiv, Ukraine",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/tesla-model-s-2023.jpg",
+      "carModel": "Tesla Model S 2023",
+      "date": "22.10.2024",
+      "feedbackId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "feedbackText": "First time driving a Tesla and I'm impressed! The car was clean, fully charged, and a joy to drive. The app made the rental process so convenient. Will definitely rent again.",
+      "orderHistory": "#2440 (22.10.2024)",
+      "rating": "4.9",
+      "id": "82cb"
+    },
+    {
+      "author": "Michael B., Berlin, Germany",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/lexus-es350-2023.jpg",
+      "carModel": "Lexus ES350 2023",
+      "date": "28.10.2024",
+      "feedbackId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "feedbackText": "The Lexus ES350 was comfortable but had some minor issues with the entertainment system. The staff was helpful, though the pickup process took longer than expected. Good value overall.",
+      "orderHistory": "#2441 (28.10.2024)",
+      "rating": "3.8",
+      "id": "4ad3"
+    },
+    {
+      "author": "Natalia P., Warsaw, Poland",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/volvo-s90-2023.jpg",
+      "carModel": "Volvo S90 2023",
+      "date": "02.11.2024",
+      "feedbackId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "feedbackText": "Exceptional service from start to finish! The Volvo S90 was perfect for our family vacation - safe, comfortable, and fuel-efficient. The staff went above and beyond to accommodate our needs.",
+      "orderHistory": "#2442 (02.11.2024)",
+      "rating": "5.0",
+      "id": "f6d9"
+    },
+    {
+      "author": "David R., Toronto, Canada",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/jaguar-xf-2023.jpg",
+      "carModel": "Jaguar XF 2023",
+      "date": "08.11.2024",
+      "feedbackId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "feedbackText": "The Jaguar XF was a pleasure to drive during my business trip to Kyiv. The car was in excellent condition, and the rental process was efficient. Would have given 5 stars, but the return process was a bit confusing.",
+      "orderHistory": "#2443 (08.11.2024)",
+      "rating": "4.7",
+      "id": "99cb"
+    },
+    {
+      "author": "Sofia M., Rome, Italy",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/cadillac-ct5-2023.jpg",
+      "carModel": "Cadillac CT5 2023",
+      "date": "15.11.2024",
+      "feedbackId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "feedbackText": "The Cadillac CT5 was luxurious but consumed more fuel than expected. The pickup was smooth, though the location was a bit hard to find. Customer service was responsive when I had questions during my rental.",
+      "orderHistory": "#2444 (15.11.2024)",
+      "rating": "4.2",
+      "id": "2afa"
+    },
+    {
+      "author": "Ivan T., Lviv, Ukraine",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/genesis-g80-2023.jpg",
+      "carModel": "Genesis G80 2023",
+      "date": "20.11.2024",
+      "feedbackId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "feedbackText": "Rented the Genesis G80 for a weekend trip. The car was comfortable and well-maintained. The booking process was straightforward, and the staff was friendly and professional. Great experience overall!",
+      "orderHistory": "#2445 (20.11.2024)",
+      "rating": "4.6",
+      "id": "f8dd"
+    },
+    {
+      "author": "Emma L., Stockholm, Sweden",
+      "carImageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/cars/toyota-camry-hybrid-2023.jpg",
+      "carModel": "Toyota Camry Hybrid 2023",
+      "date": "25.11.2024",
+      "feedbackId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "feedbackText": "The Toyota Camry Hybrid was perfect for our eco-friendly tour of Ukraine. Very fuel-efficient and comfortable. The app made tracking and extending our rental super easy. Highly recommend this service!",
+      "orderHistory": "#2446 (25.11.2024)",
+      "rating": "4.9",
+      "id": "9616"
+    }
+  ],
+  "LocationInfo": [
+    {
+      "locationAddress": "J B Nagar, Mumbai, Maharashtra 400059",
+      "locationId": "9b903ebf-2b18-4946-bc58-045d86a2632e",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241274.748387375!2d72.57657878671871!3d19.11125540000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c901ec5b39b5%3A0xd1133d0132e44cb8!2sSuper%20Luxury%20Car%20Rental%20Mumbai!5e0!3m2!1sen!2sin!4v1745383460713!5m2!1sen!2sin",
+      "locationName": "Mumbai, India",
+      "id": "ce47"
+    },
+    {
+      "locationAddress": "Gachibowli, Hyderabad, Telangana 500084",
+      "locationId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121787.2259416969!2d78.19649934768678!3d17.466853296475488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb930be10be07f%3A0x5dd526cef04d9e4f!2sPrime%20Car%20rentals(self%20drive)!5e0!3m2!1sen!2sin!4v1744800209690!5m2!1sen!2sin",
+      "locationName": "Hyderabad, India",
+      "id": "583f"
+    },
+    {
+      "locationAddress": "Anna Nagar, Chennai, Tamil Nadu 600101",
+      "locationId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248713.12663379996!2d79.89807258671873!3d13.090147400000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263f7de0b00b3%3A0xafbb75c9304190c9!2sSMILE%20CARS!5e0!3m2!1sen!2sin!4v1745383827729!5m2!1sen!2sin",
+      "locationName": "Chennai, India",
+      "id": "c9bc"
+    },
+    {
+      "locationAddress": "Kodigehalli, Bengaluru, Karnataka 560065",
+      "locationId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248732.12496150774!2d77.29867088671875!3d13.071312000000011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17a95a69f261%3A0x4890c07ab27d10a3!2sIndusGo%20Self%20Drive%20Car%20Rental%20-%20Bengaluru!5e0!3m2!1sen!2sin!4v1745383947359!5m2!1sen!2sin",
+      "locationName": "Bangalore, India",
+      "id": "b8c4"
+    },
+    {
+      "locationAddress": "Kharadi, Pune, Maharashtra 411014",
+      "locationId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121053.0152912292!2d73.77169865918215!3d18.533116612467584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c32ba696588f%3A0x542822aa258406a5!2sHello%20Cars%20Rental!5e0!3m2!1sen!2sin!4v1745384080788!5m2!1sen!2sin",
+      "locationName": "Pune, India",
+      "id": "e2da"
+    },
+    {
+      "locationAddress": "Vidya Nagar, Madgaon, Goa 403601",
+      "locationId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492129.0225176192!2d73.54586753877952!3d15.497444499781903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb3a3ef07e24f%3A0xa974bbe87436be1!2sTop%20Goa%20Car%20Rentals!5e0!3m2!1sen!2sin!4v1745384227623!5m2!1sen!2sin",
+      "locationName": "Goa, India",
+      "id": "64f9"
+    },
+    {
+      "locationAddress": "Kochi, Ernakulam, Kerala 682024",
+      "locationId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "locationImageUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251441.1957298345!2d76.01092138671876!3d10.035937500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d4278eb0937%3A0xd67b68b5f8aebf2a!2sIndusGo%20Rent%20A%20Car!5e0!3m2!1sen!2sin!4v1745384405529!5m2!1sen!2sin",
+      "locationName": "Kochi, India",
+      "id": "9923"
+    }
+  ],
+  "PersonalInfo": [
+    {
+      "city": "Kyiv",
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "country": "Ukraine",
+      "email": "john_smith@example.com",
+      "firstName": "John",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/f47ac10b-58cc-4372-a567-0e02b2c3d479.png",
+      "lastName": "Smith",
+      "phoneNumber": "+1 123 456 7890",
+      "postalCode": "04210",
+      "street": "Velika Vasylkivska",
+      "id": "737d"
+    },
+    {
+      "city": "Lviv",
+      "clientId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "country": "Ukraine",
+      "email": "maria_kovalenko@example.com",
+      "firstName": "Maria",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d.png",
+      "lastName": "Kovalenko",
+      "phoneNumber": "+380 50 123 4567",
+      "postalCode": "79000",
+      "street": "Svobody Avenue",
+      "id": "b0a6"
+    },
+    {
+      "city": "Odesa",
+      "clientId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "country": "Ukraine",
+      "email": "alex_petrov@example.com",
+      "firstName": "Alex",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e.png",
+      "lastName": "Petrov",
+      "phoneNumber": "+380 67 234 5678",
+      "postalCode": "65000",
+      "street": "Derybasivska",
+      "id": "95cc"
+    },
+    {
+      "city": "Kharkiv",
+      "clientId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "country": "Ukraine",
+      "email": "olena_shevchenko@example.com",
+      "firstName": "Olena",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f.png",
+      "lastName": "Shevchenko",
+      "phoneNumber": "+380 63 345 6789",
+      "postalCode": "61000",
+      "street": "Sumska",
+      "id": "0827"
+    },
+    {
+      "city": "Dnipro",
+      "clientId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "country": "Ukraine",
+      "email": "ivan_melnyk@example.com",
+      "firstName": "Ivan",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a.png",
+      "lastName": "Melnyk",
+      "phoneNumber": "+380 95 456 7890",
+      "postalCode": "49000",
+      "street": "Dmytra Yavornytskoho Avenue",
+      "id": "3493"
+    },
+    {
+      "city": "Berlin",
+      "clientId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "country": "Germany",
+      "email": "michael_schmidt@example.com",
+      "firstName": "Michael",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b.png",
+      "lastName": "Schmidt",
+      "phoneNumber": "+49 30 567 8901",
+      "postalCode": "10115",
+      "street": "Unter den Linden",
+      "id": "0d93"
+    },
+    {
+      "city": "Warsaw",
+      "clientId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "country": "Poland",
+      "email": "anna_kowalska@example.com",
+      "firstName": "Anna",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1.png",
+      "lastName": "Kowalska",
+      "phoneNumber": "+48 22 678 9012",
+      "postalCode": "00-001",
+      "street": "Nowy Świat",
+      "id": "9899"
+    },
+    {
+      "city": "New York",
+      "clientId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "country": "United States",
+      "email": "david_johnson@example.com",
+      "firstName": "David",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2.png",
+      "lastName": "Johnson",
+      "phoneNumber": "+1 212 789 0123",
+      "postalCode": "10001",
+      "street": "5th Avenue",
+      "id": "029e"
+    },
+    {
+      "city": "London",
+      "clientId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "country": "United Kingdom",
+      "email": "emma_wilson@example.com",
+      "firstName": "Emma",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3.png",
+      "lastName": "Wilson",
+      "phoneNumber": "+44 20 890 1234",
+      "postalCode": "SW1A 1AA",
+      "street": "Baker Street",
+      "id": "8ad6"
+    },
+    {
+      "city": "Paris",
+      "clientId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "country": "France",
+      "email": "sophie_dubois@example.com",
+      "firstName": "Sophie",
+      "imageUrl": "https://application.s3.eu-central-1.amazonaws.com/img/users/c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4.png",
+      "lastName": "Dubois",
+      "phoneNumber": "+33 1 901 2345",
+      "postalCode": "75001",
+      "street": "Champs-Élysées",
+      "id": "5fa9"
+    }
+  ],
+  "ReportInfo": [
+    {
+      "bookingPeriod": "Oct 28 - Nov 1",
+      "carMillageEnd": 31225,
+      "carMillageStart": 28977,
+      "carModel": "Toyota Camry",
+      "carNumber": "AA 1234 AA",
+      "carServiceRating": "5",
+      "madeBy": "John Doe (Client)",
+      "reportId": "ff99d446-b98a-4f20-ba16-25247c79e36f",
+      "supportAgent": "Lisa Smith",
+      "id": "e9e2"
+    },
+    {
+      "bookingPeriod": "Nov 5 - Nov 10",
+      "carMillageEnd": 42680,
+      "carMillageStart": 41250,
+      "carModel": "Audi A6 Quattro",
+      "carNumber": "BC 5678 KL",
+      "carServiceRating": "4.8",
+      "madeBy": "Maria Kovalenko (Client)",
+      "reportId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "supportAgent": "David Johnson",
+      "id": "3d1c"
+    },
+    {
+      "bookingPeriod": "Nov 12 - Nov 15",
+      "carMillageEnd": 18975,
+      "carMillageStart": 18350,
+      "carModel": "BMW 530i",
+      "carNumber": "KA 9012 MN",
+      "carServiceRating": "4.5",
+      "madeBy": "Alex Petrov (Client)",
+      "reportId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "supportAgent": "Emma Wilson",
+      "id": "d7b1"
+    },
+    {
+      "bookingPeriod": "Nov 18 - Nov 25",
+      "carMillageEnd": 65430,
+      "carMillageStart": 63210,
+      "carModel": "Mercedes E350",
+      "carNumber": "OP 3456 QR",
+      "carServiceRating": "5",
+      "madeBy": "Olena Shevchenko (Client)",
+      "reportId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "supportAgent": "Michael Brown",
+      "id": "4f6a"
+    },
+    {
+      "bookingPeriod": "Nov 20 - Nov 23",
+      "carMillageEnd": 27890,
+      "carMillageStart": 27120,
+      "carModel": "Tesla Model S",
+      "carNumber": "ST 7890 UV",
+      "carServiceRating": "4.9",
+      "madeBy": "Ivan Melnyk (Client)",
+      "reportId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "supportAgent": "Sophie Martin",
+      "id": "d77d"
+    },
+    {
+      "bookingPeriod": "Dec 1 - Dec 5",
+      "carMillageEnd": 53680,
+      "carMillageStart": 52100,
+      "carModel": "Lexus ES350",
+      "carNumber": "WX 2345 YZ",
+      "carServiceRating": "4.7",
+      "madeBy": "Michael Schmidt (Client)",
+      "reportId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "supportAgent": "Anna Kowalska",
+      "id": "92ef"
+    },
+    {
+      "bookingPeriod": "Dec 8 - Dec 12",
+      "carMillageEnd": 39450,
+      "carMillageStart": 38200,
+      "carModel": "Volvo S90",
+      "carNumber": "AB 6789 CD",
+      "carServiceRating": "4.6",
+      "madeBy": "Anna Kowalska (Client)",
+      "reportId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "supportAgent": "Ivan Petrov",
+      "id": "095e"
+    },
+    {
+      "bookingPeriod": "Dec 15 - Dec 20",
+      "carMillageEnd": 72340,
+      "carMillageStart": 70500,
+      "carModel": "Jaguar XF",
+      "carNumber": "EF 0123 GH",
+      "carServiceRating": "4.8",
+      "madeBy": "David Johnson (Client)",
+      "reportId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "supportAgent": "Olga Ivanova",
+      "id": "3aa4"
+    },
+    {
+      "bookingPeriod": "Dec 22 - Dec 28",
+      "carMillageEnd": 45780,
+      "carMillageStart": 43900,
+      "carModel": "Cadillac CT5",
+      "carNumber": "IJ 4567 KL",
+      "carServiceRating": "4.4",
+      "madeBy": "Emma Wilson (Client)",
+      "reportId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "supportAgent": "Andriy Kovalchuk",
+      "id": "4deb"
+    },
+    {
+      "bookingPeriod": "Jan 2 - Jan 8",
+      "carMillageEnd": 58920,
+      "carMillageStart": 56750,
+      "carModel": "Genesis G80",
+      "carNumber": "MN 8901 OP",
+      "carServiceRating": "4.9",
+      "madeBy": "Sophie Dubois (Client)",
+      "reportId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "supportAgent": "Maria Shevchenko",
+      "id": "8655"
+    }
+  ],
+  "SupportAgentBookingInfo": [
+    {
+      "bookingId": "ce3d9306-ec01-48a9-9d1a-f9818063c734",
+      "bookingNumber": "2437",
+      "BookingPeriod": "Oct 25 - Nov 05",
+      "carModel": "Audi A6 Quattro 2023",
+      "clientName": "Lily Hope",
+      "date": "25.11.24",
+      "location": "Boston",
+      "madeBy": "CLIENT",
+      "id": "c609"
+    },
+    {
+      "bookingId": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "bookingNumber": "2438",
+      "BookingPeriod": "Nov 10 - Nov 15",
+      "carModel": "BMW 530i 2023",
+      "clientName": "Michael Johnson",
+      "date": "10.11.24",
+      "location": "Kyiv",
+      "madeBy": "CLIENT",
+      "id": "889c"
+    },
+    {
+      "bookingId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "bookingNumber": "2439",
+      "BookingPeriod": "Nov 12 - Nov 18",
+      "carModel": "Mercedes E350 2023",
+      "clientName": "Olena Kovalenko",
+      "date": "12.11.24",
+      "location": "Lviv",
+      "madeBy": "SUPPORT_AGENT",
+      "id": "5e92"
+    },
+    {
+      "bookingId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "bookingNumber": "2440",
+      "BookingPeriod": "Nov 15 - Nov 20",
+      "carModel": "Tesla Model S 2023",
+      "clientName": "David Wilson",
+      "date": "15.11.24",
+      "location": "Odesa",
+      "madeBy": "CLIENT",
+      "id": "81fb"
+    },
+    {
+      "bookingId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "bookingNumber": "2441",
+      "BookingPeriod": "Nov 18 - Nov 25",
+      "carModel": "Lexus ES350 2023",
+      "clientName": "Anna Shevchenko",
+      "date": "18.11.24",
+      "location": "Kharkiv",
+      "madeBy": "CLIENT",
+      "id": "e102"
+    },
+    {
+      "bookingId": "e5f6a7b8-c9d0-e1f2-3a4b-5c6d7e8f9a0b",
+      "bookingNumber": "2442",
+      "BookingPeriod": "Nov 20 - Nov 27",
+      "carModel": "Volvo S90 2023",
+      "clientName": "Ivan Petrov",
+      "date": "20.11.24",
+      "location": "Dnipro",
+      "madeBy": "SUPPORT_AGENT",
+      "id": "80d7"
+    },
+    {
+      "bookingId": "f6a7b8c9-d0e1-f2a3-b4c5-d6e7f8a9b0c1",
+      "bookingNumber": "2443",
+      "BookingPeriod": "Nov 22 - Nov 28",
+      "carModel": "Jaguar XF 2023",
+      "clientName": "Sophie Martin",
+      "date": "22.11.24",
+      "location": "Zaporizhzhia",
+      "madeBy": "CLIENT",
+      "id": "c6bc"
+    },
+    {
+      "bookingId": "a7b8c9d0-e1f2-a3b4-c5d6-e7f8a9b0c1d2",
+      "bookingNumber": "2444",
+      "BookingPeriod": "Nov 25 - Dec 02",
+      "carModel": "Cadillac CT5 2023",
+      "clientName": "Alex Brown",
+      "date": "25.11.24",
+      "location": "New York",
+      "madeBy": "CLIENT",
+      "id": "144c"
+    },
+    {
+      "bookingId": "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+      "bookingNumber": "2445",
+      "BookingPeriod": "Nov 28 - Dec 05",
+      "carModel": "Genesis G80 2023",
+      "clientName": "Maria Schmidt",
+      "date": "28.11.24",
+      "location": "Berlin",
+      "madeBy": "SUPPORT_AGENT",
+      "id": "ca38"
+    },
+    {
+      "bookingId": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+      "bookingNumber": "2446",
+      "BookingPeriod": "Dec 01 - Dec 08",
+      "carModel": "Toyota Camry Hybrid 2023",
+      "clientName": "Emma Dubois",
+      "date": "01.12.24",
+      "location": "Paris",
+      "madeBy": "CLIENT",
+      "id": "19a1"
+    }
+  ],
+  "users": [
+    {
+      "id": "ce6a",
+      "firstName": "Sagar",
+      "lastName": "Thakre",
+      "email": "sagarthakre159@gmail.com",
+      "password": "4da4e582de91cce13b8701ea02bab05bb58ae4e5f97b1b324438ac0f18cea5fc",
+      "username": "Sagar Thakre",
+      "role": "Admin",
+      "userId": "22c95457-30ed-4fbd-b83b-db3800cfe760",
+      "userImageUrl": "https://api.dicebear.com/7.x/initials/svg?seed=ST"
+    },
+    {
+      "id": "077f",
+      "firstName": "Shuvam",
+      "lastName": "Ghosh",
+      "email": "shuvamghosh@gmail.com",
+      "password": "e5e9f1ae0540f779b8e1ce6d13009b643db1b01e131f1fb3b82a52b6fc010ddd",
+      "username": "Shuvam Ghosh",
+      "role": "Client",
+      "userId": "4a0a03b8-4c28-442f-a426-a89ef5a4f079",
+      "userImageUrl": "https://api.dicebear.com/7.x/initials/svg?seed=SG"
+    },
+    {
+      "id": "01ae",
+      "firstName": "Saugata",
+      "lastName": "Ghosh",
+      "email": "saugataghosh@gmail.com",
+      "password": "5762f708a1798f909b2728ee8a2c5a5021498674f34f7999cee310faca6f8906",
+      "username": "Saugata Ghosh",
+      "role": "Client",
+      "userId": "51eb36a1-1a2f-4309-828a-ad4cd5531de6",
+      "userImageUrl": "https://api.dicebear.com/7.x/initials/svg?seed=SG"
+    },
+    {
+      "id": "f593",
+      "firstName": "Shrikant",
+      "lastName": "Gaikwad",
+      "email": "shrikantgaikwad@gmail.com",
+      "password": "4e47de12ba7d265eff5c66069c868596b759ee417f4df7f4c3be9d9b1298fde1",
+      "username": "Shrikant Gaikwad",
+      "role": "Client",
+      "userId": "3e723689-fbf8-4cb4-8a57-3687f322d66c",
+      "userImageUrl": "https://api.dicebear.com/7.x/initials/svg?seed=SG"
+    }
+  ]
+}

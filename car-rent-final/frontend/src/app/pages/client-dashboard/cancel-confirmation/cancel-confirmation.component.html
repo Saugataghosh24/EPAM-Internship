@@ -1,0 +1,24 @@
+<div class="fixed inset-0 bg-black/50 z-40 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+      <h3 class="text-xl font-medium mb-2">Cancel booking?</h3>
+      <p class="text-gray-600 mb-6">
+        You are about to cancel your booking.<br>
+        Are you sure you want to proceed?
+      </p>
+      <div class="flex gap-3">
+        <app-button type="secondary"  class="w-1/2" label="Cancel booking" (clicked)="onConfirm()"></app-button>
+        <app-button type="primary"  class="w-1/2" label="Resume booking" (clicked)="onCancel()"></app-button>
+
+        <!-- <button 
+          (click)="onConfirm()" 
+          class="flex-1 border border-gray-300 rounded-full py-2 px-4 text-center hover:bg-gray-100 cursor-pointer">
+          Cancel booking
+        </button>
+        <button 
+          (click)="onCancel()" 
+          class="flex-1 cursor-pointer bg-red-500 text-white rounded-full py-2 px-4 text-center  transition-all duration-200 hover:bg-white border-2 border-red-500 hover:text-red-500">
+          Resume booking
+        </button> -->
+      </div>
+    </div>
+  </div>

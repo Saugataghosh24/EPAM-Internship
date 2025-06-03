@@ -1,0 +1,234 @@
+<app-header></app-header>
+<div class="w-full max-w-[1500px] mx-auto p-6">
+    <app-cancel-confirmation *ngIf="showCancelConfirmation" (confirm)="confirmCancelBooking()"
+        (cancel)="closeCancelConfirmation()">
+    </app-cancel-confirmation>
+    <!-- Add the feedback form popup -->
+    <app-feedback-form *ngIf="showFeedbackForm && bookingForFeedback" [carModel]="bookingForFeedback.carModel"
+        (submit)="submitFeedback($event)" (cancel)="closeFeedbackForm()">
+    </app-feedback-form>
+    <h1 class="text-3xl font-bold mb-6">My bookings</h1>
+
+    <!-- Tabs -->
+    <!-- Tabs with anti-flicker styling -->
+    <div class="flex flex-wrap justify-between md:justify-normal mb-6 ">
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'all-bookings',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'all-bookings'
+        }" (click)="setActiveTab('all-bookings')">
+            All bookings
+        </button>
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'reserved',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'reserved'
+        }" (click)="setActiveTab('reserved')">
+            Reserved
+        </button>
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'service-started',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'service-started'
+        }" (click)="setActiveTab('service-started')">
+            Service started
+        </button>
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'service-provided',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'service-provided'
+        }" (click)="setActiveTab('service-provided')">
+            Service provided
+        </button>
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'booking-finished',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'booking-finished'
+        }" (click)="setActiveTab('booking-finished')">
+            Booking finished
+        </button>
+        <button class="px-4 py-2 border-b-2 transition-colors duration-200 hover:scale-105 font-medium cursor-pointer"
+            [ngClass]="{
+            'border-primary text-primary': activeTab === 'cancelled',
+            'border-transparent text-gray-600 hover:text-gray-800': activeTab !== 'cancelled'
+        }" (click)="setActiveTab('cancelled')">
+            Cancelled
+        </button>
+    </div>
+        <ng-container *ngIf="isLoading" >
+            <div class="animate-pulse">
+
+            <!-- Bookings Grid Skeleton -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-items-center sm:justify-items-start max-w-[1400px] w-full mx-auto gap-8">
+                <!-- Generate multiple booking card skeletons -->
+                <div *ngFor="let i of [1,2,3,4]" 
+                    class="bg-[#F0F0F0] rounded-lg shadow-md overflow-hidden flex flex-col w-[320px]">
+                
+                <!-- Image placeholder -->
+                <div class="relative p-3">
+                    <div class="w-full h-48 bg-gray-300 rounded-md"></div>
+                    <!-- Status badge placeholder -->
+                    <div class="absolute top-2 left-2 bg-gray-200 w-16 h-5 rounded"></div>
+                </div>
+                
+                <!-- Content placeholder -->
+                <div class="p-4 flex flex-col flex-grow">
+                    <!-- Car details placeholder -->
+                    <div>
+                    <div class="h-5 bg-gray-300 rounded w-3/4 mb-2"></div>
+                    <div class="h-4 bg-gray-200 rounded w-5/6 mb-4"></div>
+                    </div>
+                    
+                    <!-- Action buttons placeholder -->
+                    <div class="mt-4 flex gap-2">
+                    <div class="h-10 bg-gray-300 rounded-full w-1/2"></div>
+                    <div class="h-10 bg-gray-300 rounded-full w-1/2"></div>
+                    </div>
+                    
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    
+                    <!-- Support chat placeholder -->
+                    <div class="mt-4 flex items-center">
+                    <div class="h-4 bg-gray-200 rounded w-28 mr-2"></div>
+                    <div class="h-4 bg-gray-300 rounded w-24"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </ng-container>
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="bg-red-100 flex justify-center items-center gap-4 my-8 text-red-700 p-4 rounded-lg mb-6">
+       <span class="block sm:inline">{{ error }}</span>
+      <button 
+        (click)="loadBookingDetails()" 
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2">
+        Try Again
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!isLoading && !error && getFilteredBookings().length === 0"
+        class="flex flex-col items-center justify-center py-12">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+        <h3 class="text-xl font-medium text-gray-700 mb-2">No bookings found</h3>
+        <p class="text-gray-500 text-center max-w-md">
+            {{ getEmptyStateMessage() }}
+        </p>
+    </div>
+
+    <!-- Bookings Grid -->
+    <div *ngIf="!isLoading && !error && getFilteredBookings().length > 0"
+        class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-items-center sm:justify-items-start max-w-[1400px] w-full mx-auto gap-8">
+        <div *ngFor="let booking of getFilteredBookings()"
+            class="bg-[#F0F0F0] rounded-lg shadow-md overflow-hidden flex flex-col transition-all duration-200 hover:scale-105 hover:shadow-2xl w-full max-w-xs">
+
+            <!-- bookingStatus Badge -->
+            <div class="relative">
+                <!-- Image with error handling -->
+                <div class="px-3 pt-3 overflow-hidden  ">
+
+                    <img [src]="booking.carImageUrl" alt="{{ booking.carModel }}" class="w-full h-48 object-cover rounded-md"
+                    (error)="handleImageError($event)"
+                    onerror="this.onerror=null; this.src='assets/images/car-placeholder.jpg';">
+                </div>
+                <span *ngIf="booking.bookingStatus === 'RESERVED'"
+                    class="absolute top-2 left-2 bg-white text-blue-800 text-xs px-2 py-1 rounded">
+                    Reserved
+                </span>
+                <span *ngIf="booking.bookingStatus === 'RESERVEDBYSUPPORTAGENT'"
+                    class="absolute top-2 left-2 bg-white text-green-800 text-xs px-2 py-1 rounded">
+                    Reserved by SA
+                </span>
+                <span *ngIf="booking.bookingStatus === 'SERVICESTARTED'"
+                    class="absolute top-2 left-2 bg-white text-blue-800 text-xs px-2 py-1 rounded">
+                    Service started
+                </span>
+                <span *ngIf="booking.bookingStatus === 'SERVICEPROVIDED'"
+                    class="absolute top-2 left-2 bg-white text-purple-800 text-xs px-2 py-1 rounded">
+                    Service provided
+                </span>
+                <span *ngIf="booking.bookingStatus === 'BOOKINGFINISHED'"
+                    class="absolute top-2 left-2 bg-white text-yellow-800 text-xs px-2 py-1 rounded">
+                    Booking finished
+                </span>
+                <span *ngIf="booking.bookingStatus === 'CANCELLED'"
+                    class="absolute top-2 left-2 bg-white text-red-800 text-xs px-2 py-1 rounded">
+                    Cancelled
+                </span>
+            </div>
+
+            <!-- Car Details -->
+            <div class="p-4 flex flex-col flex-grow">
+                <div>
+                    <p class="text-l font-semibold">{{ booking.carModel }} </p>
+                    <p class="text-gray-600">Order: {{ booking.orderDetails }} </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-4 flex  gap-2"
+                    *ngIf="booking.bookingStatus === 'RESERVED' || booking.bookingStatus === 'RESERVEDBYSUPPORTAGENT'">
+                    <app-button type="secondary" class="w-1/2" label="Cancel"
+                        (clicked)="cancelBooking(booking.bookingId)"></app-button>
+                    <app-button type="primary" class="w-1/2" label="Edit"
+                        (clicked)="editBooking(booking.bookingId)"></app-button>
+                </div>
+                <div class="mt-4 flex  gap-2" *ngIf="booking.bookingStatus === 'SERVICEPROVIDED'">
+                    <app-button type="primary" class="w-full " label="Leave feedback"
+                        (clicked)="leaveFeedback(booking.bookingId)"></app-button>
+                </div>
+                <div class="mt-4 flex  gap-2" *ngIf="booking.bookingStatus === 'SERVICESTARTED'">
+                    <app-button type="primary" class="w-full " label="Edit"
+                        (clicked)="editBooking(booking.bookingId)"></app-button>
+                </div>
+
+                <div class="mt-4 flex  gap-2" *ngIf="booking.bookingStatus === 'BOOKINGFINISHED'">
+                    <app-button type="secondary" class="w-full " label="View feedback"
+                        (clicked)="viewFeedback(booking.carModel,booking.review)"></app-button>
+                </div>
+
+                <!-- Spacer to push support chat to bottom -->
+                <div class="flex-grow"></div>
+
+                <!-- Support Chat - Now at the bottom of every card -->
+                <div class="mt-4 text-sm  flex items-center">
+                    <span class="text-gray-500">Have any questions?</span>
+                    <button (click)="openSupportChat()"
+                        class="ml-2 text-primary cursor-pointer underline flex items-center">
+                        Support chat
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" class="h-4 w-4 ml-1 mt-1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.33333 4.0013H9.66667M4.33333 6.66797H8.33333M11 0.667969C11.5304 0.667969 12.0391 0.878682 12.4142 1.25376C12.7893 1.62883 13 2.13754 13 2.66797V8.0013C13 8.53173 12.7893 9.04044 12.4142 9.41552C12.0391 9.79059 11.5304 10.0013 11 10.0013H7.66667L4.33333 12.0013V10.0013H3C2.46957 10.0013 1.96086 9.79059 1.58579 9.41552C1.21071 9.04044 1 8.53173 1 8.0013V2.66797C1 2.13754 1.21071 1.62883 1.58579 1.25376C1.96086 0.878682 2.46957 0.667969 3 0.667969H11Z"
+                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@if(bookingstate){
+<app-notification [alert]="alert" [message]="message" [success]="status"></app-notification>
+}
+
+<!-- view feedback -->
+@if(showfeedback){
+<div class="fixed inset-0 bg-black/50 z-40 flex flex-col items-center justify-center">
+    <div class="bg-white overflow-hidden max-w-md w-full mx-4 rounded-xl">
+        <h3 class="text-lg font-medium mb-2 bg-[#CC1D1D] p-4 text-white">Your FeedBack</h3>
+        <p class="text-[#CC1D1D] font-bold text-lg text-center px-4 p-4" >{{ carModel }}</p>
+        <p class="text-gray-950 text-sm text-center  px-4 pb-4">"{{ review }}"</p>
+        <div class="w-60 justify-self-center p-4">
+            <app-button (clicked)="closefeedback()" label="Close" type="secondary"></app-button>
+        </div>
+    </div>
+</div>
+}
+
+<app-footer></app-footer>

@@ -1,0 +1,48 @@
+<div class="w-full max-w-[1500px] mx-auto p-6">
+  <section class=" mt-2 relative flex flex-col" >
+    <p class="text-2xl text-[#666666] ">(FAQ)</p>
+          <!-- Loading state -->
+          <div *ngIf="isLoading" class="flex justify-center items-center py-12">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-800"></div>
+          </div>
+          
+          <!-- Error state -->
+          <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            <span class="block sm:inline">{{ error }}</span>
+            <button 
+              (click)="loadFaqs()" 
+              class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+            >
+              Try Again
+            </button>
+          </div>
+          
+          <!-- Empty state -->
+          <div *ngIf="!isLoading && !error && faqs.length === 0" class="text-center py-8">
+            <p class="text-gray-500">No FAQ items available at the moment.</p>
+          </div>
+    <div class="self-end md:w-[64%] ">
+
+      <div *ngFor="let faq of faqs; index as i" class="border-b border-gray-700 w-full">
+        <button
+          (click)="toggle(i)"
+          class="w-full flex justify-between items-center py-4 text-left cursor-pointer"
+        >
+          <span class="text-xl font-medium">{{ faq.question }}</span>
+          <span class="text-2xl">{{ isOpen(i) ? '×' : '+' }}</span>
+        </button>
+    
+        <div
+          [@slideToggle]="isOpen(i) ? 'open' : 'closed'"
+          class="overflow-hidden text-gray-400 text-sm transition-all duration-300"
+        >
+          <div class="pb-4 px-2 text-[#666666]">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+
+</div>

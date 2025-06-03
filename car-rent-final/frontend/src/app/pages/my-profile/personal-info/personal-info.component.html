@@ -1,0 +1,324 @@
+<div>
+    <h2 class="text-3xl font-bold mb-6">Personal info</h2>
+    
+    <!-- Success notification -->
+    <div *ngIf="showSuccessMessage">
+     <app-notification
+      [alert]="alert"
+      [message]="message"
+      [success]="status">
+    </app-notification>
+    </div>
+    
+    <!-- Error message -->
+    <div *ngIf="errorMessage">
+      <app-notification
+      [alert]="alert"
+      [message]="message"
+      [success]="status"
+      [buttons]="false">
+    </app-notification>
+    </div>
+    
+    <!-- Skeleton Loader -->
+    <div *ngIf="isLoading" class="animate-pulse">
+      <!-- User profile card skeleton -->
+      <div class="border rounded-lg p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full bg-gray-200"></div>
+            <div>
+              <div class="h-5 bg-gray-200 rounded w-36 mb-2"></div>
+              <div class="h-4 bg-gray-200 rounded w-48"></div>
+            </div>
+          </div>
+          <div class="h-5 bg-gray-200 rounded w-16"></div>
+        </div>
+        <!-- Placeholder for error message area -->
+        <div class="min-h-[24px] mt-2"></div>
+      </div>
+      
+      <!-- Personal info section skeleton -->
+      <div class="mb-8">
+        <div class="h-6 bg-gray-200 rounded w-32 mb-4"></div>
+        <div class="border rounded-lg p-6 mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <!-- First Name -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-12 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+            
+            <!-- Last Name -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-16 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+          </div>
+          
+          <!-- Phone Number -->
+          <div class="mb-4">
+            <div class="h-4 bg-gray-200 rounded w-14 mb-2"></div>
+            <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+            <div class="min-h-[20px]"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Address section skeleton -->
+      <div class="mb-8">
+        <div class="h-6 bg-gray-200 rounded w-20 mb-4"></div>
+        <div class="border rounded-lg p-6 mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <!-- Country -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-16 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+            
+            <!-- City -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-10 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Postal Code -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-24 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+            
+            <!-- Street -->
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-14 mb-2"></div>
+              <div class="h-10 bg-gray-200 rounded-md w-full"></div>
+              <div class="min-h-[20px]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons Skeleton -->
+      <div class="flex justify-end gap-4">
+        <div class="h-12 bg-gray-200 rounded-md w-24"></div>
+        <div class="h-12 bg-gray-300 rounded-md w-32"></div>
+      </div>
+    </div>
+    
+    <!-- Content - only show when data is loaded -->
+    <div *ngIf="!isLoading && originalInfo && editableInfo">
+      <!-- User profile card - using originalInfo (not editable) -->
+<!-- User profile card - using originalInfo (not editable) -->
+<!-- User profile card - using originalInfo (not editable) -->
+<div class="border rounded-lg p-6 mb-8">
+  <div class="flex flex-col md:flex-row items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden" >
+        <img 
+          [src]="newImagePreview || originalInfo.imageUrl" 
+          alt="Profile" 
+          class="w-full h-full object-cover" 
+          (error)="handleImageError($event)"
+        />
+      </div>
+      <div>
+        <h3 class="text-lg font-medium">{{ originalInfo.firstName }} {{ originalInfo.lastName }}</h3>
+        <p class="text-gray-600">{{ originalInfo.email }}</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button *ngIf="newImagePreview" class="text-gray-500 hover:text-red-600 text-sm" (click)="cancelImageSelection()">
+        Cancel
+      </button>
+      <button class="text-gray-600 hover:text-red-600 cursor-pointer" (click)="triggerFileInput()">Change</button>
+      
+    </div>
+    <input 
+      id="profileImageInput" 
+      type="file" 
+      class="hidden" 
+      accept="image/*" 
+      (change)="onFileSelected($event)" 
+    />
+  </div>
+  
+  <!-- Image validation error message with fixed height -->
+  <div *ngIf="imageError" class="flex items-center justify-between  text-red-500 text-sm min-h-[24px]">
+    <span>{{ imageError }}</span>
+   
+  </div>
+  <!-- Placeholder div to maintain layout when no error -->
+  <div *ngIf="!imageError" class="min-h-[24px]"></div>
+</div>
+
+<!-- Update the personal info form section -->
+<div>
+  <h3 class="text-xl font-medium mb-4">Personal info</h3>
+  <div class="border rounded-lg p-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Name <span class="text-red-600">*</span></label>
+        <input 
+          type="text" 
+          class="w-full border rounded-md p-2.5" 
+          [ngClass]="{'border-red-500': validationErrors['firstName']}"
+          placeholder="Write your name"
+          [(ngModel)]="editableInfo.firstName"
+        />
+        <p *ngIf="validationErrors['firstName']" class="text-red-500 text-xs mt-1">
+          {{ validationErrors['firstName'] }}
+        </p>
+      </div>
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Surname </label>
+        <input 
+          type="text" 
+          class="w-full border rounded-md p-2.5" 
+          [ngClass]="{'border-red-500': validationErrors['lastName']}"
+          placeholder="Write your surname"
+          [(ngModel)]="editableInfo.lastName"
+        />
+        <p *ngIf="validationErrors['lastName']" class="text-red-500 text-xs mt-1">
+          {{ validationErrors['lastName'] }}
+        </p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm text-gray-600 mb-1">Phone</label>
+      <input 
+        type="tel" 
+        class="w-full border rounded-md p-2.5" 
+        [ngClass]="{'border-red-500': validationErrors['phoneNumber']}"
+        placeholder="Write your phone no"
+        [(ngModel)]="editableInfo.phoneNumber"
+      />
+      <p *ngIf="validationErrors['phoneNumber']" class="text-red-500 text-xs mt-1">
+        {{ validationErrors['phoneNumber'] }}
+      </p>
+    </div>
+  </div>
+  
+  <!-- Address section -->
+ <!-- Address section -->
+<h3 class="text-xl font-medium mb-4">Address</h3>
+<div class="border rounded-lg p-6 mb-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+    <div>
+      <label class="block text-sm text-gray-600 mb-1">Country</label>
+      <input 
+        type="text" 
+        class="w-full border rounded-md p-2.5" 
+        [ngClass]="{'border-red-500': validationErrors['country']}"
+        placeholder="Write your country"
+        [(ngModel)]="editableInfo.country"
+      />
+      <div class="min-h-[20px]">
+        <div *ngIf="validationErrors['country']" class="flex items-center justify-between text-red-500 text-xs mt-1">
+          <span>{{ validationErrors['country'] }}</span>
+          <button class="text-red-500 hover:text-red-700" (click)="clearValidationError('country')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="block text-sm text-gray-600 mb-1">City</label>
+      <input 
+        type="text" 
+        class="w-full border rounded-md p-2.5" 
+        [ngClass]="{'border-red-500': validationErrors['city']}"
+        placeholder="Write your city"
+        [(ngModel)]="editableInfo.city"
+      />
+      <div class="min-h-[20px]">
+        <div *ngIf="validationErrors['city']" class="flex items-center justify-between text-red-500 text-xs mt-1">
+          <span>{{ validationErrors['city'] }}</span>
+          <button class="text-red-500 hover:text-red-700" (click)="clearValidationError('city')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <label class="block text-sm text-gray-600 mb-1">Postal code</label>
+      <input 
+        type="text" 
+        class="w-full border rounded-md p-2.5" 
+        [ngClass]="{'border-red-500': validationErrors['postalCode']}"
+        placeholder="Write your postal code"
+        [(ngModel)]="editableInfo.postalCode"
+      />
+      <div class="min-h-[20px]">
+        <div *ngIf="validationErrors['postalCode']" class="flex items-center justify-between text-red-500 text-xs mt-1">
+          <span>{{ validationErrors['postalCode'] }}</span>
+          <button class="text-red-500 hover:text-red-700" (click)="clearValidationError('postalCode')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="block text-sm text-gray-600 mb-1">Street</label>
+      <input 
+        type="text" 
+        class="w-full border rounded-md p-2.5" 
+        [ngClass]="{'border-red-500': validationErrors['street']}"
+        placeholder="Write your street"
+        [(ngModel)]="editableInfo.street"
+      />
+      <div class="min-h-[20px]">
+        <div *ngIf="validationErrors['street']" class="flex items-center justify-between text-red-500 text-xs mt-1">
+          <span>{{ validationErrors['street'] }}</span>
+          <button class="text-red-500 hover:text-red-700" (click)="clearValidationError('street')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <!-- Buttons -->
+  <div class="flex justify-end gap-4">
+    
+    <button 
+      class="border border-gray-300 text-gray-700 rounded-md px-6 py-3 hover:bg-gray-50"
+      (click)="discardChanges()"
+    >
+      Cancel
+    </button>
+    <button 
+      class="bg-red-600 hover:bg-red-700 text-white rounded-md px-6 py-3"
+      (click)="saveChanges()"
+      [disabled]="isSaving"
+    >
+      <span *ngIf="!isSaving">Save changes</span>
+      <span *ngIf="isSaving" class="flex items-center">
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Saving...
+      </span>
+    </button>
+  </div>
+</div>
+    </div>
+  </div>

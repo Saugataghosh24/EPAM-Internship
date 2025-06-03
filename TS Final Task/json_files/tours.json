@@ -1,0 +1,92 @@
+[
+    {
+        "badge": "Top Rated",
+        "image": "assets/journey2.png.png",
+        "title": "California Sunset/Twilight Boat Cruise",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "2 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 48.25
+    },
+    {
+        "badge": "Best Sale",
+        "image": "assets/journey3.png.png",
+        "title": "NYC: Food Tastings and Culture Tour",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "3 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 17.32
+    },
+    {
+        "badge": "25% Off",
+        "image": "assets/journey4.png.png",
+        "title": "Grand Canyon Horseshoe Bend 2 days",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "7 days 6 nights",
+        "guests": "4-6 guest",
+        "price": 15.63
+    },
+    {
+        "badge": "Top Rated",
+        "image": "assets/journey2.png.png",
+        "title": "California Sunset/Twilight Boat Cruise",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "2 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 48.25
+    },
+    {
+        "badge": "Best Sale",
+        "image": "assets/journey3.png.png",
+        "title": "NYC: Food Tastings and Culture Tour",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "3 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 17.32
+    },
+    {
+        "badge": "25% Off",
+        "image": "assets/journey4.png.png",
+        "title": "Grand Canyon Horseshoe Bend 2 days",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "7 days 6 nights",
+        "guests": "4-6 guest",
+        "price": 15.63
+    },
+    {
+        "badge": "Top Rated",
+        "image": "assets/journey2.png.png",
+        "title": "California Sunset/Twilight Boat Cruise",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "2 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 48.25
+    },
+    {
+        "badge": "Best Sale",
+        "image": "assets/journey3.png.png",
+        "title": "NYC: Food Tastings and Culture Tour",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "3 days 3 nights",
+        "guests": "4-6 guest",
+        "price": 17.32
+    },
+    {
+        "badge": "25% Off",
+        "image": "assets/journey4.png.png",
+        "title": "Grand Canyon Horseshoe Bend 2 days",
+        "rating": "4.96",
+        "reviews": 672,
+        "duration": "7 days 6 nights",
+        "guests": "4-6 guest",
+        "price": 15.63
+    }
+]

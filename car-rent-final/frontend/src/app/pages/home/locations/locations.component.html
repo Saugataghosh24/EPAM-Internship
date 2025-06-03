@@ -1,0 +1,65 @@
+<section class="w-full max-w-[1500px] mx-auto p-6 flex flex-col" id="locations">
+  <h2 class="text-[#666666] text-2xl mb-4">(OUR LOCATIONS)</h2>
+  <!-- Loading skeleton state -->
+   <ng-container *ngIf="isLoading">
+  <div  class="flex flex-col md:flex-row gap-8 py-8">
+    <!-- Left skeleton: location list -->
+    <div class="w-full md:w-1/2 lg:w-2/5 flex flex-col gap-4">
+      <div *ngFor="let i of [1,2,3,4,5,6,7]" class="p-4 border-b border-gray-300 animate-pulse">
+        <div class="h-6 bg-gray-300 rounded w-2/3 mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+      </div>
+    </div>
+    <!-- Right skeleton: map area -->
+    <div class="md:w-[66%] w-full flex items-center justify-center">
+      <div class="w-full h-full bg-gray-200 animate-pulse"></div>
+    </div>
+  </div>
+  </ng-container>
+  <!-- Error state -->
+  <div *ngIf="error" class="bg-red-100 flex justify-center items-center gap-4 my-8 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+    <span class="block sm:inline">{{ error }}</span>
+    <button 
+      (click)="loadLocation()" 
+      class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+    >
+      Try Again
+    </button>
+  </div>
+
+  <!-- Empty state -->
+  <div *ngIf="!isLoading && !error && locations.length === 0" class="text-center py-8">
+    <p class="text-gray-500">No Location items available at the moment.</p>
+  </div>
+  <div *ngIf="!isLoading && !error && locations.length !== 0" class="flex flex-col md:flex-row flex-1 overflow-hidden mt-6">
+    <!-- Left side - location list -->
+    <div class="w-full md:w-1/2 lg:w-2/5 flex flex-col gap-3 overflow-y-auto pr-4" id="location-list">
+      @for (loc of locations; track loc) {
+        <div 
+          (click)="selectLocation(loc)" 
+          class="cursor-pointer border-b border-gray-600/30 py-3 px-4 transition-all duration-300 hover:bg-gray-800 hover:text-white"
+          [class.bg-black]="loc === selectedLocation"
+          [class.text-white]="loc === selectedLocation"
+        >
+          <p class="text-lg font-semibold" *ngIf="loc.locationName">{{ loc.locationName }}</p>
+          <p class="text-sm">{{ loc.locationAddress }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Right side - map display -->
+    <div class="md:w-[66%] w-full">
+      <iframe
+        class="w-full h-full rounded-md"
+        [src]="selectedLocation?.safeMapSrc"
+        title="Map showing selected location"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>

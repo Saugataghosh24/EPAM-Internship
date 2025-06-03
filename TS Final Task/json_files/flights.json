@@ -1,0 +1,122 @@
+[
+    {
+        "image": "assets/flight.png.png",
+        "departureDate": "09 Jun 2024",
+        "returnDate": "16 Jun 2024",
+        "from": "Denmark",
+        "to": "New York",
+        "businessPrice": 288.15,
+        "economyPrice": 288.15,
+        "seatsLeft": 18
+    },
+    {
+        "image": "assets/flight2.png.png",
+        "departureDate": "10 Jun 2024",
+        "returnDate": "17 Jun 2024",
+        "from": "London",
+        "to": "Paris",
+        "businessPrice": 199.99,
+        "economyPrice": 99.99,
+        "seatsLeft": 22
+    },
+    {
+        "image": "assets/flight4.png.png",
+        "departureDate": "11 Jun 2024",
+        "returnDate": "18 Jun 2024",
+        "from": "Tokyo",
+        "to": "Seoul",
+        "businessPrice": 350.00,
+        "economyPrice": 180.00,
+        "seatsLeft": 15
+    },
+    {
+        "image": "assets/flight5.png.png",
+        "departureDate": "12 Jun 2024",
+        "returnDate": "19 Jun 2024",
+        "from": "Sydney",
+        "to": "Los Angeles",
+        "businessPrice": 599.99,
+        "economyPrice": 399.99,
+        "seatsLeft": 10
+    },
+    {
+        "image": "assets/flight6.jpg",
+        "departureDate": "15 Jun 2024",
+        "returnDate": "22 Jun 2024",
+        "from": "Berlin",
+        "to": "Rome",
+        "businessPrice": 220.50,
+        "economyPrice": 120.75,
+        "seatsLeft": 25
+    },
+    {
+        "image": "assets/flight7.jpg",
+        "departureDate": "18 Jun 2024",
+        "returnDate": "25 Jun 2024",
+        "from": "Dubai",
+        "to": "Singapore",
+        "businessPrice": 450.00,
+        "economyPrice": 280.00,
+        "seatsLeft": 12
+    },
+    {
+        "image": "assets/flight8.jpg",
+        "departureDate": "20 Jun 2024",
+        "returnDate": "27 Jun 2024",
+        "from": "Moscow",
+        "to": "Beijing",
+        "businessPrice": 380.25,
+        "economyPrice": 220.50,
+        "seatsLeft": 20
+    },
+    {
+        "image": "assets/flight9.jpg",
+        "departureDate": "22 Jun 2024",
+        "returnDate": "29 Jun 2024",
+        "from": "Toronto",
+        "to": "Mexico City",
+        "businessPrice": 320.75,
+        "economyPrice": 180.25,
+        "seatsLeft": 16
+    },
+    {
+        "image": "assets/flight10.jpg",
+        "departureDate": "25 Jun 2024",
+        "returnDate": "02 Jul 2024",
+        "from": "Amsterdam",
+        "to": "Barcelona",
+        "businessPrice": 240.00,
+        "economyPrice": 130.50,
+        "seatsLeft": 28
+    },
+    {
+        "image": "assets/flight11.jpg",
+        "departureDate": "28 Jun 2024",
+        "returnDate": "05 Jul 2024",
+        "from": "São Paulo",
+        "to": "Buenos Aires",
+        "businessPrice": 280.50,
+        "economyPrice": 150.75,
+        "seatsLeft": 14
+    },
+    {
+        "image": "assets/flight12.jpg",
+        "departureDate": "01 Jul 2024",
+        "returnDate": "08 Jul 2024",
+        "from": "Hong Kong",
+        "to": "Bangkok",
+        "businessPrice": 420.00,
+        "economyPrice": 260.00,
+        "seatsLeft": 19
+    },
+    {
+        "image": "assets/flight13.jpg",
+        "departureDate": "05 Jul 2024",
+        "returnDate": "12 Jul 2024",
+        "from": "Istanbul",
+        "to": "Cairo",
+        "businessPrice": 310.25,
+        "economyPrice": 175.50,
+        "seatsLeft": 23
+    }
+]

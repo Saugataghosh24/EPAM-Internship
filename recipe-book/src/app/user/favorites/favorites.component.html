@@ -1,0 +1,16 @@
+<div class="favorites-container">
+    <h1 class="page-title">My Favorite Recipes</h1>
+    
+    <div class="recipes-grid" *ngIf="favoriteRecipes.length > 0">
+      <app-recipe-card 
+        *ngFor="let recipe of favoriteRecipes" 
+        [recipe]="recipe"
+        (favoriteToggle)="toggleFavorite($event)">
+      </app-recipe-card>
+    </div>
+    
+    <div class="no-favorites" *ngIf="favoriteRecipes.length === 0">
+      <p>You haven't added any recipes to your favorites yet.</p>
+      <button class="btn btn-primary" routerLink="/recipes">Browse Recipes</button>
+    </div>
+  </div>

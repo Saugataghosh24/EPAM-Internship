@@ -1,0 +1,187 @@
+<header class="w-full mx-auto px-3 md:px-6 border-b-2 border-[#DCDCDD] py-2 flex justify-between items-center">
+    <!-- Hamburger Menu (visible on small screens) -->
+  <button (click)="toggleSidebar()" class="md:hidden w-[33%] items-center">
+    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" 
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+  
+  <div class="flex items-center w-[33%] justify-center md:justify-start">
+      <a href="#" class="text-2xl text-primary"
+        >Flexi<span class="text-[#CC1D1D] font-bold">Ride</span></a
+      >
+    </div>
+    <nav class="hidden md:flex justify-center gap-6 w-[33%]">
+       @if(isAuthLoading) {
+    <!-- Show nothing during loading -->
+  } @else {
+      @if(!loggedIn){
+        <a
+        (click)="setActive('Home');  $event.preventDefault()"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/"
+        class="text-gray-600 hover:text-gray-800"
+        >
+          Home
+        </a>
+
+      <a
+        (click)="setActive('Cars'); $event.preventDefault()"
+        routerLinkActive="active" routerLink="/cars"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        Cars
+      </a>
+      }
+       @else{ 
+        @if(role==='Client'){
+        <a
+        (click)="setActive('Home');  $event.preventDefault()"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/"
+        class="text-gray-600 hover:text-gray-800"
+        >
+          Home
+        </a>
+
+        <a
+        (click)="setActive('Cars'); $event.preventDefault()"
+        routerLinkActive="active" routerLink="/cars"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        Cars
+      </a>
+      <a
+      [routerLink]="['/mybookings']"
+        (click)="setActive('My Bookings'); "
+        routerLinkActive="active"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        My Bookings
+      </a>
+      } 
+      @else if(role ==='Admin'){
+      <a
+        (click)="setActive('Dashboard'); $event.preventDefault()"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  [routerLink]="['/dashboard']"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        Dashboard
+      </a>
+      }
+       @else if(role==='Support'){
+      <a
+        (click)="setActive('Bookings'); $event.preventDefault()"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/bookings"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        Bookings
+      </a>
+      <a
+        (click)="setActive('Cars'); $event.preventDefault()"
+        routerLinkActive="active" routerLink="/cars"
+        class="text-gray-600 hover:text-gray-800"
+      >
+        Cars
+      </a>
+      } }}
+    </nav>
+
+
+  <aside
+  class="fixed top-0 left-0 h-full w-64 bg-[#FFFBF3] shadow-lg transform transition-transform duration-300 z-50"
+  [class.-translate-x-full]="!isSidebarOpen"
+  [class.translate-x-0]="isSidebarOpen"
+  *ngIf="isSmallScreen"
+  >
+  <!-- [class.invisible]="!isSidebarOpen"
+  [class.pointer-events-none]="!isSidebarOpen"  add these lines -->
+  <div class="flex justify-between items-center p-4 border-[#DCDCDD] border-b">
+    <span class="text-xl font-bold">Menu</span>
+    <button (click)="toggleSidebar()" class="text-gray-600 hover:text-black">
+      ✕
+    </button>
+  </div>
+  <nav class="flex flex-col gap-4 p-4">
+    @if(isAuthLoading) {
+    <!-- Show nothing during loading -->
+  } @else {
+    <!-- Add the same nav links here as in the main nav -->
+     @if (!loggedIn) {
+      <a routerLink="/" (click)="setActive('Home');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Home</a>
+      <a routerLink="/cars" (click)="setActive('Cars');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Cars</a>
+     }
+     @else {
+      @if(role==='Client'){
+        <a routerLink="/" (click)="setActive('Home');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Home</a>
+        <a routerLink="/cars" (click)="setActive('Cars');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Cars</a>
+        <a routerLink="/mybookings" (click)="setActive('My Bookings');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">My Bookings</a>
+      }
+      @else if(role==='Admin'){
+        <a routerLink="/dashboard" (click)="setActive('Dashboard');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Dashboard</a>
+      }
+      @else if(role==='Support'){
+        <a routerLink="/bookings"  (click)="setActive('Bookings');  $event.preventDefault()"class="text-gray-600 hover:text-gray-800">Bookings</a>
+        <a routerLink="/cars" (click)="setActive('Cars');  $event.preventDefault()" class="text-gray-600 hover:text-gray-800">Cars</a>
+      }
+     }
+  }
+  </nav>
+</aside>
+
+    <div class="flex items-center gap-2 w-[33%] justify-end">
+      @if(!loggedIn){
+      <a [routerLink]="['/auth/sign-in']" class="text-gray-600 hover:text-gray-800">Log in</a>
+      } @else {
+      <div class="flex justify-between items-center gap-1">
+        <div
+          (click)="toggleDropdown()"
+          class="relative cursor-pointer flex justify-between items-center gap-1"
+        >
+          <img [src]="profileImgUrl" alt="profileImage" class="h-8 w-8 object-cover rounded-full border-[#CC1D1D] border-2" />
+          <p class="hidden md:block ml-2">Hello, {{ name }} ({{ role }})</p>
+
+          @if (showDropdown) {
+          <div (click)="$event.stopPropagation()"
+            class="absolute right-0 top-8 mt-2 w-48 bg-[#FFFBF3] rounded-md shadow-lg py-1 z-20"
+          >
+            <div class="px-2 py-1 text-gray-800 border-b border-gray-200">
+              <a
+                routerLink="/my-profile"
+                class="block text-black hover:text-white hover:bg-black rounded-md px-2 py-1"
+                >My Profile</a
+              >
+            </div>
+            <div class="px-2 py-1 text-gray-800 border-gray-200">
+              <a
+                (click)="logout()"
+                class="block text-black hover:text-white hover:bg-black rounded-md px-2 py-1"
+                >Logout</a
+              >
+            </div>
+          </div>
+          }
+        </div>
+        <svg
+          class="hidden md:block ml-4"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.7 8.80924C5.7 7.00332 6.41643 5.27136 7.69167 3.99438C8.96692 2.7174 10.6965 2 12.5 2C14.3035 2 16.0331 2.7174 17.3083 3.99438C18.5836 5.27136 19.3 7.00332 19.3 8.80924V12.8071L21 15.3606V19.0231H16.2306C16.0373 19.8689 15.563 20.624 14.8854 21.1647C14.2078 21.7055 13.3669 22 12.5004 22C11.6339 22 10.7931 21.7055 10.1154 21.1647C9.43782 20.624 8.96354 19.8689 8.7702 19.0231H4V15.3606L5.7 12.8071V8.80924ZM10.5518 19.0231C10.717 19.4029 10.9894 19.7262 11.3355 19.9532C11.6815 20.1803 12.0863 20.3012 12.5 20.3012C12.9137 20.3012 13.3185 20.1803 13.6645 19.9532C14.0106 19.7262 14.283 19.4029 14.4482 19.0231H10.5518ZM12.5 3.70231C11.1474 3.70231 9.85019 4.24036 8.89376 5.1981C7.93732 6.15583 7.4 7.4548 7.4 8.80924V13.3229L5.7 15.8764V17.3208H19.3V15.8764L17.6 13.3229V8.80924C17.6 7.4548 17.0627 6.15583 16.1062 5.1981C15.1498 4.24036 13.8526 3.70231 12.5 3.70231Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+
+      }
+      <div class="hidden lg:block ml-2">
+        <select title="select" class="flex items-center text-gray-600 hover:text-gray-800 cursor-pointer">
+          <option value="en">En</option>
+          <option value="fr">Fr</option>
+        </select>
+      </div>
+    </div>
+</header>

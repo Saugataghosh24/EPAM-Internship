@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "category": "Cultural",
+    "image": "assets/news.png.png",
+    "date": "18 Sep 2024",
+    "readTime": "6 mins",
+    "comments": 38,
+    "title": "Ultimate Travel Planning Guide: 10 Tips for a Seamless Journey",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Embarking on a journey requires more than just packing a suitcase. Our ultimate travel planning guide offers 10 essential tips to ensure your next adventure is seamless and unforgettable. From choosing the perfect destination to navigating local customs, we've got you covered. Read on to transform your travel experience!"
+  },
+  {
+    "id": 2,
+    "category": "Travel",
+    "image": "assets/news2.png.png",
+    "date": "18 Sep 2024",
+    "readTime": "6 mins",
+    "comments": 38,
+    "title": "Top 10 Travel Hacks for Budget-Conscious Adventurers",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Traveling on a budget doesn't mean sacrificing quality experiences. Our top 10 travel hacks will show you how to stretch your dollars further while maximizing your adventures. From finding hidden flight deals to savoring local cuisine without breaking the bank, these tips will revolutionize your approach to budget travel."
+  },
+  {
+    "id": 3,
+    "category": "Discovery",
+    "image": "assets/news3.png.png",
+    "date": "18 Sep 2024",
+    "readTime": "6 mins",
+    "comments": 38,
+    "title": "Discovering Hidden Gems: 10 Off-the-Beaten-Path Travel Tips",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Tired of crowded tourist spots? Discover the world's hidden gems with our guide to off-the-beaten-path travel. We'll share 10 insider tips on how to find and explore lesser-known destinations that offer authentic experiences and breathtaking beauty. Get ready to step off the typical tourist trail and into a world of unique adventures!"
+  },
+  {
+    "id": 4,
+    "category": "Adventure",
+    "image": "assets/news4.png",
+    "date": "20 Sep 2024",
+    "readTime": "8 mins",
+    "comments": 45,
+    "title": "Extreme Adventures: Pushing Your Limits in Exotic Locations",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "For thrill-seekers and adrenaline junkies, we've compiled a list of extreme adventures in some of the world's most exotic locations. From ice climbing in Patagonia to cave diving in Mexico, these heart-pounding experiences will push your limits and create unforgettable memories. Discover how to safely prepare for and enjoy these exhilarating challenges."
+  },
+  {
+    "id": 5,
+    "category": "Food",
+    "image": "assets/news5.png",
+    "date": "22 Sep 2024",
+    "readTime": "7 mins",
+    "comments": 52,
+    "title": "Culinary Journeys: Exploring the World Through Local Cuisines",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Embark on a global culinary adventure as we explore the world through its diverse local cuisines. This gastronomic guide will take you from street food stalls in Bangkok to Michelin-starred restaurants in Paris. Learn how to navigate foreign menus, discover must-try dishes in various countries, and understand the cultural significance behind each bite."
+  },
+  {
+    "id": 6,
+    "category": "Wellness",
+    "image": "assets/news6.png",
+    "date": "25 Sep 2024",
+    "readTime": "5 mins",
+    "comments": 30,
+    "title": "Mindful Travel: Balancing Adventure and Self-Care on the Road",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Traveling can be both exhilarating and exhausting. Our guide to mindful travel teaches you how to balance exciting adventures with essential self-care practices. Discover techniques for staying grounded in unfamiliar environments, maintaining your wellness routines while on the go, and returning from your travels feeling refreshed rather than drained."
+  },
+  {
+    "id": 7,
+    "category": "Photography",
+    "image": "assets/news7.png",
+    "date": "28 Sep 2024",
+    "readTime": "9 mins",
+    "comments": 60,
+    "title": "Capturing the World: Essential Photography Tips for Travelers",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "Turn your travel memories into stunning visual stories with our essential photography tips for travelers. Whether you're using a DSLR or smartphone, we'll guide you through composition techniques, lighting tricks, and editing tools that will elevate your travel photography. Learn how to capture the essence of a place and bring your adventures to life through your lens."
+  },
+  {
+    "id": 8,
+    "category": "Sustainability",
+    "image": "assets/news8.png",
+    "date": "1 Oct 2024",
+    "readTime": "7 mins",
+    "comments": 42,
+    "title": "Eco-Friendly Travel: How to Minimize Your Environmental Impact",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "As responsible travelers, it's crucial to minimize our environmental impact. This guide provides practical tips for eco-friendly travel, from choosing sustainable accommodations to reducing plastic waste on the road. Discover how small changes in your travel habits can contribute to preserving the beautiful destinations we love to explore."
+  },
+  {
+    "id": 9,
+    "category": "Technology",
+    "image": "assets/news9.png",
+    "date": "5 Oct 2024",
+    "readTime": "8 mins",
+    "comments": 55,
+    "title": "Tech-Savvy Traveler: Must-Have Apps and Gadgets for Your Next Trip",
+    "author": "Jimmy Dave",
+    "authorAvatar": "assets/avatar.png.png",
+    "content": "In the digital age, technology can significantly enhance your travel experience. Our tech-savvy traveler's guide introduces you to must-have apps and gadgets that will streamline your journey. From language translation tools to portable Wi-Fi devices, discover how these tech solutions can help you navigate foreign lands with ease and confidence."
+  }
+]

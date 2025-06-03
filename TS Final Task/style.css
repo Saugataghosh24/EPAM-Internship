@@ -1,0 +1,367 @@
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hover-effect {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btn-hover:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* Slider transitions */
+#slider .slide {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#slider .slide.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#slider .slide:not(.hidden) {
+  opacity: 1;
+}
+
+/* Text transitions */
+.slide-text {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide-text.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide-text:not(.hidden) {
+  opacity: 1;
+}
+
+/* Animation for text fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Dot transitions */
+#slider .dot {
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* Search results styling */
+#search-results {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eaeaea;
+}
+
+#search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#search-results li {
+  transition: background-color 0.2s ease;
+}
+
+/* Truncate long text */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+
+
+/* Search results section styling */
+#search-results-section {
+  transition: all 0.3s ease-in-out;
+}
+
+#results-container {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Card hover effects */
+#results-container article:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#results-container article {
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 0;
+}
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+section.py-16 section.mt-10 article p {
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+              padding 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  overflow: hidden;
+  will-change: max-height, opacity, padding;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+section.py-16 section.mt-10 article button {
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: background-color;
+}
+
+section.py-16 section.mt-10 article header {
+  transition: background-color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.tab-button.activated {
+  background-color: #e5e7eb; /* Tailwind CSS bg-gray-200 */
+}
+
+#flightGrid {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#popularPlacesContainer {
+  width: 100%;
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  #popularPlacesContainer {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+  }
+  #popularPlacesContainer article {
+      scroll-snap-align: start;
+  }
+}
+
+
+.blog-card {
+  perspective: 1000px;
+  height: 400px; /* Adjust based on your needs */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.blog-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+.location-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.location-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+
+#chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.user-message {
+  background-color: #4299e1;
+  color: white;
+  border-radius: 18px 18px 0 18px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #e2e8f0;
+  color: black;
+  border-radius: 18px 18px 18px 0;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+  align-self: flex-start;
+}
+
+
+/* ===== DARK MODE: IMPROVED COLOR SCHEME ===== */
+/* Base Variables */
+:root {
+  /* Light Mode Colors */
+  --light-bg-primary: #FFFFFF;
+  --light-bg-secondary: #F9F9F9;
+  --light-bg-tertiary: #F0F0F0;
+  --light-text-primary: #333333;
+  --light-text-secondary: #666666;
+  --light-text-muted: #888888;
+  --light-border-color: #E0E0E0;
+  --light-accent-color: #000000;
+  --light-hover-color: #F5F5F5;
+  
+  /* Custom Brand Colors */
+  --color-custom-blue: #A8BAF9;
+  --color-custom-green: #D4F6C0;
+  --color-custom-teal: #A8E2EF;
+  --color-custom-cream: #FCFCF3;
+  --color-custom-yellow: #FEFA17;
+}
+
+/* Dark Mode Colors - Improved Palette */
+.dark-mode {
+  /* Main Colors */
+  --bg-primary: #121212;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #232323;
+  --bg-elevated: #2a2a2a;
+  
+  /* Text Colors */
+  --text-primary: #f0f0f0;
+  --text-secondary: #b8b8b8;
+  --text-muted: #8a8a8a;
+  
+  /* UI Elements */
+  --border-color: #383838;
+  --hover-color: #303030;
+  --accent-color: #5d8aff; /* Slightly lighter blue for better contrast */
+  --accent-hover: #7ba0ff;
+  
+  /* Custom Brand Colors in Dark Mode */
+  --color-custom-blue: #3a4275;
+  --color-custom-green: #2c4b24;
+  --color-custom-teal: #1e4b57;
+  --color-custom-cream: #2e2e2a;
+  --color-custom-yellow: #9e9c10;
+  
+  /* Apply base styles */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+
+/* ===== CUSTOM COLOR CLASSES ===== */
+.bg-custom-blue {
+  background-color: var(--color-custom-blue);
+}
+
+.bg-custom-green {
+  background-color: var(--color-custom-green);
+}
+
+.bg-custom-teal {
+  background-color: var(--color-custom-teal);
+}
+
+.bg-custom-cream {
+  background-color: var(--color-custom-cream);
+}
+
+.bg-custom-yellow {
+  background-color: var(--color-custom-yellow);
+}
+

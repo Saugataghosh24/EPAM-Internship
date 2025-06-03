@@ -1,0 +1,4 @@
+.active{
+    border-bottom: 2px solid #CC1D1D;
+    color: #1f2937; /* Equivalent to Tailwind's text-gray-800 */
+}

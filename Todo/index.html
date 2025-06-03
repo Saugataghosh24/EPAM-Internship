@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group-1 To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen">
+    <div class="container mx-auto p-8 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-8 text-center text-gray-800">Group-1 To-Do List</h1>
+        
+        <!-- Add Task Form -->
+        <form id="addTaskForm" class="mb-8 bg-white rounded-lg shadow-md p-6">
+            <input type="text" id="taskTitle" placeholder="Enter task title" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <textarea id="taskDescription" placeholder="Enter task description" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 h-24"></textarea>
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Add Task</button>
+        </form>
+        
+        <!-- Task List -->
+        <div id="taskList" class="space-y-4"></div>
+    </div>
+
+    <!-- Edit Description Modal -->
+    <div id="editModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-lg bg-white">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Edit Task Description</h3>
+            <textarea id="editDescriptionInput" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4 h-32"></textarea>
+            <div class="flex justify-end">
+                <button id="cancelEdit" class="bg-gray-300 text-gray-800 p-2 rounded-md mr-2 hover:bg-gray-400 transition duration-300 ease-in-out">Cancel</button>
+                <button id="saveEdit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tasks = [];
+        let currentEditIndex = -1;
+
+        function renderTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+            
+            tasks.forEach((task, index) => {
+                const taskElement = document.createElement('div');
+                taskElement.className = `p-6 rounded-lg shadow-md ${task.archived ? 'bg-gray-100' : 'bg-white'} mb-4`;
+                taskElement.innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <h2 class="text-xl font-semibold ${task.status === 'Done' ? 'line-through text-gray-500' : 'text-gray-800'}">${task.title}</h2>
+                        ${task.archived ? '<span class="text-red-500 font-semibold text-sm">Archived</span>' : ''}
+                    </div>
+                    <p class="mb-4 ${task.status === 'Done' ? 'line-through text-gray-500' : 'text-gray-600'}">${task.description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium ${getStatusColor(task.status)}">${task.status}</span>
+                        <div>
+                            ${!task.archived && task.status !== 'Done' ? `<button onclick="openEditModal(${index})" class="bg-yellow-500 text-white px-3 py-1 rounded-md mr-2 text-sm hover:bg-yellow-600 transition duration-300 ease-in-out">Edit</button>` : ''}
+                            <button onclick="toggleArchive(${index})" class="bg-red-500 text-white px-3 py-1 rounded-md mr-2 text-sm hover:bg-red-600 transition duration-300 ease-in-out">
+                                ${task.archived ? 'Unarchive' : 'Archive'}
+                            </button>
+                            <select onchange="changeStatus(${index}, this.value)" class="p-1 rounded-md text-sm border border-gray-300" ${task.archived ? 'disabled' : ''}>
+                                <option value="TO-DO" ${task.status === 'TO-DO' ? 'selected' : ''}>TO-DO</option>
+                                <option value="In-Progress" ${task.status === 'In-Progress' ? 'selected' : ''}>In-Progress</option>
+                                <option value="Done" ${task.status === 'Done' ? 'selected' : ''}>Done</option>
+                            </select>
+                        </div>
+                    </div>
+                `;
+                taskList.appendChild(taskElement);
+            });
+        }
+
+        function getStatusColor(status) {
+            switch(status) {
+                case 'TO-DO': return 'text-blue-500';
+                case 'In-Progress': return 'text-yellow-500';
+                case 'Done': return 'text-green-500';
+                default: return 'text-gray-500';
+            }
+        }
+
+        function addTask(title, description) {
+            tasks.push({ title, description, status: 'TO-DO', archived: false });
+            renderTasks();
+        }
+
+        function openEditModal(index) {
+            currentEditIndex = index;
+            const modal = document.getElementById('editModal');
+            const input = document.getElementById('editDescriptionInput');
+            input.value = tasks[index].description;
+            modal.classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            const modal = document.getElementById('editModal');
+            modal.classList.add('hidden');
+            currentEditIndex = -1;
+        }
+
+        function saveEditedDescription() {
+            if (currentEditIndex !== -1) {
+                const newDescription = document.getElementById('editDescriptionInput').value;
+                tasks[currentEditIndex].description = newDescription;
+                renderTasks();
+                closeEditModal();
+            }
+        }
+
+        function toggleArchive(index) {
+            tasks[index].archived = !tasks[index].archived;
+            if (tasks[index].archived) {
+                tasks[index].status = 'Archived';
+            }
+            renderTasks();
+        }
+
+        function changeStatus(index, newStatus) {
+            const task = tasks[index];
+            
+            if (task.archived) {
+                alert('Archived tasks cannot change status');
+                return;
+            }
+            
+            if (task.status === 'Done' && (newStatus === 'In-Progress' || newStatus === 'TO-DO')) {
+                alert('Tasks already Done cannot be marked as In-Progress or TO-DO');
+                return;
+            }
+            
+            task.status = newStatus;
+            renderTasks();
+        }
+
+        document.getElementById('addTaskForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const taskTitle = document.getElementById('taskTitle');
+            const taskDescription = document.getElementById('taskDescription');
+            if (taskTitle.value.trim() && taskDescription.value.trim()) {
+                addTask(taskTitle.value.trim(), taskDescription.value.trim());
+                taskTitle.value = '';
+                taskDescription.value = '';
+            }
+        });
+
+        document.getElementById('cancelEdit').addEventListener('click', closeEditModal);
+        document.getElementById('saveEdit').addEventListener('click', saveEditedDescription);
+
+        // Initial render
+        renderTasks();
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<section class="my-4">
+    <p class="my-3 font-semibold text-xl">Dates & Times</p>
+    <section class="border-[1.5px] rounded-lg p-3">
+        <section class="mb-1">
+            <section class="flex justify-between items-center">
+                <span class="text-xs text-gray-600">Pick-up date & time</span>
+                <p class="text-sm cursor-pointer" (click)="openPickup()">Change</p>
+            </section>
+            <p>{{dateTime.pickup | date: 'MMMM d'}} | {{dateTime.pickup | date: 'HH:mm'}}</p>
+        </section>
+        <span class="text-xs text-gray-600">Drop-off date & time</span>
+        <p>{{dateTime.dropoff | date: 'MMMM d'}} | {{dateTime.dropoff | date: 'HH:mm'}}</p>
+    </section>
+</section>

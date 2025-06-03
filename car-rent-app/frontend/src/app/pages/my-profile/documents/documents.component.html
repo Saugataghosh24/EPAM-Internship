@@ -1,0 +1,267 @@
+<!-- documents.component.html -->
+<div class="documents-container">
+  <h2 class="page-title">Documents</h2>
+  
+  <!-- Success notification -->
+  <div *ngIf="showSuccessMessage" class="success-notification">
+    <div class="notification-content">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="notification-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <div>
+        <p class="notification-title">Success!</p>
+        <p class="notification-message">{{ successMessage }}</p>
+      </div>
+    </div>
+    <button class="notification-close" (click)="showSuccessMessage = false">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Error notification -->
+  <div *ngIf="errorMessage" class="error-notification">
+    <div class="notification-content">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="notification-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <div>
+        <p class="notification-title">Error</p>
+        <p class="notification-message">{{ errorMessage }}</p>
+      </div>
+    </div>
+    <button class="notification-close" (click)="errorMessage = ''">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Loading indicator -->
+  <div *ngIf="isLoading" class="loading-indicator">
+    <div class="spinner"></div>
+  </div>
+  
+  <div *ngIf="!isLoading" class="documents-content">
+    <!-- Passport section -->
+    <div class="document-section">
+      <h3 class="section-title">Passport details</h3>
+      
+      <div class="document-grid-column border border-black-800 rounded-md p-4">
+        <!-- Passport front -->
+        <div class="document-item">
+          <div class="document-label">Front side</div>
+          
+          <ng-container *ngIf="getDocumentByType('passport', 'front')?.uploaded; else uploadPassportFront">
+            <div class="document-preview">
+              <div class="document-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="document-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div class="document-details">
+                  <div class="document-name">{{ getDocumentByType('passport', 'front')?.name }}</div>
+                  <div class="document-size">{{ getDocumentByType('passport', 'front')?.size }}</div>
+                </div>
+              </div>
+              <button class="document-delete" (click)="showDeleteDialog(getDocumentByType('passport', 'front')!)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </ng-container>
+          
+          <ng-template #uploadPassportFront>
+            <div 
+              class="document-upload-area w-2/5" 
+              (click)="openFileSelector('passport', 'front')"
+              (dragover)="onDragOver($event)"
+              (drop)="onDrop($event, 'passport', 'front')"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <div class="upload-text">Click to upload or drag and drop</div>
+              <div class="upload-hint">Max file size: 1MB</div>
+            </div>
+            <input 
+              #fileInputPassportFront
+              type="file" 
+              class="file-input" 
+              accept=".pdf,.jpg,.jpeg,.png"
+              (change)="onFileSelected($event, 'passport', 'front')"
+            />
+          </ng-template>
+        </div>
+        
+        <!-- Passport back -->
+        <div class="document-item">
+          <div class="document-label">Back side</div>
+          
+          <ng-container *ngIf="getDocumentByType('passport', 'back')?.uploaded; else uploadPassportBack">
+            <div class="document-preview">
+              <div class="document-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="document-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div class="document-details">
+                  <div class="document-name">{{ getDocumentByType('passport', 'back')?.name }}</div>
+                  <div class="document-size">{{ getDocumentByType('passport', 'back')?.size }}</div>
+                </div>
+              </div>
+              <button class="document-delete" (click)="showDeleteDialog(getDocumentByType('passport', 'back')!)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </ng-container>
+          
+          <ng-template #uploadPassportBack>
+            <div 
+              class="document-upload-area w-2/5" 
+              (click)="openFileSelector('passport', 'back')"
+              (dragover)="onDragOver($event)"
+              (drop)="onDrop($event, 'passport', 'back')"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <div class="upload-text">Click to upload or drag and drop</div>
+              <div class="upload-hint">Max file size: 1MB</div>
+            </div>
+            <input 
+              #fileInputPassportBack
+              type="file" 
+              class="file-input" 
+              accept=".pdf,.jpg,.jpeg,.png"
+              (change)="onFileSelected($event, 'passport', 'back')"
+            />
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    
+    <!-- License section -->
+    <div class="document-section">
+      <h3 class="section-title">Driving license</h3>
+      
+      <div class="document-grid-column border border-black-800 rounded-md p-4">
+        <!-- License front -->
+        <div class="document-item">
+          <div class="document-label">Front side</div>
+          
+          <ng-container *ngIf="getDocumentByType('license', 'front')?.uploaded; else uploadLicenseFront">
+            <div class="document-preview">
+              <div class="document-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="document-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div class="document-details">
+                  <div class="document-name">{{ getDocumentByType('license', 'front')?.name }}</div>
+                  <div class="document-size">{{ getDocumentByType('license', 'front')?.size }}</div>
+                </div>
+              </div>
+              <button class="document-delete" (click)="showDeleteDialog(getDocumentByType('license', 'front')!)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </ng-container>
+          
+          <ng-template #uploadLicenseFront>
+            <div 
+              class="document-upload-area w-2/5" 
+              (click)="openFileSelector('license', 'front')"
+              (dragover)="onDragOver($event)"
+              (drop)="onDrop($event, 'license', 'front')"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <div class="upload-text">Click to upload or drag and drop</div>
+              <div class="upload-hint">Max file size: 1MB</div>
+            </div>
+            <input 
+              #fileInputLicenseFront
+              type="file" 
+              class="file-input" 
+              accept=".pdf,.jpg,.jpeg,.png"
+              (change)="onFileSelected($event, 'license', 'front')"
+            />
+          </ng-template>
+        </div>
+        
+        <!-- License back -->
+        <div class="document-item">
+          <div class="document-label">Back side</div>
+          
+          <ng-container *ngIf="getDocumentByType('license', 'back')?.uploaded; else uploadLicenseBack">
+            <div class="document-preview">
+              <div class="document-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="document-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div class="document-details">
+                  <div class="document-name">{{ getDocumentByType('license', 'back')?.name }}</div>
+                  <div class="document-size">{{ getDocumentByType('license', 'back')?.size }}</div>
+                </div>
+              </div>
+              <button class="document-delete" (click)="showDeleteDialog(getDocumentByType('license', 'back')!)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </ng-container>
+          
+          <ng-template #uploadLicenseBack>
+            <div 
+              class="document-upload-area w-2/5" 
+              (click)="openFileSelector('license', 'back')"
+              (dragover)="onDragOver($event)"
+              (drop)="onDrop($event, 'license', 'back')"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <div class="upload-text">Click to upload or drag and drop</div>
+              <div class="upload-hint">Max file size: 1MB</div>
+            </div>
+            <input 
+              #fileInputLicenseBack
+              type="file" 
+              class="file-input" 
+              accept=".pdf,.jpg,.jpeg,.png"
+              (change)="onFileSelected($event, 'license', 'back')"
+            />
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Save button -->
+    <div class="save-button-container">
+      <button class="save-button" [disabled]="isUploading">
+        {{ isUploading ? 'Uploading...' : 'Save changes' }}
+      </button>
+    </div>
+  </div>
+  
+  <!-- Delete confirmation dialog -->
+  <div *ngIf="showDeleteConfirmation" class="delete-dialog-overlay">
+    <div class="delete-dialog">
+      <h3 class="delete-dialog-title">Delete document?</h3>
+      <p class="delete-dialog-message">
+        You are about to delete document.
+        Are you sure you want to proceed?
+      </p>
+      <div class="delete-dialog-buttons">
+        <button class="delete-dialog-cancel" (click)="cancelDelete()">Cancel</button>
+        <button class="delete-dialog-confirm" (click)="confirmDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

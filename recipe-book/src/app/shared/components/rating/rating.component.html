@@ -1,0 +1,16 @@
+<div class="rating-container" [class.readonly]="readonly">
+    <span 
+      *ngFor="let star of stars" 
+      class="star" 
+      [class.active]="isActive(star)"
+      [class.half]="isHalfStar(star)"
+      (mouseenter)="setHoverRating(star)"
+      (mouseleave)="resetHoverRating()"
+      (click)="setRating(star)">
+      <i class="star-icon">★</i>
+    </span>
+    
+    <span *ngIf="showValue && rating > 0" class="rating-value">
+      {{ rating.toFixed(1) }}
+    </span>
+  </div>

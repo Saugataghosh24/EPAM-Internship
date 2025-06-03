@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "name": "api_handler",
+  "func_name": "lambdas/api_handler/index.handler",
+  "resource_type": "lambda",
+  "iam_role_name": "api_handler-role",
+  "runtime": "nodejs20.x",
+  "memory": 128,
+  "timeout": 100,
+  "lambda_path": "lambdas\\api_handler",
+  "dependencies": [{
+      "resource_type": "s3_bucket",
+      "resource_name": "files-bucket-team1"
+  }],
+  "event_sources": [],
+  "env_variables": {
+    "MONGO_URI": "mongodb+srv://skfiroj:pa81v4RtWanENuBA@cluster0.uqulr6d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "JWT_SECRET": "secret",
+    "BCRYPT_SALT": "10",
+    "S3_BUCKET_NAME":"tm1-files-bucket-team1-dev1"
+  },
+  "publish_version": true,
+  "alias": "${lambdas_alias_name}",
+  "url_config": {},
+  "ephemeral_storage": 512,
+  "tags": {}
+}

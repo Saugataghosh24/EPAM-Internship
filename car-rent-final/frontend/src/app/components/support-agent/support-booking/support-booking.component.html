@@ -1,0 +1,114 @@
+<app-header></app-header>
+<section class="w-full max-w-[1500px] mx-auto p-6 ">
+  <div class="flex justify-between">
+    <h2 class="text-3xl font-bold mb-4">Bookings</h2>
+    <div class="w-40">
+      <app-button label="Create new booking" (clicked)="createBooking()"></app-button>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <section class="flex flex-wrap items-center gap-3 mb-4">
+    <section class="relative">
+      <div
+        class="w-70 border border-gray-300 rounded-md px-4 py-2 flex justify-between items-center cursor-pointer relative"
+        (click)="togglePickup()">
+        <p>{{ dateTime.pickup | date: 'MMM dd' }} - {{ dateTime.dropoff | date: 'MMM dd yyyy' }}
+        </p>
+        <svg class="absolute -right-0.5 w-5 h-3 text-black" fill="none" stroke="black" stroke-width="3"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      <div *ngIf="datepicker" class="absolute top-10 left-0 z-2">
+        <app-date-time-picker (dateRangeSelected)="selectedDates($event)"
+          (closed)="pickerStatus($event)" [allowPastDates]="true" ></app-date-time-picker>
+      </div>
+    </section>
+    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-40" [(ngModel)]="filters.madeBy">
+      <option *ngFor="let client of userType" [value]="client">{{ client }}</option>
+    </select>
+
+    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-44" [(ngModel)]="filters.status">
+      <option *ngFor="let status of bookingStatuses" [value]="status">{{ status }}</option>
+    </select>
+
+    <button class="text-red-600 text-sm font-medium hover:underline" (click)="applyFilters()">
+      Apply filters
+    </button>
+
+  </section>
+
+  <!-- Table wrapper -->
+  <div class="border border-gray-200 rounded-md overflow-auto">
+    <table class="w-full text-sm text-left border border-gray-200">
+      <thead>
+        <tr class="bg-black text-white">
+          <th class="px-4 py-3 border border-gray-200">Date</th>
+          <th class="px-4 py-3 border border-gray-200">Booking number</th>
+          <th class="px-4 py-3 border border-gray-200">Client</th>
+          <th class="px-4 py-3 border border-gray-200">Car</th>
+          <th class="px-4 py-3 border border-gray-200">Made by</th>
+          <th class="px-4 py-3 border border-gray-200">Booking status</th>
+          <th class="px-4 py-3 border border-gray-200">Booking period</th>
+          <th class="px-4 py-3 border border-gray-200">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Skeleton loader with 15 rows -->
+        @if(loading){
+          <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" class="border-t border-gray-200 animate-pulse">
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-20"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-24"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-28"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-32"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-16"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-24"></div></td>
+            <td class="px-4 py-3 border border-gray-200"><div class="h-4 bg-gray-200 rounded w-32"></div></td>
+            <td class="px-4 py-3 border border-gray-200">
+              <div class="h-4 bg-gray-200 rounded-full w-4 mx-auto"></div>
+            </td>
+          </tr>
+        }
+        @else if(filteredBookings.length==0){
+          <tr>
+            <td colspan="8" class="p-5 text-center">No bookings found for the selected date range.</td>
+          </tr>
+        }
+        @else{
+          <tr *ngFor="let booking of filteredBookings; let i = index" class="border-t border-gray-200">
+            <td class="px-4 py-3 border border-gray-200">{{ booking.date }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.bookingNumber }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.clientName }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.carModel }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.madeBy }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.bookingStatus }}</td>
+            <td class="px-4 py-3 border border-gray-200">{{ booking.BookingPeriod }}</td>
+            <td class="px-4 py-3 border border-gray-200 relative">
+              <button (click)="toggleMenu(i)" class="font-bold hover:cursor-pointer">⋯</button>
+  
+              <!-- Dropdown menu -->
+              <div *ngIf="openMenuIndex === i"
+                [ngClass] = "i>filteredBookings.length-3? 'top-auto bottom-10':''"
+                class="absolute right-4 p-2 mt-2 w-40 bg-[#FFFBF3] border border-gray-200 rounded-md shadow-md z-100">
+                <button class="w-full text-left px-4 py-2 hover:text-white hover:bg-black rounded-md"
+                  (click)="viewDetails(booking.bookingId)">
+                  View details
+                </button>
+                <button class="w-full text-left px-4 py-2 hover:text-white hover:bg-black rounded-md"
+                  (click)="cancelBooking()">
+                  Cancel
+                </button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</section>
+@if(bookingstate){
+<app-notification [alert]="alert" [message]="message" [success]="status"></app-notification>
+}
+<app-footer></app-footer>

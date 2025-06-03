@@ -1,0 +1,51 @@
+<div class="p-4 bg-white rounded-lg shadow-xl">
+    <div class="flex gap-8 flex-col">
+      <div class="flex justify-between items-center mb-3 px-2 gap-4 sm:gap-21">
+          <button (click)="goToPrevMonth()" class="text-gray-600 hover:text-black">&larr;</button>
+          <div class="font-semibold text-gray-800 flex justify-between w-full gap-8">
+            <div>
+              {{ calendarMonths[0] | date: 'MMMM yyyy' }} 
+            </div>
+            <div>
+               {{ calendarMonths[1] | date: 'MMMM yyyy' }}
+            </div>
+          </div>
+          <button (click)="goToNextMonth()" class="text-gray-600 hover:text-black">&rarr;</button>
+      </div>
+      <div class="flex gap-8 sm:flex-row flex-col ">
+        <div *ngFor="let month of calendarMonths" class="w-64">
+          <div class="grid grid-cols-7 text-xs text-gray-500 mb-1">
+            <div *ngFor="let d of ['S','M','T','W','T','F','S']" class="text-center">{{ d }}</div>
+          </div>
+          
+          <div class="grid grid-cols-7 gap-1 text-sm">
+            <ng-container *ngFor="let date of getDaysInMonth(month)" class="bg-red-500">
+              <button *ngIf="date" type="button"
+                class="h-8 w-8 rounded-full text-center transition-all duration-200"
+                [ngClass]="{
+                  'bg-black text-white z-10': isSelected(date),
+                  'bg-[#F0F0F0] rounded-none w-15 -translate-x-3.5  flex justify-center items-center': isInRange(date) && !isSelected(date),
+                  'bg-gray-300 text-gray-500 cursor-not-allowed': isBlocked(date),
+                  'text-gray-500 cursor-not-allowed':isPast(date) ,
+                  'hover:bg-gray-200': !isBlocked(date) && !isPast(date) && !isSelected(date)
+                }" (click)="onSelectDate(date)" [disabled]="isPast(date) || isBlocked(date)">
+              {{ date.getDate() }}
+            </button>
+            <div *ngIf="!date"></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-4 w-full justify-between">
+      <div class="w-1/2">
+        <label class="block font-medium">Pick-up Time</label>
+        <input title="date" type="time" class="border w-full p-2 rounded-md" [(ngModel)]="pickupTime">
+      </div>
+      <div class="w-1/2">
+        <label class="block font-medium">Drop-off Time</label>
+        <input title="date" type="time" class="border w-full p-2 rounded-md" [(ngModel)]="dropoffTime">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<!-- src/app/recipes/recipe-list/recipe-list.component.html -->
+<div class="recipe-list-container">
+    <div class="cuisine-filters">
+      <h2>What are your favorite cuisines?</h2>
+      <div class="cuisine-buttons">
+        <button 
+          *ngFor="let cuisine of cuisineTypes" 
+          class="cuisine-button" 
+          [class.active]="filters.cuisineType === cuisine"
+          (click)="filters.cuisineType = cuisine; onFilterChange()">
+          {{ cuisine }}
+        </button>
+      </div>
+    </div>
+  
+    <div class="recipes-header">
+      <h2>Most Popular Dishes</h2>
+      <div class="filter-controls">
+        <button class="filter-toggle" (click)="toggleFilterMenu()">
+          <span class="filter-icon">⚙</span>
+        </button>
+        <button class="sort-toggle" [class.active]="sortBy === 'latest'" (click)="sortBy = 'latest'; onSortChange()">
+          <span class="sort-icon">↓</span>
+        </button>
+      </div>
+    </div>
+  
+    <div class="filter-menu" [class.open]="isFilterMenuOpen">
+      <div class="filter-section">
+        <h3>FILTERS</h3>
+        <div class="filter-group">
+          <label for="category">Category</label>
+          <select id="category" [(ngModel)]="filters.category" (change)="onFilterChange()">
+            <option value="">All Categories</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="difficulty">Difficulty level</label>
+          <select id="difficulty" [(ngModel)]="filters.difficultyLevel" (change)="onFilterChange()">
+            <option value="">All Difficulties</option>
+            <option *ngFor="let level of difficultyLevels" [value]="level">{{ level }}</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="cookingTime">Cooking time in minutes</label>
+          <select id="cookingTime" [(ngModel)]="filters.cookingTime" (change)="onFilterChange()">
+            <option value="0">Any Time</option>
+            <option value="30">30 minutes or less</option>
+            <option value="60">60 minutes or less</option>
+            <option value="120">2 hours or less</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3>SORT</h3>
+        <div class="sort-options">
+          <label>
+            <input type="radio" name="sortBy" [value]="'popular'" [(ngModel)]="sortBy" (change)="onSortChange()">
+            Most Popular
+          </label>
+          <label>
+            <input type="radio" name="sortBy" [value]="'latest'" [(ngModel)]="sortBy" (change)="onSortChange()">
+            Latest
+          </label>
+        </div>
+      </div>
+      
+      <button class="reset-button" (click)="resetFilters()">Reset Filters</button>
+    </div>
+  
+    <div class="search-container">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        (keyup.enter)="onSearch()"
+        placeholder="Search recipes, cuisine, category, tags...">
+      <button (click)="onSearch()">Search</button>
+    </div>
+  
+    <div class="recipes-grid">
+      <app-recipe-card 
+        *ngFor="let recipe of filteredRecipes" 
+        [recipe]="recipe"
+        (favoriteToggle)="toggleFavorite($event)">
+      </app-recipe-card>
+    </div>
+    
+    <div class="no-results" *ngIf="filteredRecipes.length === 0">
+      <p>No recipes found matching your criteria.</p>
+      <button class="btn btn-primary" routerLink="/recipes/add" *ngIf="isLoggedIn">Add New Recipe</button>
+      <button class="btn btn-outline" routerLink="/auth/login" *ngIf="!isLoggedIn">Login to Add Recipes</button>
+    </div>
+</div>

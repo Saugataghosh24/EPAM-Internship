@@ -1,0 +1,56 @@
+<div class="fixed inset-0 bg-black/50 z-40 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+      <h3 class="text-lg font-medium mb-2">How was your experience?</h3>
+      <p class="text-gray-950 mb-4">{{ carModel }} {{ carYear }}</p>
+      <span class="text-gray-600 text-sm">Rate your experience</span>
+      <form [formGroup]="feedbackForm">
+        <!-- Star Rating -->
+        <div class="mb-4">
+          <div class="flex">
+            <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+              <button 
+                type="button"
+                (click)="setRating(i)" 
+                class="text-2xl focus:outline-none"
+                [ngClass]="{'text-yellow-400': i <= rating, 'text-gray-300': i > rating}">
+                ★
+              </button>
+            </ng-container>
+          </div>
+        </div>
+        
+        <!-- Comment Field -->
+      <span class="text-gray-600 text-sm">Review</span>
+
+        <div class="mb-6">
+          <textarea 
+            formControlName="comment"
+            placeholder="Add your comment"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            rows="3">
+          </textarea>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex gap-3">
+            <app-button type="secondary"  class="w-1/2" label="Cancel" (clicked)="onCancel()"></app-button>
+
+          <!-- <button 
+            type="button"
+            (click)="onCancel()" 
+            class="flex-1 cursor-pointer border border-gray-300 rounded-full py-2 px-4 text-center hover:bg-gray-100">
+            Cancel
+          </button> -->
+          <app-button type="primary"  class="w-1/2" label="Submit" (clicked)="onSubmit()" [disabled]="rating === 0"></app-button>
+
+          <!-- <button 
+            type="button"
+            [disabled]="rating === 0"
+            (click)="onSubmit()" 
+            class="flex-1 bg-red-500 text-white cursor-pointer rounded-full py-2 px-4 text-center  transition-all duration-200 hover:bg-white border-2 border-red-500 hover:text-red-500">
+            Submit
+          </button> -->
+        </div>
+      </form>
+    </div>
+  </div>

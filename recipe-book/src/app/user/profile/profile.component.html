@@ -1,0 +1,67 @@
+<!-- src/app/user/profile/profile.component.html -->
+<div class="profile-container" *ngIf="currentUser">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img *ngIf="currentUser.profileImage" [src]="currentUser.profileImage" alt="Profile">
+        <div *ngIf="!currentUser.profileImage" class="avatar-placeholder">
+          {{ currentUser.firstName.charAt(0) }}
+        </div>
+      </div>
+      
+      <div class="profile-info">
+        <h1 class="profile-name">{{ currentUser.firstName }} {{ currentUser.lastName }}</h1>
+        <p class="profile-location">{{ currentUser.region }}, {{ currentUser.country }}</p>
+        
+        <div class="profile-stats">
+          <div class="stat">
+            <span class="stat-value">{{ userRecipes.length }}</span>
+            <span class="stat-label">Recipes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="profile-content">
+      <div class="section-header">
+        <h2>Your Recipes</h2>
+        <button class="add-recipe-btn" (click)="navigateToAddRecipe()">Add New Recipe</button>
+      </div>
+      
+      <div class="recipes-grid">
+        <div class="recipe-card" *ngFor="let recipe of userRecipes">
+          <div class="recipe-image">
+            <img [src]="recipe.imageUrl || 'assets/images/default-recipe.jpg'" [alt]="recipe.name">
+            <div class="recipe-actions">
+              <button class="edit-btn" (click)="editRecipe(recipe.id)">Edit</button>
+              <button class="delete-btn" (click)="deleteRecipe(recipe.id)">Delete</button>
+            </div>
+          </div>
+          
+          <div class="recipe-content">
+            <h3 class="recipe-name" [routerLink]="['/recipes', recipe.id]">{{ recipe.name }}</h3>
+            <p class="recipe-category">{{ recipe.category }}</p>
+            
+            <div class="recipe-tags">
+              <span class="tag" *ngFor="let tag of recipe.tags.slice(0, 3)">{{ tag }}</span>
+            </div>
+            
+            <div class="recipe-meta">
+              <div class="recipe-rating">
+                <app-rating [rating]="recipe.averageRating" [readonly]="true"></app-rating>
+                <span class="rating-count">({{ recipe.ratings.length }})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="no-recipes" *ngIf="userRecipes.length === 0">
+        <p>You haven't created any recipes yet.</p>
+        <button class="add-recipe-btn" (click)="navigateToAddRecipe()">Create Your First Recipe</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading" *ngIf="!currentUser">
+    Loading profile...
+  </div>

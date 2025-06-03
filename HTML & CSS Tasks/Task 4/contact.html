@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NexaTech || Contact Page</title>
+  </head>
+  <body class="bg-gray-100">
+    <header class="w-full bg-blue-900 py-4 px-6 flex flex-wrap items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-yellow-500">NexaTech</a>
+      <nav class="w-full md:w-auto mt-4 md:mt-0">
+        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-6">
+          <li><a href="index.html" class="text-white uppercase hover:text-yellow-500">Home</a></li>
+          <li><a href="services.html" class="text-white uppercase hover:text-yellow-500">Services</a></li>
+          <li><a href="work.html" class="text-white uppercase hover:text-yellow-500">Work</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="container mx-auto p-6 md:p-10">
+      <section class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Contact Us</h2>
+        <p class="text-gray-700 mt-4">Get in touch with us for any inquiries or collaborations.</p>
+      </section>
+
+      <section class="mt-8 max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <form>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label for="First Name">
+              <span class="sr-only">First Name</span>
+              <input type="text" required placeholder="First Name" class="border border-gray-300 p-3 rounded-md w-full">
+            </label>
+            <label for="Last Name">
+              <span class="sr-only">Last Name</span>
+              <input type="text" required placeholder="Last Name" class="border border-gray-300 p-3 rounded-md w-full">
+            </label>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <label for="Email">
+              <span class="sr-only">Email</span>
+              <input type="email" required placeholder="Email" class="border border-gray-300 p-3 rounded-md w-full">
+            </label>
+            <label for="Subject">
+              <span class="sr-only">Subject</span>
+              <input type="text" required placeholder="Subject" class="border border-gray-300 p-3 rounded-md w-full">
+            </label>
+          </div>
+          <label  for="Message">
+            <span class="sr-only">Message</span>
+            <textarea placeholder="Message" required class="border border-gray-300 p-3 rounded-md w-full mt-4 h-40"></textarea>
+          </label>
+          <button type="submit" class="w-full bg-blue-900 text-white py-3 px-6 mt-6 rounded-md hover:bg-blue-800">Send Message</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer class="w-full bg-blue-900 text-white text-center py-6 mt-12">
+      <p class="mt-4">&copy; 2024 NexaTech. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

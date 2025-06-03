@@ -1,0 +1,34 @@
+<section class="my-4" id="pd-location">
+    <p class="my-3 font-semibold text-xl">Location</p>
+    <section *ngIf="!updateLocation" class="border-[1.5px] rounded-lg p-3">
+        <section class="mb-1">
+            <section class="flex justify-between items-center">
+                <span class="text-xs text-gray-600">Pick-up location</span>
+                <p id="change-location" class="text-sm cursor-pointer" (click)="toggleUpdate()">Change</p>
+            </section>
+            <p>{{ getLocationName(pickup) }}</p>
+        </section>
+        <span class="text-xs text-gray-600">Drop-off location</span>
+        <p>{{ getLocationName(dropoff) }}</p>
+    </section>
+
+    <section *ngIf="updateLocation" class="border-[1.5px] rounded-lg p-3 flex flex-col">
+        <section class="mb-1">
+            <section class="flex justify-between items-center">
+                <span class="text-xs text-gray-600">Pick-up location</span>
+                <p id="save-location" class="text-sm cursor-pointer" (click)="toggleUpdate()">Save</p>
+            </section>
+
+            <p>{{ getLocationName(pickup) }}</p>
+        </section>
+
+        <span class="text-xs text-gray-600 mb-1">Drop-off location</span>
+        <select id="dropoff-location" [(ngModel)]="dropoff"
+            class="w-70 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+            <option *ngFor="let loc of availableLocations" [ngValue]="loc.locationId">
+                {{ loc.locationName }}
+            </option>
+        </select>
+    </section>
+
+</section>

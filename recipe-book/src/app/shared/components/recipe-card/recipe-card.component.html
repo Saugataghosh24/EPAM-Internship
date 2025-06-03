@@ -1,0 +1,44 @@
+<!-- src/app/shared/components/recipe-card/recipe-card.component.html -->
+<div class="recipe-card" [routerLink]="['/recipes', recipe.id]">
+    <div class="recipe-image">
+      <img [src]="recipe.imageUrl || 'assets/images/default-recipe.jpg'" [alt]="recipe.name">
+      <button 
+        *ngIf="isLoggedIn"
+        class="favorite-btn" 
+        [class.active]="isFavorite"
+        (click)="toggleFavorite($event)">
+        <span class="heart-icon" [class.filled]="isFavorite">
+          {{ isFavorite ? '❤' : '♡' }}
+        </span>
+      </button>
+    </div>
+    
+    <div class="recipe-content" >
+      <h3 class="recipe-name" >{{ recipe.name }}</h3>
+      <p class="recipe-category">{{ recipe.category }}</p>
+      
+      <div class="recipe-tags">
+        <span class="tag" *ngFor="let tag of recipe.tags?.slice(0, 3) || []">{{ tag }}</span>
+      </div>
+      
+      <div class="recipe-meta">
+        <div class="recipe-rating">
+          <span *ngFor="let star of getStarArray(recipe.averageRating)" class="star">
+            <ng-container *ngIf="star === 1">★</ng-container>
+            <ng-container *ngIf="star === 0.5">½</ng-container>
+            <ng-container *ngIf="star === 0">☆</ng-container>
+          </span>
+          <span class="rating-count">({{ recipe.ratings?.length || 0 }})</span>
+        </div>
+        
+        <div class="recipe-author" [routerLink]="['/users', recipe.userId]">
+          <div class="author-avatar">
+            <img *ngIf="recipe.userImage" [src]="recipe.userImage" alt="Author">
+            <div *ngIf="!recipe.userImage" class="avatar-placeholder">
+              {{ recipe.userName?.charAt(0) || 'U' }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

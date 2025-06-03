@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "name": "New York, USA",
+      "description": "The city that never sleeps with iconic landmarks",
+      "image": "assets/New York.jpg",
+      "rating": 4.8,
+      "category": "Urban",
+      "price": "$$$",
+      "activities": ["Sightseeing", "Shopping", "Dining"]
+    },
+    {
+      "id": 2,
+      "name": "Tokyo, Japan",
+      "description": "A blend of traditional culture and ultramodern attractions",
+      "image": "assets/Tokyo.jpg",
+      "rating": 4.9,
+      "category": "Urban",
+      "price": "$$$",
+      "activities": ["Cultural", "Shopping", "Dining"]
+    },
+    {
+      "id": 3,
+      "name": "Paris, France",
+      "description": "The city of love with art, fashion and gastronomy",
+      "image": "assets/Paris.jpg",
+      "rating": 4.7,
+      "category": "Urban",
+      "price": "$$$",
+      "activities": ["Romantic", "Art", "Dining"]
+    },
+    {
+      "id": 4,
+      "name": "Bali, Indonesia",
+      "description": "Tropical paradise with beaches and spiritual retreats",
+      "image": "assets/Bali.jpg",
+      "rating": 4.6,
+      "category": "Beach",
+      "price": "$$",
+      "activities": ["Beach", "Spiritual", "Adventure"]
+    },
+    {
+      "id": 5,
+      "name": "London, UK",
+      "description": "Historic city with royal heritage and modern culture",
+      "image": "assets/London.jpg",
+      "rating": 4.7,
+      "category": "Urban",
+      "price": "$$$",
+      "activities": ["Historical", "Shopping", "Cultural"]
+    },
+    {
+      "id": 6,
+      "name": "Rome, Italy",
+      "description": "Ancient ruins and artistic masterpieces",
+      "image": "assets/Rome.jpg",
+      "rating": 4.8,
+      "category": "Historical",
+      "price": "$$$",
+      "activities": ["Historical", "Cultural", "Dining"]
+    },
+    {
+      "id": 7,
+      "name": "Sydney, Australia",
+      "description": "Harbor city with iconic Opera House and beaches",
+      "image": "assets/Sydney.jpg",
+      "rating": 4.6,
+      "category": "Urban/Beach",
+      "price": "$$$",
+      "activities": ["Beach", "Urban", "Adventure"]
+    },
+    {
+      "id": 8,
+      "name": "Santorini, Greece",
+      "description": "Stunning island with white-washed buildings and blue domes",
+      "image": "assets/Santorini.jpg",
+      "rating": 4.9,
+      "category": "Island",
+      "price": "$$$",
+      "activities": ["Romantic", "Beach", "Scenic"]
+    },
+    {
+      "id": 9,
+      "name": "Bangkok, Thailand",
+      "description": "Vibrant street life and ornate shrines",
+      "image": "assets/Bangkok.jpg",
+      "rating": 4.5,
+      "category": "Urban",
+      "price": "$$",
+      "activities": ["Cultural", "Shopping", "Dining"]
+    },
+    {
+      "id": 10,
+      "name": "Machu Picchu, Peru",
+      "description": "Ancient Incan citadel set in the Andes Mountains",
+      "image": "assets/Machu Pichu.jpg",
+      "rating": 4.9,
+      "category": "Historical",
+      "price": "$$$",
+      "activities": ["Historical", "Adventure", "Scenic"]
+    },
+    {
+      "id": 11,
+      "name": "Dubai, UAE",
+      "description": "Luxury shopping, ultramodern architecture and lively nightlife",
+      "image": "assets/Dubai.jpg",
+      "rating": 4.7,
+      "category": "Urban",
+      "price": "$$$$",
+      "activities": ["Luxury", "Shopping", "Adventure"]
+    },
+    {
+      "id": 12,
+      "name": "Kyoto, Japan",
+      "description": "Classical Buddhist temples, gardens and imperial palaces",
+      "image": "assets/Kyoto.jpg",
+      "rating": 4.8,
+      "category": "Cultural",
+      "price": "$$$",
+      "activities": ["Cultural", "Historical", "Spiritual"]
+    }
+  ]

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/travila-logo1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travila Travel Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4299e1">
+    <link rel="apple-touch-icon" href="/assets/travila-logo1.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Travila">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="relative z-50 flex items-center justify-between px-6 py-3 bg-white border-b drop-shadow-md">
+        <!-- Left Section: Logo -->
+        <section class="flex items-center space-x-2">
+            <a href="#" class="flex items-center">
+                <img src="assets/travila-logo1.png" alt="Travila Logo" class="h-8 w-8">
+                <span class="text-lg pl-1 font-semibold text-black mr-2">Travila</span>
+            </a>
+        </section>
+
+
+        <!-- Center: Navigation (Hidden on Mobile) -->
+        <nav class="hidden lg:flex space-x-4 text-gray-700 text-sm font-medium">
+            <menu class="flex space-x-4">
+                <!-- Reusable Dropdown Component -->
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Home <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Home 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Home 2</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Home 3</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Tours <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Adventure Tours</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Luxury Tours</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Eco Tours</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Destinations <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Asia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Europe</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">America</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Activities <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Hiking</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Skiing</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Diving</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Hotel <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Budget Hotels</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Luxury Hotels</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Resorts</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Rental <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Car Rental</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Bike Rental</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Tickets <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Tickets</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Flight Tickets</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Pages <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">About Us</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a></li>
+                    </ul>
+                </div>
+        
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Blog <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Latest Posts</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Tips & Guides</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Contact (No Dropdown) -->
+                <div class="relative group">
+                    <button class="flex items-center hover:text-black focus:outline-none">
+                        Contact <span class="ml-1">▾</span>
+                    </button>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Phone</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Email</a></li>
+                    </ul>
+                </div>
+            </menu>
+        </nav>
+
+
+    
+        <!-- Right Section -->
+        <section class="hidden lg:flex items-center space-x-4">
+            <!-- Language & Currency -->
+            <article class="flex items-center space-x-1 text-gray-600 text-sm">
+                <img src="assets/globe.png" alt="Language" class="h-4">
+                <select class="cursor-pointer hover:text-black flex items-center">
+                    <option value="English">EN</option>
+                    <option value="Bengali">BEN</option>
+                    <option value="Hindi">HIN</option>
+                </select>
+                <select class="cursor-pointer hover:text-black flex items-center">
+                    <option value="Usd">USD</option>
+                    <option value="Inr">INR</option>
+                    <option value="Eur">EUR</option>
+                </select>
+            </article>
+    
+            <!-- Theme Toggle -->
+            <figure class="cursor-pointer py-3 px-5 bg-gray-100 rounded-3xl hover:bg-gray-200">
+                <img src="assets/sun.png" class="h-5">
+            </figure>
+    
+            <!-- Sign-in Button -->
+            <article class="cursor-pointer border px-4 py-3 rounded-full text-sm font-medium hover:bg-gray-100">
+                Signin
+            </article>
+    
+            <figure class="hidden lg:block">
+                <img src="assets/menu.png" alt="menu" class="h-9">
+            </figure>
+        </section>
+    
+        <!-- Mobile Menu Icon (Burger Menu) -->
+        <button id="menu-toggle" class="lg:hidden">
+            <img src="assets/burger-bar.png" alt="burger-menu" class="h-8">
+        </button>
+    
+
+        <!-- Mobile Navigation (Hidden by Default) -->
+        <nav id="mobile-menu" class="fixed top-[60px] left-0 w-full bg-white shadow-md hidden transition-all duration-300 transform translate-x-full lg:hidden z-50">
+            <menu class="flex flex-col space-y-4 py-4 px-6">
+        
+                <!-- Home Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Home <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Home 1</a>
+                        <a href="#" class="block hover:text-black">Home 2</a>
+                        <a href="#" class="block hover:text-black">Home 3</a>
+                    </menu>
+                </details>
+        
+                <!-- Tours Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Tours <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Adventure Tours</a>
+                        <a href="#" class="block hover:text-black">Luxury Tours</a>
+                        <a href="#" class="block hover:text-black">Eco Tours</a>
+                    </menu>
+                </details>
+        
+                <!-- Destinations Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Destinations <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Asia</a>
+                        <a href="#" class="block hover:text-black">Europe</a>
+                        <a href="#" class="block hover:text-black">America</a>
+                    </menu>
+                </details>
+        
+                <!-- Activities Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Activities <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Hiking</a>
+                        <a href="#" class="block hover:text-black">Skiing</a>
+                        <a href="#" class="block hover:text-black">Diving</a>
+                    </menu>
+                </details>
+        
+                <!-- Hotel Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Hotel <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Budget Hotels</a>
+                        <a href="#" class="block hover:text-black">Luxury Hotels</a>
+                        <a href="#" class="block hover:text-black">Resorts</a>
+                    </menu>
+                </details>
+        
+                <!-- Rental Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Rental <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Car Rental</a>
+                        <a href="#" class="block hover:text-black">Bike Rental</a>
+                    </menu>
+                </details>
+        
+                <!-- Tickets Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Tickets <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Event Tickets</a>
+                        <a href="#" class="block hover:text-black">Flight Tickets</a>
+                    </menu>
+                </details>
+        
+                <!-- Pages Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Pages <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">About Us</a>
+                        <a href="#" class="block hover:text-black">FAQ</a>
+                    </menu>
+                </details>
+        
+                <!-- Blog Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Blog <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Latest Posts</a>
+                        <a href="#" class="block hover:text-black">Tips & Guides</a>
+                    </menu>
+                </details>
+        
+                <!-- Contact Dropdown -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer hover:text-black">
+                        Contact <span class="ml-1">▾</span>
+                    </summary>
+                    <menu class="pl-4 mt-2 space-y-2 hidden group-open:block">
+                        <a href="#" class="block hover:text-black">Phone</a>
+                        <a href="#" class="block hover:text-black">Email</a>
+                    </menu>
+                </details>
+                </div>
+
+                <!-- Signin (Border Top) -->
+                <div class="mt-4 border-t pt-4">
+                    <a href="#" class="text-sm font-medium flex items-center">Signin</a>
+                </div>
+                
+        
+            </menu>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="flex justify-center items-center px-4 sm:px-6 py-8 sm:py-12 bg-white">
+            <article class="relative w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden">
+                <!-- Background Image -->
+                <!-- Background Image Slider -->
+                <figure id="slider" class="relative w-full h-[700px] sm:h-[400px] md:h-[480px] lg:h-[560px]">
+                    <div class="slide absolute inset-0">
+                        <img src="assets/hero.png" alt="Hero Background 1" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class="slide absolute inset-0 hidden">
+                        <img src="assets/hero2.png" alt="Hero Background 2" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class="slide absolute inset-0 hidden">
+                        <img src="assets/hero3.png" alt="Hero Background 3" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button aria-label="left-nav" id="prev-slide" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white w-6 h-6 rounded-full flex items-center justify-center hover:bg-opacity-70 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button aria-label="right-nav" id="next-slide" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white w-6 h-6 rounded-full flex items-center justify-center hover:bg-opacity-70 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button> 
+                    
+                    <!-- Navigation Dots -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+                        <button aria-label="dot" class="dot w-4 h-4 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" data-index="0"></button>
+                        <button aria-label="dot" class="dot w-4 h-4 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" data-index="1"></button>
+                        <button aria-label="dot" class="dot w-4 h-4 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100" data-index="2"></button>
+                    </div>
+                    
+                </figure>
+        
+                <!-- Slide Content Container -->
+                <article id="slide-content"
+                    class="absolute top-8 sm:top-16 md:top-24 lg:top-32 left-4 sm:left-8 md:left-8 text-black w-[90%] sm:w-[45%] max-w-[280px] sm:max-w-[320px] md:max-w-lg">
+                    <!-- Slide 1 Content -->
+                    <article class="slide-text" data-slide="0">
+                        <span
+                            class="bg-yellow-300 text-black px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-md">
+                            Luxury Travel Redefined
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mt-3 sm:mt-5 leading-tight">
+                            Your Passport to <br> Global Glamour
+                        </h1>
+                        <p class="text-xs sm:text-sm text-gray-800 mt-2 sm:mt-4">
+                            Personalized Travel Experiences <br>
+                            Expert Destination Knowledge <br>
+                            Exceptional Customer Service
+                        </p>
+                    </article>
+                
+                    <!-- Slide 2 Content -->
+                    <article class="slide-text hidden" data-slide="1">
+                        <span
+                            class="bg-blue-300 text-black px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-md">
+                            Adventure Awaits
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mt-3 sm:mt-5 leading-tight">
+                            Discover Hidden <br> Treasures
+                        </h1>
+                        <p class="text-xs sm:text-sm text-gray-800 mt-2 sm:mt-4">
+                            Unforgettable Adventures <br>
+                            Authentic Local Experiences <br>
+                            Sustainable Travel Options
+                        </p>
+                    </article>
+                
+                    <!-- Slide 3 Content -->
+                    <article class="slide-text hidden" data-slide="2">
+                        <span
+                            class="bg-green-300 text-black px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-md">
+                            Family Getaways
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mt-3 sm:mt-5 leading-tight">
+                            Create Memories <br> That Last Forever
+                        </h1>
+                        <p class="text-xs sm:text-sm text-gray-800 mt-2 sm:mt-4">
+                            Kid-Friendly Activities <br>
+                            Multi-Generation Packages <br>
+                            Hassle-Free Planning
+                        </p>
+                    </article>
+                
+                    <!-- App Store & Play Store Buttons -->
+                    <aside class="flex space-x-2 sm:space-x-3 mt-4 sm:mt-6">
+                        <a href="#" class="bg-black rounded flex items-center">
+                            <img src="assets/Link → googleplay.png.png"
+                                class="h-8 sm:h-10 md:h-10 max-w-24 sm:max-w-32 md:max-w-36 hover-effect" alt="Google Play">
+                        </a>
+                        <a href="#" class="bg-black rounded flex items-center">
+                            <img src="assets/Link → appstore.png.png" class="h-8 sm:h-10 md:h-10 hover-effect" alt="App Store">
+                        </a>
+                    </aside>
+                </article>
+        
+                <!-- Search Box -->
+                <aside class="absolute top-[350px] sm:top-8 md:top-12 left-4 right-4 sm:left-auto sm:right-8 md:right-8 bg-white p-3 sm:p-4 md:p-6 rounded-lg shadow-xl w-auto sm:w-[340px] md:w-[380px] lg:w-[420px]">
+                    <!-- Tab Navigation -->
+                    <nav id="tab-navigation" class="flex overflow-x-auto text-gray-700 text-xs sm:text-sm font-medium mb-3 sm:mb-4 no-scrollbar">
+                        <button id="tours" class="px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black text-gray-300 whitespace-nowrap">Tours</button>
+                        <button id="hotels" class="px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black text-gray-300 whitespace-nowrap">Hotels</button>
+                        <button id="tickets" class="px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black text-gray-300 whitespace-nowrap">Tickets</button>
+                        <button id="rental" class="px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black text-gray-300 whitespace-nowrap">Rental</button>
+                        <button id="activities" class="px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black text-gray-300 whitespace-nowrap">Activities</button>
+                    </nav>
+        
+                    <!-- Search Inputs -->
+                    <form class="bg-gray-200 p-2 sm:p-3 md:p-4 rounded-lg">
+                        <fieldset class="grid grid-cols-2 gap-2 sm:gap-4">
+                            <!-- Location -->
+                            <label class="text-xs sm:text-sm text-gray-600 font-semibold relative">
+                                Location
+                                <div class="flex items-center bg-white px-1 py-1.5 sm:py-2 rounded border border-gray-300">
+                                    <img src="assets/location.png" alt="location" class="h-3 sm:h-4 opacity-50">
+                                    <input id="location-search" type="text" placeholder="Search destinations..."
+                                        class="w-full border-none bg-transparent text-black text-xs sm:text-sm font-semibold focus:outline-none ml-1">
+                                </div>
+                                <!-- Search Results Dropdown -->
+                                <div id="search-results"
+                                    class="absolute left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto hidden"></div>
+                            </label>
+        
+                            <!-- Check In -->
+                            <label class="text-xs sm:text-sm text-gray-600 font-semibold">
+                                Check In
+                                <div class="flex items-center bg-white px-1 py-1.5 sm:py-2 md:px-0 rounded border border-gray-300">
+                                    <img src="assets/time.png" alt="checkin" class="pl-1.5 h-3 sm:h-4 opacity-50">
+                                    <input type="date" value="2024-01-02" class="w-full text-black text-xs sm:text-sm font-semibold border-none bg-transparent focus:outline-none ml-1">
+                                </div>
+                            </label>
+        
+                            <!-- Check Out -->
+                            <label class="text-xs sm:text-sm text-gray-600 font-semibold">
+                                Check Out
+                                <div class="flex items-center bg-white px-1 py-1.5 sm:py-2 md:px-0 rounded border border-gray-300">
+                                    <img src="assets/time.png" alt="time" class="pl-1.5 h-3 sm:h-4 opacity-50">
+                                    <input type="date" value="2024-01-02" class="w-full text-black text-xs sm:text-sm font-semibold border-none bg-transparent focus:outline-none ml-1">
+                                </div>
+                            </label>
+        
+                            <!-- Guests -->
+                            <label class="text-xs sm:text-sm text-gray-600 font-semibold">
+                                Guest
+                                <div class="flex items-center bg-white px-1 py-1.5 sm:py-2 rounded border border-gray-300">
+                                    <img src="assets/user.png" alt="user" class="h-3 sm:h-3.5 opacity-50">
+                                    <select class="w-full border-none bg-transparent text-black text-xs sm:text-sm font-semibold focus:outline-none ml-1">
+                                        <option>2 adults, 2 children</option>
+                                        <option>2 adults, 1 children</option>
+                                    </select>
+                                </div>
+                            </label>
+                        </fieldset>
+                    </form>
+        
+                    <article class="flex gap-4 sm:gap-8 md:gap-16 mt-2 sm:mt-4">
+                        <!-- Search Button -->
+                        <button id="search-button"
+                            class="w-2/5 bg-black text-white py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center shadow-md hover:bg-gray-800">
+                            <img src="assets/search.png" alt="search-btn" class="h-4 sm:h-5 invert mr-1">
+                            Search
+                        </button>
+        
+                        <!-- Help Text -->
+                        <p class="text-gray-500 text-xs sm:text-sm mt-2 sm:mt-3 text-center flex items-center cursor-pointer hover:text-black">
+                            <img src="assets/user.png" alt="user" class="h-3 sm:h-4 mr-1 opacity-50">
+                            Need some help?
+                        </p>
+                    </article>
+                </aside>
+            </article>
+        </section>
+
+
+        <!-- Search Results Section (initially hidden) -->
+        <section id="search-results-section" class="hidden py-12 px-4 sm:px-6 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <header class="mb-8 text-center">
+                    <h2 class="text-2xl sm:text-3xl font-bold">Search Results</h2>
+                    <p id="search-summary" class="text-gray-600 mt-2">Showing destinations matching your search</p>
+                </header>
+
+                <!-- Results Container -->
+                <div id="results-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results-message" class="hidden text-center py-12">
+                    <img src="assets/no-results.png" alt="No results" class="w-24 h-24 mx-auto opacity-50">
+                    <p class="text-xl font-semibold mt-4">No destinations found</p>
+                    <p class="text-gray-500 mt-2">Try adjusting your search criteria</p>
+                    <button id="clear-search" class="mt-4 bg-black text-white px-6 py-2 rounded-full text-sm hover:bg-gray-800">
+                        Clear Search
+                    </button>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loading-results" class="hidden text-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black mx-auto"></div>
+                    <p class="text-gray-600 mt-4">Finding the perfect destinations...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destination Section -->
+        <section class="py-16 bg-white">
+            <section class="max-w-6xl mx-auto text-center px-10">
+                <h2 class="text-3xl font-bold">Popular Destinations</h2>
+                <p class="text-gray-500 text-lg mt-2">Navigate the Globe with Confidence</p>
+        
+                <!-- Carousel Container -->
+                <nav class="relative mt-8 flex items-center overflow-hidden">
+                    <!-- Left Arrow -->
+                    <button id="leftArrow" class="absolute left-0 z-10 bg-gray-200 hover:bg-gray-300 rounded-full p-2">
+                        <img src="assets/left-arrow.png" alt="left-arrow" class="h-4">
+                    </button>
+        
+                    <!-- Popular Places Items -->
+                    <section id="popularPlacesContainer" class="flex transition-transform duration-300 ease-in-out w-full no-scrollbar">
+                        <!-- Place cards will be dynamically inserted here -->
+                    </section>
+        
+                    <!-- Right Arrow -->
+                    <button id="rightArrow" class="absolute right-0 z-10 bg-gray-200 hover:bg-gray-300 rounded-full p-2">
+                        <img src="assets/right-arrow.png" alt="right-arrow" class="h-4">
+                    </button>
+                </nav>
+            </section>
+        </section>
+        
+
+
+        <!-- Recomended Section -->
+        <section class="py-16 bg-white">
+            <section class="max-w-6xl mx-auto text-center px-14">
+                <!-- Section Title -->
+                <h2 class="text-3xl font-bold">Recommended For You</h2>
+                <p class="text-gray-500 text-lg mt-2">The best booking platform you can trust</p>
+        
+                <!-- Grid Layout for Tour Cards -->
+                <section id="tourGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                    <!-- Tour cards will be dynamically inserted here -->
+                </section>
+        
+                <!-- Load More Button -->
+                <button id="loadMoreBtn" class="mt-10 bg-black text-white text-sm font-semibold px-6 py-3 rounded-full flex items-center mx-auto space-x-2">
+                    <img src="assets/Load.png" alt="Load-more"> <span>Load More Tours</span>
+                </button>
+            </section>
+        </section>
+
+
+        <section class="py-10 px-4 sm:px-10 md:px-10">
+            <article class="h-auto md:h-48 max-w-6xl mx-auto bg-black text-white rounded-lg py-12 sm:py-16 md:py-24 px-6 sm:px-16 md:px-48 flex flex-col md:flex-row justify-around items-center relative overflow-hidden"
+                 style="background: url('assets/background.png') no-repeat center center; background-size: cover;">
+                
+                <!-- Stat Items (Now Responsive) -->
+                <article class="relative z-10 text-center mb-6 md:mb-0 md:pr-4">
+                    <p class="text-3xl sm:text-3xl font-bold">168k</p>
+                    <p class="text-sm text-gray-400">Happy Clients</p>
+                </article>
+        
+                <article class="relative z-10 text-center md:border-l border-gray-600 pl-0 md:pl-6 mb-6 md:mb-0 md:pr-4">
+                    <p class="text-3xl sm:text-3xl font-bold">+45k</p>
+                    <p class="text-sm text-gray-400">Destinations</p>
+                </article>
+        
+                <article class="relative z-10 text-center md:border-l border-gray-600 pl-0 md:pl-6 mb-6 md:mb-0 md:pr-4">
+                    <p class="text-3xl sm:text-3xl font-bold">+49</p>
+                    <p class="text-sm text-gray-400">Global Branch</p>
+                </article>
+        
+                <article class="relative z-10 text-center md:border-l border-gray-600 pl-0 md:pl-6">
+                    <p class="text-3xl sm:text-3xl font-bold">+26k</p>
+                    <p class="text-sm text-gray-400">Campaigns</p>
+                </article>
+            </article>
+        </section>
+
+
+        <!-- Flight Offer Section -->
+        <section class="p-6 sm:p-8 md:p-12">
+            <!-- Header Section -->
+            <header class="max-w-5xl mx-auto text-center">
+                <h1 class="text-3xl font-bold">Flight Offer Deals</h1>
+                <p class="text-gray-500 mt-2">Competitive fares for your route-specific searches.</p>
+            </header>
+        
+            <!-- Flight Cards Grid -->
+            <section id="flightGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto auto-rows-fr">
+                <!-- Flight cards will be dynamically inserted here -->
+            </section>
+        
+            <!-- Navigation Arrows -->
+            <nav class="flex justify-center items-center p-8">
+                <div class="flex gap-2">
+                    <!-- Left Button -->
+                    <button id="prevBtn" class="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-gray-300 transition">
+                        <img src="assets/left-arrow.png" alt="left-arrow" class="h-4 sm:h-5">
+                    </button>
+                    <!-- Right Button -->
+                    <button id="nextBtn" class="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-gray-300 transition">
+                        <img src="assets/right-arrow.png" alt="right-arrow" class="h-4 sm:h-5">
+                    </button>
+                </div>
+            </nav>
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="py-6 px-6 sm:px-12 md:px-16 lg:px-24 bg-white flex justify-center">
+            <section class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+                
+                <!-- First Column (24/7 Support) -->
+                <article class="hover-effect relative bg-custom-blue text-black p-4 rounded-lg shadow-lg w-full sm:w-60 md:w-full lg:w-60 xl:w-72 mx-auto lg:ml-6 xl:ml-16 mt-4 md:mt-8"
+                     style="background-image: url('assets/Background (1).png'); background-size: cover; background-position: bottom left;">
+                    <h3 class="text-lg sm:text-xl font-bold">24/7 Support</h3>
+                    <p class="text-xs sm:text-sm mt-2">We are here to help, before, during, and even after your trip.</p>
+                    <figure class="mt-4 grid grid-cols-1 gap-2">
+                        <img src="assets/support.png.png" alt="Support Image" class="hover-effect rounded-lg h-32 sm:h-36 w-40 sm:w-48">
+                        <img src="assets/support2.png.png" alt="Support Image" class="hover-effect rounded-lg h-32 sm:h-36 w-40 sm:w-48 mt-2">
+                    </figure>
+                </article>
+        
+                <!-- Second Column (Best Price + Explore) -->
+                <section class="flex flex-col gap-4 pt-4 md:pt-8 w-full">
+                    <!-- Best Price Card -->
+                    <article class="hover-effect relative bg-custom-green p-4 sm:p-6 rounded-lg shadow-lg h-44 sm:h-52"
+                         style="background-image: url('assets/Background (2).png'); background-size: cover; background-position: top right;">
+                        <h3 class="text-lg sm:text-xl font-bold">Best Price</h3>
+                        <p class="text-xs sm:text-sm mt-2 mb-2">Price match within 48 hours of order confirmation</p>
+                        <button class="flex items-center text-xs sm:text-sm font-semibold text-black bg-custom-yellow hover:bg-yellow-400 px-3 sm:px-4 py-3 sm:py-4 rounded-full">
+                            View More
+                            <img src="assets/right-arrow.png" alt="right-arrow" class="h-3 sm:h-4 ml-2">
+                        </button>
+                    </article>
+        
+                    <!-- Explore & Book Card -->
+                    <article class="hover-effect relative bg-custom-teal p-4 sm:p-6 rounded-lg shadow-lg h-44 sm:h-52"
+                         style="background-image: url('assets/Background (3).png'); background-size: cover; background-position: bottom right;">
+                        <h3 class="text-lg sm:text-xl font-bold">Save your time!</h3>
+                        <p class="text-xs sm:text-sm mt-2 mb-2">Explore, Book, Soar: Your Journey Awaits</p>
+                        <button class="flex items-center text-xs sm:text-sm font-semibold text-black bg-custom-yellow hover:bg-yellow-400 px-3 sm:px-4 py-3 sm:py-4 rounded-full">
+                            View More
+                            <img src="assets/right-arrow.png" alt="right-arrow" class="h-3 sm:h-4 ml-2">
+                        </button>
+                    </article>
+                </section>
+        
+                <!-- Third Column (Travelers & Offer) -->
+                <aside class="hover-effect relative bg-custom-cream p-4 sm:p-6 rounded-lg shadow-lg flex justify-center items-center w-full">
+                    <!-- Price Tag (Behind Image) -->
+                    <div class="z-0 h-20 sm:h-24 w-20 sm:w-24 absolute bottom-16 sm:bottom-20 left-4 bg-custom-yellow text-black p-2 sm:p-3 rounded-full text-[10px] sm:text-xs font-bold text-center">
+                        SAVE 399 <br> <b class="text-base sm:text-lg">$899</b><br> <u>BOOK NOW</u>
+                    </div>
+        
+                    <!-- Traveler Image (In Front of Price Tag) -->
+                    <figure class="relative z-10">
+                        <img src="assets/img-travel.png.png" alt="Travelers" class="w-48 sm:w-64 md:w-80">
+                    </figure>
+                </aside>  
+            </section>
+        </section>
+
+
+        <section class="py-20 px-6 sm:px-12 lg:px-48 my-10 bg-pink-50 flex justify-center relative">
+            <!-- Bottom Right Background Image -->
+            <img src="assets/section.png" alt="Decorative Image" 
+                 class="absolute bottom-8 right-4 w-32 sm:w-36 z-0">
+        
+            <section class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+                <!-- Left Side (Image) -->
+                <figure class="flex justify-center">
+                    <img src="assets/img-love.png.png" alt="Customer Experience" 
+                         class="w-[280px] sm:w-[320px] md:w-full max-w-md mx-auto">
+                </figure>
+        
+                <!-- Right Side (Text & Features) -->
+                <article class="text-center md:text-left">
+                    <header>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">You will love us</h2>
+                        <p class="text-gray-500 mt-2">Because more than 268 other customers have loved us too</p>
+                    </header>
+        
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                        <!-- Feature 1 -->
+                        <article class="flex items-start space-x-3">
+                            <img src="assets/security.png" alt="Security Assurance" 
+                                 class="w-8 sm:w-10 rounded-md mt-1">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Security Assurance</h3>
+                                <p class="text-xs sm:text-sm text-gray-500">Demonstrates commitment to user data security through encryption and secure payment practices</p>
+                                <a href="#" class="text-xs sm:text-sm text-black font-semibold mt-1 inline-block">Learn More →</a>
+                            </div>
+                        </article>
+        
+                        <!-- Feature 2 -->
+                        <article class="flex items-start space-x-3">
+                            <img src="assets/customer.png" alt="Customer Support" 
+                                 class="w-8 sm:w-10 rounded-md mt-1">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Customer Support</h3>
+                                <p class="text-xs sm:text-sm text-gray-500">Our expert team is always available to help you</p>
+                                <a href="#" class="text-xs sm:text-sm text-black font-semibold mt-1 inline-block">Learn More →</a>
+                            </div>
+                        </article>
+        
+                        <!-- Feature 3 -->
+                        <article class="flex items-start space-x-3">
+                            <img src="assets/transparent.png" alt="Transparent Policies" 
+                                 class="w-8 sm:w-10 rounded-md mt-1">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Transparent Policies</h3>
+                                <p class="text-xs sm:text-sm text-gray-500">We ensure complete transparency in our services</p>
+                                <a href="#" class="text-xs sm:text-sm text-black font-semibold mt-1 inline-block">Learn More →</a>
+                            </div>
+                        </article>
+        
+                        <!-- Feature 4 -->
+                        <article class="flex items-start space-x-3">
+                            <img src="assets/reputable.png" alt="Reputable Affiliations" 
+                                 class="w-8 sm:w-10 rounded-md mt-1">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Reputable Affiliations</h3>
+                                <p class="text-xs sm:text-sm text-gray-500">We collaborate with top-rated brands and agencies</p>
+                                <a href="#" class="text-xs sm:text-sm text-black font-semibold mt-1 inline-block">Learn More →</a>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+            </section>
+        </section>
+        
+
+        <!-- Popular Destination Section -->
+        <section class="py-12 px-4 sm:px-8 md:px-16 lg:px-32 bg-white">
+            <section class="max-w-6xl mx-auto text-center">
+                <!-- Section Title -->
+                <header>
+                    <h2 class="text-2xl sm:text-3xl font-bold">Popular Destinations</h2>
+                    <p class="text-gray-500 text-sm sm:text-md mt-2">Favorite locations based on customer reviews</p>
+                </header>
+        
+                <!-- Filter Buttons with Dropdown -->
+                <nav class="z-20 flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-6 text-xs sm:text-xs relative" aria-label="Filter options"> 
+                    <div>
+                        <label for="categoriesSelect" class="sr-only">Select Category</label>
+                        <select id="categoriesSelect" class="px-3 sm:px-3 py-2 bg-gray-200 text-gray-700 rounded-3xl">
+                            <option value="Categories">Categories</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Budget">Budget</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="durationSelect" class="sr-only">Select Duration</label>
+                        <select id="durationSelect" class="px-3 sm:px-3 py-2 bg-gray-200 text-gray-700 rounded-3xl">
+                            <option value="Duration">Duration</option>
+                            <option value="1-3 Days">1-3 Days</option>
+                            <option value="4-7 Days">4-7 Days</option>
+                            <option value="8+ Days">8+ Days</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="reviewSelect" class="sr-only">Select Review/Rating</label>
+                        <select id="reviewSelect" class="px-3 sm:px-3 py-2 bg-gray-200 text-gray-700 rounded-3xl">
+                            <option value="Review/Rating">Review/Rating</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="priceSelect" class="sr-only">Select Price Range</label>
+                        <select id="priceSelect" class="px-3 sm:px-3 py-2 translate-y-3 md:translate-y-0 lg:translate-y-0 bg-gray-200 text-gray-700 rounded-3xl">
+                            <option value="Price Range">Price Range</option>
+                            <option value="$ - Budget">$ - Budget</option>
+                            <option value="$$ - Mid-range">$$ - Mid-range</option>
+                            <option value="$$$ - Luxury">$$$ - Luxury</option>
+                        </select>
+                    </div>
+                </nav>
+
+        
+                <!-- Featured Locations Grid -->
+                <section id="featuredLocationsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+                    <!-- Location cards will be dynamically inserted here -->
+                </section>
+            </section>
+        </section>
+        
+        
+        
+   
+        <!-- Video Gallery Section -->
+        <section class="py-16 px-4 sm:px-12 md:px-24 lg:px-32 bg-black relative">
+            <section class="max-w-6xl mx-auto text-center relative z-10">
+                <!-- Section Title -->
+                <header class="cursor-pointer inline-block bg-yellow-300 hover:bg-yellow-400 text-black text-xs font-semibold px-4 py-2 rounded-full mb-4">
+                    Video Gallery
+                </header>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">
+                    Journey to the Most <br class="hidden sm:block"> Beautiful Places on Earth
+                </h2>
+        
+                <!-- Video Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 place-items-center">
+                    <!-- First Column: One Large Video -->
+                    <div class="relative w-full h-[280px] sm:h-full lg:h-[450px] col-span-1 sm:col-span-2 lg:col-span-1 hover-effect video-container">
+                        <div class="video-poster absolute inset-0 bg-cover bg-center" style="background-image: url('assets/video.png.png');"></div>
+                        <video class="rounded-xl w-full h-full object-cover" src="https://videos.pexels.com/video-files/4010511/4010511-hd_1920_1080_25fps.mp4" controls loop></video>
+                        <button class="play-button absolute inset-0 flex items-center justify-center">
+                            <img src="assets/Link.png" alt="Play Button" class="w-12">
+                        </button>
+                    </div>
+        
+                    <!-- Second Column: Two Smaller Videos -->
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="relative w-full h-[180px] sm:h-[210px] lg:h-[210px] hover-effect video-container">
+                            <div class="video-poster absolute inset-0 bg-cover bg-center" style="background-image: url('assets/video2.png.png');"></div>
+                            <video class="rounded-xl w-full h-full object-cover" src="https://videos.pexels.com/video-files/4205697/4205697-uhd_2560_1440_30fps.mp4" controls loop></video>
+                            <button class="play-button absolute inset-0 flex items-center justify-center">
+                                <img src="assets/Link.png" alt="Play Button" class="w-12">
+                            </button>
+                        </div>
+                        <div class="relative w-full h-[180px] sm:h-[210px] lg:h-[210px] hover-effect video-container">
+                            <div class="video-poster absolute inset-0 bg-cover bg-center" style="background-image: url('assets/video3.png.png');"></div>
+                            <video class="rounded-xl w-full h-full object-cover" src="https://videos.pexels.com/video-files/5700949/5700949-uhd_2560_1440_25fps.mp4" controls loop></video>
+                            <button class="play-button absolute inset-0 flex items-center justify-center">
+                                <img src="assets/Link.png" alt="Play Button" class="w-12">
+                            </button>
+                        </div>
+                    </div>
+        
+                    <!-- Third Column: Two Smaller Videos -->
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="relative w-full h-[180px] sm:h-[210px] lg:h-[210px] hover-effect video-container">
+                            <div class="video-poster absolute inset-0 bg-cover bg-center" style="background-image: url('assets/video4.png.png');"></div>
+                            <video class="rounded-xl w-full h-full object-cover" src="https://videos.pexels.com/video-files/3173313/3173313-uhd_2560_1440_30fps.mp4" controls loop></video>
+                            <button class="play-button absolute inset-0 flex items-center justify-center">
+                                <img src="assets/Link.png" alt="Play Button" class="w-12">
+                            </button>
+                        </div>
+                        <div class="relative w-full h-[180px] sm:h-[210px] lg:h-[210px] hover-effect video-container">
+                            <div class="video-poster absolute inset-0 bg-cover bg-center" style="background-image: url('assets/video5.png.png');"></div>
+                            <video class="rounded-xl w-full h-full object-cover" src="https://videos.pexels.com/video-files/4763869/4763869-uhd_2732_1440_24fps.mp4" controls loop></video>
+                            <button class="play-button absolute inset-0 flex items-center justify-center">
+                                <img src="assets/Link.png" alt="Play Button" class="w-12">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Load More Button (Centered) -->
+                <footer class="mt-10 flex justify-center">
+                    <button class="bg-yellow-300 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full flex items-center space-x-2">
+                        Load More Tours
+                    </button>
+                </footer>
+            </section>
+        </section>
+        
+
+
+        <!-- FAQ Section -->
+        <section class="py-16 px-6 sm:px-12 md:px-24 bg-white relative">
+            <!-- Background Images -->
+            <img src="assets/Background (5).png" class="absolute top-40 right-0 w-60 sm:w-72 md:w-80 z-0" alt="Background Top">
+            <img src="assets/Section (2).png" class="absolute bottom-0 left-0 w-64 sm:w-80 md:w-96 z-0" alt="Background Bottom">
+        
+            <section class="max-w-4xl mx-auto text-center relative z-10">
+                <!-- Section Title -->
+                <header>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                    <p class="text-gray-500 text-sm sm:text-md mt-2">You need to come at least once in your life</p>
+                </header>
+        
+                <!-- Category Filters -->
+                <nav class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 text-xs sm:text-sm">
+                    <button data-tab="tours" class="tab-button activated px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200 activated">
+                        <img src="assets/Tours.png" alt="Tours" class="h-4 pr-1.5"> Tours Booking
+                    </button>
+                    <button data-tab="activities" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Activities.png" alt="Activity" class="h-4 pr-1.5"> Activities
+                    </button>
+                    <button data-tab="destinations" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Destinations.png" alt="Destination" class="h-4 pr-1.5"> Destinations
+                    </button>
+                    <button data-tab="hotels" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Hotels.png" alt="Hotels" class="h-4 pr-1.5"> Hotels Booking
+                    </button>
+                    <button data-tab="rentalCar" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Car.png" alt="Car" class="h-4 pr-1.5"> Rental Car
+                    </button>
+                    <button data-tab="property" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Property.png" alt="Properties" class="h-4 pr-1.5"> Property
+                    </button>
+                    <button data-tab="tickets" class="tab-button px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center shadow-sm hover:bg-gray-200">
+                        <img src="assets/Tickets.png" alt="Tickets" class="h-4 pr-1.5"> Tickets Booking
+                    </button>
+                </nav>
+        
+                <!-- FAQ List for Tours Booking -->
+                <section data-content="tours" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20">
+                    <!-- FAQ items for Tours Booking -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 bg-gray-100">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How do I make a reservation on your website?
+                                </h3>
+                            </div>
+                            <button class="bg-black p-1 sm:p-1.5"><img src="assets/cross.png" alt="cross" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50">
+                            Provide a step-by-step guide on how users can browse and book travel services on your platform.
+                            Include information on searching for destinations, selecting dates, choosing accommodation, 
+                            and completing the booking process. Mention any special features or tools that can help users 
+                            find the best deals.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What documents do I need for my trip, and how do I obtain them?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">03</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    If I need to modify or cancel my reservation, what are the policies?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">04</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What types of credit/debit cards or digital wallets are accepted?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">05</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What are the working hours, and expected response times?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                    </article>
+                </section>
+        
+                <!-- FAQ List for Activities -->
+                <section data-content="activities" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Activities -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What activities can I book?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            You can book a variety of activities including guided tours, adventure sports, cultural experiences, and more.
+                            Our platform provides detailed information about each activity, including schedules, pricing, and customer reviews.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    Are there any age restrictions for specific activities?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            Some activities have age restrictions for safety reasons. These restrictions will be clearly mentioned in the activity details. Please review the age requirements before booking.
+                        </p>
+                    </article>
+                </section>
+        
+                <!-- FAQ List for Destinations -->
+                <section data-content="destinations" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Destinations -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What are the top destinations to visit?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            Some of the top destinations to visit include Paris, Tokyo, New York City, Rome, and Bali. Each destination offers unique attractions and experiences for travelers.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How do I find information about the best time to visit a destination?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            We provide detailed information about the best times to visit each destination, including information on weather, peak seasons, and special events. Check each destination's page for more information.
+                        </p>
+                    </article>
+                </section>
+        
+                <!-- FAQ List for Hotels Booking -->
+                <section data-content="hotels" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Hotels Booking -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How to book a hotel room on your platform?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            To book a hotel room, simply search for your destination, select your dates, and browse through the available options. You can filter results by price, star rating, amenities, and more. 
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    Can I make changes to my hotel booking?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            Yes, you can modify your hotel booking directly through our platform. Changes are subject to hotel policies and may incur additional charges. Please review the specific hotel’s modification policy for details.
+                        </p>
+                    </article>
+                </section>
+        
+                <!-- FAQ List for Rental Car -->
+                <section data-content="rentalCar" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Rental Car -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What documents are needed to rent a car?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            You will need a valid driver's license, a credit card in your name, and in some cases, an additional form of identification such as a passport. Please check the specific requirements for your car rental provider.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How do I make changes to my car rental reservation?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5"><img src="assets/add.png" alt="add" class="h-3 sm:h-3.5"></button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            To modify your car rental reservation, go to the 'My Reservations' section on our platform, select the reservation you wish to modify, and follow the prompts. Changes are subject to the rental provider’s policies and availability.
+                        </p>
+                    </article>
+                </section>
+        
+                <!-- FAQ List for Property -->
+                <section data-content="property" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Property -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How can I list my property on your platform?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5">
+                                <img src="assets/add.png" alt="add" class="h-3 sm:h-3.5">
+                            </button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            To list your property, create an account and follow the listing steps which include providing property details, uploading high-quality photos, setting pricing, and defining availability. Once approved, your property will be visible to millions of travelers.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    What fees are associated with listing a property?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5">
+                                <img src="assets/add.png" alt="add" class="h-3 sm:h-3.5">
+                            </button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            We charge a service fee for each booking. The specific amount varies depending on the location and type of property. You can view the fee details in your property dashboard once your property is listed.
+                        </p>
+                    </article>
+                </section>
+
+                <!-- FAQ List for Tickets Booking -->
+                <section data-content="tickets" class="tab-content mt-10 bg-white shadow-lg rounded-lg relative z-20 hidden">
+                    <!-- FAQ items for Tickets Booking -->
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">01</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    Can I purchase tickets for events through your platform?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5">
+                                <img src="assets/add.png" alt="add" class="h-3 sm:h-3.5">
+                            </button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            Yes, you can purchase tickets for a variety of events including concerts, sports events, theatre shows, and more. Browse through our event listings, select your preferred event, and follow the booking steps.
+                        </p>
+                    </article>
+                    <article class="border-b">
+                        <header class="flex justify-between items-center p-4 sm:p-5 py-5 sm:py-6 hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <span class="text-xl sm:text-2xl font-bold text-gray-900">02</span>
+                                <h3 class="font-semibold text-gray-900 text-sm sm:text-md">
+                                    How do I receive my event tickets?
+                                </h3>
+                            </div>
+                            <button class="bg-gray-200 text-gray-700 p-1 sm:p-1.5">
+                                <img src="assets/add.png" alt="add" class="h-3 sm:h-3.5">
+                            </button>
+                        </header>
+                        <p class="p-4 sm:p-5 text-xs sm:text-sm text-gray-600 bg-gray-50 hidden">
+                            Once you purchase tickets, they will be sent to your email address. You can also access and download your tickets from the 'My Tickets' section on our platform. We recommend printing or saving a digital copy for easy access at the event.
+                        </p>
+                    </article>
+                </section>
+                </section>
+        </section>
+        
+ 
+        <!-- News Section -->
+        <section id="blog-section" class="py-16 px-6 sm:px-12 md:px-40 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <!-- Header Section -->
+                <header class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">News, Tips & Guides</h2>
+                        <p class="text-gray-500 mt-2 text-sm">Favorite destinations based on customer reviews</p>
+                    </div>
+                    <a href="#" id="view-more-btn" class="bg-black text-white hover:scale-105 px-4 py-2 rounded-full flex items-center space-x-2 text-sm mt-4 md:mt-0">
+                        <span>View More</span>
+                        <img src="assets/right-arrow.png" alt="right-arrow" class="h-4 ml-1 filter invert">
+                    </a>
+                </header>
+
+                <!-- Blog Articles Container -->
+                <div id="blog-posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+         
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer class="relative bg-white py-10 border-t border-gray-200 md:px-2">
+        <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
+            <!-- Company Info -->
+            <article>
+                <div class="flex items-center space-x-1">
+                    <img src="assets/travila-logo1.png" alt="Travila Logo" class="h-5">
+                    <h2 class="text-lg font-semibold text-gray-900">Travila</h2>
+                </div>
+                <ul class="mt-4 text-sm text-gray-600 space-y-2">
+                    <li class="flex items-start space-x-2">
+                        <img src="assets/location.png" alt="location" class="h-3.5 opacity-50 mt-1">
+                        <span>4517 Washington Ave. Manchester, Kentucky <br>39495</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <img src="assets/clock.png" alt="clock" class="h-3.5 opacity-50 mt-1">
+                        <span>Hours: 8:00 - 17:00, Mon - Sat</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <img src="assets/email.png" alt="email" class="h-3.5 opacity-50 mt-1">
+                        <span>support@travila.com</span>
+                    </li>
+                </ul>
+            </article>
+    
+            <!-- Services Section -->
+            <article>
+                <h3 class="text-lg font-semibold text-gray-900">Services</h3>
+                <ul class="mt-4 text-sm text-gray-600 grid grid-cols-2 gap-2">
+                    <li><a href="#" class="hover:text-gray-900">Tour Guide</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Ticket Booking</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Tour Booking</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Rental Services</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Hotel Booking</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Travel Plane</a></li>
+                </ul>
+            </article>
+    
+            <!-- Newsletter Section -->
+            <article>
+                <h3 class="text-lg font-semibold text-gray-900">Subscribe For Newsletter</h3>
+                <form id="newsletterForm" class="mt-4">
+                    <div class="flex items-center bg-white border border-gray-300 rounded-full overflow-hidden">
+                        <input type="email" id="emailInput" placeholder="Enter your email" class="flex-1 outline-none text-sm px-4 bg-transparent md:w-1/2 lg:w-full" required>
+                        <button type="submit" class="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-full">Subscribe</button>
+                    </div>
+                    <p id="errorMessage" class="text-xs text-red-500 mt-2 hidden"></p>
+                    <p class="text-xs text-gray-500 mt-2">No ads. No trails. No commitments</p>
+                </form>
+            </article>
+        </section>
+    
+        <!-- Bottom Section -->
+        <section class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16 px-6 text-center md:text-left">
+            <!-- Social Media Section -->
+            <article>
+                <p class="font-bold text-md text-gray-900">Follow Us</p>
+                <div class="mt-2 flex justify-center md:justify-start space-x-3">
+                    <a href="#" class="bg-gray-200 p-2 rounded-full hover:bg-gray-300">
+                        <img src="assets/instagram.png" class="h-5 hover-effect" alt="Instagram">
+                    </a>
+                    <a href="#" class="bg-gray-200 p-2 rounded-full hover:bg-gray-300">
+                        <img src="assets/facebook.png" class="h-5 hover-effect" alt="Facebook">
+                    </a>
+                    <a href="#" class="bg-gray-200 p-2 rounded-full hover:bg-gray-300">
+                        <img src="assets/twitter.png" class="h-5 hover-effect" alt="Twitter">
+                    </a>
+                    <a href="#" class="bg-gray-200 p-2 rounded-full hover:bg-gray-300">
+                        <img src="assets/youtube.png" class="h-5 hover-effect" alt="YouTube">
+                    </a>
+                </div>
+            </article>
+    
+            <!-- Contact Info Section -->
+            <article>
+                <p class="font-bold text-md text-gray-900"><span>📞</span> Need Help? Call us</p>
+                <div class="flex justify-center md:justify-start items-center space-x-2 mt-2">
+                    <p class="text-yellow-500 font-bold text-lg">1-800-222-8888</p>
+                </div>
+            </article>
+    
+            <!-- Payment Methods Section -->
+            <article>
+                <p class="font-bold text-md text-gray-900">Payments</p>
+                <div class="mt-2 flex justify-center md:justify-start space-x-2">
+                    <img src="assets/paypal.png" class="hover-effect h-7 border p-1" alt="Paypal">
+                    <img src="assets/stripe.png" class="hover-effect h-7 border p-1" alt="Stripe">
+                    <img src="assets/mastercard.png" class="hover-effect h-7 border p-1" alt="Mastercard">
+                    <img src="assets/skrill.png" class="hover-effect h-7 border p-1" alt="Skrill">
+                </div>
+            </article>
+        </section>
+    
+        <!-- Footer Bottom -->
+        <article class="bg-[url(assets/footer-bg.png)] bg-cover h-40 max-w-6xl mx-auto mt-6 border-t border-gray-300 pt-4 text-center text-gray-500 text-sm flex flex-col sm:flex-row justify-between">
+            <p>© 2024 Travila Inc. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-3 sm:mt-0">
+                <a href="#" class="hover:text-gray-900">Terms</a>
+                <a href="#" class="hover:text-gray-900">Privacy policy</a>
+                <a href="#" class="hover:text-gray-900">Legal notice</a>
+                <a href="#" class="hover:text-gray-900">Accessibility</a>
+            </div>
+        </article>
+    
+        <!-- Floating Scroll to Top Button -->
+        <!-- <a href="#" class="absolute right-4 bottom-8 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700">
+            <img src="assets/arrow.png" alt="arrow" class="h-3 filter invert">
+        </a> -->
+    </footer>
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top"
+        class="fixed bottom-16 right-6 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+
+    <!-- Chat Button -->
+    <button aria-label="chat" id="chat-button" class="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-3 shadow-lg z-50 hover:bg-blue-600 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+    </button>
+    
+    <div id="chat-interface" class="fixed bottom-16 right-4 w-80 bg-white rounded-lg shadow-2xl z-50 hidden overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-4 flex justify-between items-center">
+            <h3 class="text-lg font-semibold text-white">Travila Assistant</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-96 overflow-y-auto p-4 bg-gray-50">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="p-4 bg-white border-t">
+            <div class="relative">
+                <input type="text" id="user-input" placeholder="Ask about travel..." class="w-full px-4 py-2 pr-12 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <button id="send-message" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dist/app.js"></script>
+
+
+    <script src="./dist/tours.js"></script>
+    <script src="./dist/flights.js"></script>
+    <script src="./dist/popularPlaces.js"></script>
+    <script src="./dist/featuredLocations.js"></script>
+    <script src="./dist/videoGallery.js"></script>
+    <script src="./dist/blogPosts.js"></script>
+    <script src="./dist/chat.js"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="w-full max-w-[1500px] mx-auto p-6">
+  <section class=" mt-6 relative flex flex-col" >
+    <p class="text-2xl text-[#666666] ">(ABOUT US)</p>
+     <!-- Loading state -->
+     <div *ngIf="isLoading" class="flex justify-center items-center py-12">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-800"></div>
+    </div>
+    
+    <!-- Error state -->
+    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+      <span class="block sm:inline">{{ error }}</span>
+      <button 
+        (click)="loadAboutUsStats()" 
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+      >
+        Try Again
+      </button>
+    </div>
+    
+    <!-- Empty state -->
+    <div *ngIf="!isLoading && !error && aboutUsStats.length === 0" class="text-center py-8">
+      <p class="text-gray-500">No About Us items available at the moment.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 mt-3 self-end md:w-[64%]">
+      <!-- Years -->
+      @for (item of aboutUsStats; track item) {
+        <div>
+          <h2 class="text-2xl font-normal mb-2">{{ item.title }}</h2>
+          <p class="text-4xl font-semibold mb-2">{{ item.numericValue }}</p>
+          <p class="text-sm text-black">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </section>
+</div>

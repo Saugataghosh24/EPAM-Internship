@@ -1,0 +1,82 @@
+[
+    {
+      "name": "Eiffel Tower",
+      "image": "assets/eiffel-tower.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Machu Picchu",
+      "image": "assets/MachuPicchu.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Great Wall",
+      "image": "assets/GreatWall.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Statue of Liberty",
+      "image": "assets/StatueofLiberty.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Taj Mahal",
+      "image": "assets/TajMahal.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Opera House",
+      "image": "assets/OperaHouse.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Colosseum",
+      "image": "assets/Colosseum.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Grand Canyon",
+      "image": "assets/GrandCanyon.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Eiffel Tower",
+      "image": "assets/eiffel-tower.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Machu Picchu",
+      "image": "assets/MachuPicchu.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Great Wall",
+      "image": "assets/GreatWall.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Statue of Liberty",
+      "image": "assets/StatueofLiberty.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Taj Mahal",
+      "image": "assets/TajMahal.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Opera House",
+      "image": "assets/OperaHouse.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Colosseum",
+      "image": "assets/Colosseum.png.png",
+      "tours": 356
+    },
+    {
+      "name": "Grand Canyon",
+      "image": "assets/GrandCanyon.png.png",
+      "tours": 356
+    }
+  ]

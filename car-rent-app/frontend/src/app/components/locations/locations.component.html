@@ -1,0 +1,54 @@
+<section class="w-full max-w-[1500px] mx-auto p-6 flex flex-col">
+  <h2 class="text-[#666666] text-2xl mb-4">(OUR LOCATIONS)</h2>
+  <!-- Loading state -->
+  <div *ngIf="isLoading" class="flex justify-center items-center py-12">
+    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-800"></div>
+  </div>
+  
+  <!-- Error state -->
+  <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+    <span class="block sm:inline">{{ error }}</span>
+    <button 
+      (click)="loadLocation()" 
+      class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mt-2"
+    >
+      Try Again
+    </button>
+  </div>
+  
+  <!-- Empty state -->
+  <div *ngIf="!isLoading && !error && locations.length === 0" class="text-center py-8">
+    <p class="text-gray-500">No Location items available at the moment.</p>
+  </div>
+  <div *ngIf="!isLoading && !error && locations.length !== 0" class="flex flex-col md:flex-row flex-1 overflow-hidden mt-6">
+    <!-- Left side - location list -->
+    <div class="w-full md:w-1/2 lg:w-2/5 flex flex-col gap-3 overflow-y-auto pr-4">
+      @for (loc of locations; track loc) {
+        <div 
+          (click)="selectLocation(loc)" 
+          class="cursor-pointer border-b border-gray-600 py-3 px-4 transition-all duration-300 hover:bg-gray-800 hover:text-white"
+          [class.bg-black]="loc === selectedLocation"
+          [class.text-white]="loc === selectedLocation"
+        >
+          <p class="text-lg font-semibold" *ngIf="loc.locationName">{{ loc.locationName }}</p>
+          <p class="text-sm">{{ loc.locationAddress }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Right side - map display -->
+    <div class="md:w-[66%] w-full">
+      <iframe
+      class="w-full h-full rounded-md"
+      [src]="selectedLocation?.safeMapSrc"
+      title="Map showing selected location"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>

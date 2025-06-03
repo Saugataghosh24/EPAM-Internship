@@ -1,0 +1,37 @@
+<div class="bg-[#F0F0F0] rounded-lg max-w-[350px] min-w-[270px] w-full shadow-md overflow-hidden flex flex-col h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+  <div class="relative px-4 pt-4 box-border">
+    <div class="absolute top-3 left-3 bg-white px-2 py-1 rounded text-xs">
+      <span [ngClass]="getStatusClass(car.status)">{{ car.status | titlecase }}</span>
+    </div>
+    <img [src]="getImageUrl()" [alt]="car.model" class="w-full h-40 object-cover rounded-md" alt="car-img">
+  </div>
+
+  <div class="p-4 flex flex-col justify-between flex-grow">
+    <div>
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-lg">{{ car.model }}</h3>
+        <div class="flex items-center">
+          <span class="text-yellow-500 mr-1">★</span>
+          <span>{{ car.carRating }}</span>
+        </div>
+      </div>
+
+      <div class="text-sm text-gray-600 mb-4">
+        <div>{{ car.location }}</div>
+      </div>
+    </div>
+
+    <div>
+      <app-button  
+        [disabled]="car.status !== 'AVAILABLE'" 
+        type="secondary"
+        label=" Book the car · ${{ car.pricePerDay }}/day"
+        (clicked)="onBookCar()">
+      </app-button>
+
+      <a href="#" class="block text-center text-sm underline mt-2 transition-all duration-100 hover:scale-105" (click)="onViewDetails($event)">
+        See more details
+      </a>
+    </div>
+  </div>
+</div>

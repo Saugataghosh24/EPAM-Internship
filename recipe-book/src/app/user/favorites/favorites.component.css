@@ -1,0 +1,30 @@
+.favorites-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .page-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .no-favorites {
+    text-align: center;
+    padding: 3rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  .no-favorites p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #666;
+  }

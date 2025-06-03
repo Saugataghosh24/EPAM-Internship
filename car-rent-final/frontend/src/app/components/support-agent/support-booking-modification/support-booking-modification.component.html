@@ -1,0 +1,244 @@
+<app-header></app-header>
+<section class="px-4 md:px-8 w-fit">
+    <section>
+        <span class="text-xs text-gray-500">Cars > Car Booking</span>
+        <h1 class="text-5xl font-semibold my-5">Booking Modification</h1>
+    </section>
+
+    <section class="flex flex-col md:flex-row w-fit">
+        <section class="w-86 md:w-100">
+            <!-- client info -->
+            <p class="my-3 font-semibold text-xl">Client Info</p>
+            <section class="border-[1.5px] rounded-lg p-3">
+                <section class="mb-1">
+                    <section class="flex justify-between items-center">
+                        <span class="text-xs text-gray-300">Client</span>
+                        <p class="text-sm text-gray-400 cursor-pointer">Change</p>
+                    </section>
+                    <p class="text-gray-400">{{clt}}</p>
+                </section>
+            </section>
+
+            <!-- location -->
+            <section class="my-4">
+                <p class="my-3 font-semibold text-xl">Location</p>
+                <section *ngIf="!updateLocation" class="border-[1.5px] rounded-lg p-3">
+                    <section class="mb-1">
+                        <section class="flex justify-between items-center">
+                            <span class="text-xs text-gray-300">Pick-up location</span>
+                            <p *ngIf="label=='Service Started'; else elseblock" class="text-sm cursor-pointer"
+                                (click)="toggleUpdate()">Change</p>
+                            <ng-template #elseblock>
+                                <p class="text-sm cursor-pointer text-gray-400">Change</p>
+                            </ng-template>
+                        </section>
+                        <p class="text-gray-400">{{ pickup.locationName }}</p>
+                    </section>
+                    <section *ngIf="label=='Service Started'; else elseblock2">
+                        <span class="text-xs text-gray-600">Drop-off
+                            location</span>
+                        <p>{{ dropoff.locationName }}</p>
+                    </section>
+                    <ng-template #elseblock2>
+                        <span class="text-xs text-gray-300">Drop-off location</span>
+                        <p class="text-gray-400">{{ dropoff.locationName }}</p>
+                    </ng-template>
+                </section>
+                <section *ngIf="updateLocation" class="border-[1.5px] rounded-lg p-3 flex flex-col">
+                    <section class="mb-1">
+                        <section class="flex justify-between items-center">
+                            <span class="text-xs text-gray-300">Pick-up location</span>
+                            <p class="text-sm cursor-pointer" (click)="toggleUpdate()">Save</p>
+                        </section>
+                        <p class="text-gray-400">{{pickup.locationName}}</p>
+                    </section>
+                    <span class="text-xs text-gray-600 mb-1">Drop-off location</span>
+                    <select [(ngModel)]="dropoff"
+                        class="w-70 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                        <option *ngFor="let loc of availableLocations" [ngValue]="loc">
+                            {{ loc.locationName }}
+                        </option>
+                    </select>
+                </section>
+            </section>
+
+            <!-- dates -->
+            <section class="my-4">
+                <p class="my-3 font-semibold text-xl">Dates & Times</p>
+                @if(label!=="Service Started"){
+                <section class="border-[1.5px] rounded-lg p-3">
+                    <section class="mb-1">
+                        <section class="flex justify-between items-center">
+                            <span class="text-xs text-gray-300">Pick-up date & time</span>
+                            <p class="text-sm cursor-pointer text-gray-400">Change</p>
+                        </section>
+                        <p class="text-gray-400">{{dateTime.pickup | date: 'MMMM d'}} | {{dateTime.pickup | date:
+                            'HH:mm'}}</p>
+                    </section>
+                    <span class="text-xs text-gray-300">Drop-off date & time</span>
+                    <p class="text-gray-400">{{dateTime.dropoff | date: 'MMMM d'}} | {{dateTime.dropoff | date:
+                        'HH:mm'}}</p>
+                </section>
+                }
+                @else if(!changedate){
+                <section class="border-[1.5px] rounded-lg p-3">
+                    <section class="mb-1">
+                        <section class="flex justify-between items-center">
+                            <span class="text-xs text-gray-600">Pick-up date & time</span>
+                            <p class="text-sm cursor-pointer" (click)="openPickup()">Change</p>
+                        </section>
+                        <p>{{dateTime.pickup | date: 'MMMM d'}} | {{dateTime.pickup | date: 'HH:mm'}}</p>
+                    </section>
+                    <span class="text-xs text-gray-600">Drop-off date & time</span>
+                    <p>{{dateTime.dropoff | date: 'MMMM d'}} | {{dateTime.dropoff | date: 'HH:mm'}}</p>
+                </section>
+                }
+                @else{
+                <section class="border-[1.5px] rounded-lg p-3">
+                    <div class="mb-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-gray-600">Pick-up date & time</span>
+                            <p class="text-sm cursor-pointer" (click)="updatedate()">Save</p>
+                        </div>
+                        <div class="w-70 border border-gray-300 rounded-md px-4 py-2 flex justify-between items-center cursor-pointer relative"
+                            (click)="openPickup()">
+                            <p>{{ dateTime.pickup | date: 'MMMM d' }} | {{ dateTime.pickup | date: 'HH:mm' }}</p>
+                            <svg class="absolute -right-0.5 w-5 h-3 text-black" fill="none" stroke="black"
+                                stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-xs text-gray-600">Drop-off date & time</span>
+                        <div class="w-70 border border-gray-300 rounded-md px-4 py-2 flex justify-between items-center cursor-pointer relative"
+                            (click)="openPickup()">
+                            <p>{{ dateTime.dropoff | date: 'MMMM d' }} | {{ dateTime.dropoff | date: 'HH:mm' }}</p>
+                            <svg class="absolute -right-0.5 w-5 h-3 text-black" fill="none" stroke="black"
+                                stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+                }
+            </section>
+
+            <!-- mileage -->
+            <section class="my-4">
+                <p class="my-3 font-semibold text-xl">Mileage</p>
+                <section class="border-[1.5px] rounded-lg p-3">
+                    <section *ngIf="!updatemileage">
+                        @if(label=="Service Started"){
+                        <section class="mb-1">
+                            <section class="flex justify-between items-center">
+                                <span class="text-xs text-gray-600 my-1">Start mileage of the car</span>
+                                <p class="text-sm cursor-pointer" (click)="toggleMileage()">Change</p>
+                            </section>
+                            <p>{{ mileage }}</p>
+                        </section>
+                        }
+                        @else{
+                        <section class="mb-1">
+                            <section class="flex justify-between items-center">
+                                <span class="text-xs text-gray-300 my-1">Start mileage of the car</span>
+                                <p class="text-sm cursor-pointer text-gray-400">Change</p>
+                            </section>
+                            <p class="text-gray-400">{{ mileage }}</p>
+                        </section>
+                        }
+
+
+                    </section>
+                    <section *ngIf="updatemileage" class="flex flex-col">
+                        <section class="mb-1">
+                            <section class="flex justify-between items-center">
+                                <span class="text-xs text-gray-600 my-1">Start mileage of the car</span>
+                                <p class="text-sm cursor-pointer" (click)="toggleMileage()">Save</p>
+                            </section>
+                            <input class="w-70 border border-gray-300 rounded-md px-4 py-2" type="number"
+                                placeholder="Indicate mileage" name="mileage" id="mileage" [(ngModel)]="mileage">
+                        </section>
+                        <section class="text-red-700 text-xs">{{showMileageMessage}}</section>
+                    </section>
+                    @if(label=="Service Provided"){
+                    <section *ngIf="!updatendmileage">
+                        <section class="mb-1">
+                            <section class="flex justify-between items-center">
+                                <span class="text-xs text-gray-600 my-1">End mileage of the car</span>
+                                <p class="text-sm cursor-pointer" (click)="toggleEndMileage()">Change</p>
+                            </section>
+                            <p>{{ emileage }}</p>
+                        </section>
+                    </section>
+                    <section *ngIf="updatendmileage" class="flex flex-col">
+                        <section class="mb-1">
+                            <section class="flex justify-between items-center">
+                                <span class="text-xs text-gray-600 my-1">End mileage of the car</span>
+                                <p class="text-sm cursor-pointer" (click)="toggleEndMileage()">Save</p>
+                            </section>
+                            <input class="w-70 border border-gray-300 rounded-md px-4 py-2" type="number"
+                                placeholder="Indicate mileage" name="emileage" id="emileage" [(ngModel)]="emileage">
+                        </section>
+                        <section class="text-red-700 text-xs">{{showMileageMessage}}</section>
+                    </section>
+                    }
+                    @else if(label!=="Service Started"){
+                    <section class="mb-1">
+                        <section class="flex justify-between items-center">
+                            <span class="text-xs text-gray-300 my-1">End mileage of the car</span>
+                            <p class="text-sm cursor-pointer text-gray-400">Change</p>
+                        </section>
+                        <p class="text-gray-400">{{ emileage }}</p>
+                    </section>
+                    }
+                </section>
+            </section>
+
+        </section>
+        <!-- car summary -->
+        <section class="bg-[#F0F0F0] py-3 rounded-lg w-86 md:w-100 h-fit md:mx-5 my-12">
+            <section class="w-82 md:w-95 mx-auto p-1">
+                <section class="h-45 overflow-hidden rounded-md">
+                    <img class="w-full h-full object-cover" [src]="selectedBooking.carImageUrl"
+                        alt="{{ selectedBooking.carModel }}" (error)="handleImageError($event)"
+                        onerror="this.onerror=null; this.src='assets/images/car-placeholder.jpg';">
+                </section>
+                <section class="my-2">
+                    <p>{{selectedBooking.carModel}}</p>
+                    <p class="text-xs text-gray-600">{{selectedBooking.carLocation}}</p>
+                </section>
+                <hr class="border-1 border-gray-300 my-3 rounded-3xl" />
+                <section>
+                    <section class="flex justify-between my-2">
+                        <p class="font-bold">Total</p>
+                        <p class="font-bold">${{totalcost==1?selectedBooking.pricePerDay:totalcost}}</p>
+                    </section>
+                    <p class="text-xs text-gray-600 my-2">Deposit: $ 2000</p>
+                    <!-- <button class="bg-[#CC1D1D] text-white p-2 rounded-full w-95 my-2 justify-self-center">Confirm reservation</button> -->
+                    @if(elabel!==''){
+                    <app-button [label]="elabel" [disabled]="disabled"></app-button>
+                    }
+                    @else{
+                    <app-button [label]="label" (clicked)="updateStatus()" [disabled]="disabled"></app-button>
+                    }
+                </section>
+            </section>
+        </section>
+
+
+
+    </section>
+    <section *ngIf="isPickupVisible" class="p-2 rounded-lg bg-white w-fit absolute top-50">
+        <app-date-time-picker (dateRangeSelected)="selectedDates($event)"
+            (closed)="pickerStatus($event)"></app-date-time-picker>
+    </section>
+</section>
+@if(alreadybooked){
+<app-already-booked (bookStatus)="bookStatus($event)"></app-already-booked>
+}
+@if(showalert){
+<app-notification [alert]="alert" [message]="message" [success]="success" [buttons]="buttons"></app-notification>
+}
+<app-footer></app-footer>

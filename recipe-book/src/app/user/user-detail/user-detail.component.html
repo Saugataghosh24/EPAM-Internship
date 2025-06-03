@@ -1,0 +1,43 @@
+<!-- src/app/user/user-detail/user-detail.component.html -->
+<div class="user-detail-container" *ngIf="user">
+    <div class="user-header">
+      <div class="user-avatar">
+        <img *ngIf="user.profileImage" [src]="user.profileImage" alt="Profile">
+        <div *ngIf="!user.profileImage" class="avatar-placeholder">
+          {{ user.firstName.charAt(0) }}
+        </div>
+      </div>
+      
+      <div class="user-info">
+        <h1 class="user-name">{{ user.firstName }} {{ user.lastName }}</h1>
+        <p class="user-location">{{ user.region }}, {{ user.country }}</p>
+        
+        <div class="user-stats">
+          <div class="stat">
+            <span class="stat-value">{{ userRecipes.length }}</span>
+            <span class="stat-label">Recipes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="user-content">
+      <h2 class="section-title">{{ user.firstName }}'s Recipes</h2>
+      
+      <div class="recipes-grid">
+        <app-recipe-card 
+          *ngFor="let recipe of userRecipes" 
+          [recipe]="recipe"
+          (favoriteToggle)="addToFavorites($event)">
+        </app-recipe-card>
+      </div>
+      
+      <div class="no-recipes" *ngIf="userRecipes.length === 0">
+        <p>{{ user.firstName }} hasn't created any recipes yet.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading" *ngIf="!user">
+    Loading profile...
+  </div>
